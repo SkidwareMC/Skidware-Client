@@ -97,7 +97,7 @@ int __stdcall gasper::hooks::swap_buffers_hk(HDC hdc) {
 			ImGui::SliderFloat(xorstr_("Speed"), &aimbot::m_speed, 1.0f, 10.0f, xorstr_("%.1f"));
 			ImGui::SliderFloat(xorstr_("Speed on Body"), &aimbot::m_speed_body, 1.0f, 10.0f, xorstr_("%.1f"));
 			ImGui::SliderFloat(xorstr_("AimAssist Distance"), &aimbot::m_aim_distance, 1.0f, 10.0f, xorstr_("%.1f"));
-			ImGui::SliderFloat(xorstr_("FOV"), &aimbot::m_fov, 10.0f, 90.0f, xorstr_("%.1f"));
+			ImGui::SliderFloat(xorstr_("FOV"), &aimbot::m_fov, 10.0f, 360.0f, xorstr_("%.1f"));
 			ImGui::Text("Movement:");
 			ImGui::Separator();
 			ImGui::Checkbox(xorstr_("Strafe"), &strafe::m_enabled);
