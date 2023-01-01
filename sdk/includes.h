@@ -41,3 +41,4 @@ inline constexpr auto BADLION_CLIENT = false;
 #include "utils/utils.h"
 #include "mapper/mapper.h"
 #include "utils/timer/timer.h"
+#include "sdk/minecraft/itemstack/itemstack.h"

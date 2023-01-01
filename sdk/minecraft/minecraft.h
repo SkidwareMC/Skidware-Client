@@ -2,6 +2,7 @@
 
 #include "../includes.h"
 
+
 namespace sdk {
 	class c_minecraft {
 	private:

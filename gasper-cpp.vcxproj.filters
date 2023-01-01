@@ -96,6 +96,9 @@
     <ClCompile Include="main\cheats\impl\src\fly.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main\cheats\impl\src\velocity.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="sdk\includes.h">
@@ -228,6 +231,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="main\cheats\impl\headers\fly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\cheats\impl\headers\velocity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -12,6 +12,7 @@
 #include "cheats/impl/headers/clicker.h"
 #include "cheats/impl/headers/sprint.h"
 #include "cheats//impl/headers/fly.h"
+#include "cheats/impl/headers/velocity.h"
 
 
 jvmtiEnv* jvmti_env;
@@ -65,6 +66,8 @@ void gasper::c_gasper::run()
 	cheats::instance->register_function(clicker::invoke);
 	cheats::instance->register_function(sprint::invoke);
 	cheats::instance->register_function(fly::invoke);
+	// cheats::instance->register_function(velocity::invoke);
+	wrapper::show_message("Modules Created");
 
 	//Give it a console for debugging purposes
 	AllocConsole();
@@ -76,7 +79,7 @@ void gasper::c_gasper::run()
 	freopen_s(&fIn, "conin$", "r", stdin);
 	freopen_s(&fOut, "conout$", "w", stdout);
 	freopen_s(&fOut, "conout$", "w", stderr);
-	
+	wrapper::show_message("Console Allocated");
 	/// We better be running
 	while (b_running)
 	{
@@ -124,7 +127,7 @@ void gasper::c_gasper::dispose()
 	MH_DisableHook(MH_ALL_HOOKS);
 	MH_Uninitialize();
 
-	SetWindowLongPtrA(wrapper::find_window(xorstr_("Minecraft 1.7.10")), GWLP_WNDPROC, (LONG_PTR)hooks::original_wndproc);
+	SetWindowLongPtrA(wrapper::find_window(xorstr_("Minecraft 1.8.9")), GWLP_WNDPROC, (LONG_PTR)hooks::original_wndproc);
 
 	env = nullptr;
 	hooks::gl_context = nullptr;
@@ -159,7 +162,7 @@ void gasper::c_gasper::hook()
 	MH_EnableHook(MH_ALL_HOOKS);
 
 	/// Set the WndProc
-	hooks::original_wndproc = reinterpret_cast<WNDPROC>(SetWindowLongPtrA(wrapper::find_window	(xorstr_("Minecraft 1.7.10")), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(hooks::wndproc_hk)));
+	hooks::original_wndproc = reinterpret_cast<WNDPROC>(SetWindowLongPtrA(wrapper::find_window	(xorstr_("Minecraft 1.8.9")), GWLP_WNDPROC, reinterpret_cast<LONG_PTR>(hooks::wndproc_hk)));
 }
 
 

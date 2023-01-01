@@ -1,0 +1,3 @@
+E:\Repos\Skidware-Client\x64\Release\gasper-cpp.dll
+E:\Repos\Skidware-Client\x64\Release\skidware.dll
+E:\Repos\Skidware-Client\x64\Release\skidwar.dll
