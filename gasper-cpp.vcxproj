@@ -148,14 +148,6 @@
   <ItemGroup>
     <ClCompile Include="entry\main.cpp" />
     <ClCompile Include="main\cheats\cheat.cpp" />
-    <ClCompile Include="main\cheats\impl\src\aimbot.cpp" />
-    <ClCompile Include="main\cheats\impl\src\clicker.cpp" />
-    <ClCompile Include="main\cheats\impl\src\fastplace.cpp" />
-    <ClCompile Include="main\cheats\impl\src\reach.cpp" />
-    <ClCompile Include="main\cheats\impl\src\fly.cpp" />
-    <ClCompile Include="main\cheats\impl\src\sprint.cpp" />
-    <ClCompile Include="main\cheats\impl\src\strafe.cpp" />
-    <ClCompile Include="main\cheats\impl\src\velocity.cpp" />
     <ClCompile Include="main\gasper.cpp" />
     <ClCompile Include="main\hooks\swap_buffers.cpp" />
     <ClCompile Include="main\hooks\wndproc.cpp" />
@@ -170,6 +162,7 @@
     <ClCompile Include="sdk\libraries\imgui\imgui_impl_win32.cpp" />
     <ClCompile Include="sdk\libraries\imgui\imgui_widgets.cpp" />
     <ClCompile Include="sdk\minecraft\axisaligned\axisalignedbb.cpp" />
+    <ClCompile Include="sdk\minecraft\itemstack\itemstack.cpp" />
     <ClCompile Include="sdk\minecraft\minecraft.cpp" />
     <ClCompile Include="sdk\minecraft\player\player.cpp" />
     <ClCompile Include="sdk\minecraft\world\world.cpp" />
@@ -177,15 +170,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main\cheats\cheat.h" />
-    <ClInclude Include="main\cheats\impl\headers\aimbot.h" />
-    <ClInclude Include="main\cheats\impl\headers\clicker.h" />
-    <ClInclude Include="main\cheats\impl\headers\fastplace.h" />
-    <ClInclude Include="main\cheats\impl\headers\fly.h" />
     <ClInclude Include="main\cheats\impl\headers\impl.h" />
-    <ClInclude Include="main\cheats\impl\headers\reach.h" />
-    <ClInclude Include="main\cheats\impl\headers\sprint.h" />
-    <ClInclude Include="main\cheats\impl\headers\strafe.h" />
-    <ClInclude Include="main\cheats\impl\headers\velocity.h" />
     <ClInclude Include="main\gasper.h" />
     <ClInclude Include="sdk\hook\buffer.h" />
     <ClInclude Include="sdk\hook\hde\hde32.h" />
@@ -215,6 +200,7 @@
     <ClInclude Include="sdk\libraries\xorstr.h" />
     <ClInclude Include="sdk\mapper\mapper.h" />
     <ClInclude Include="sdk\minecraft\axisaligned\axisalignedbb.h" />
+    <ClInclude Include="sdk\minecraft\itemstack\itemstack.h" />
     <ClInclude Include="sdk\minecraft\minecraft.h" />
     <ClInclude Include="sdk\minecraft\player\player.h" />
     <ClInclude Include="sdk\minecraft\world\world.h" />

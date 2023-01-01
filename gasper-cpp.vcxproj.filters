@@ -72,31 +72,10 @@
     <ClCompile Include="main\cheats\cheat.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\aimbot.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\reach.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="sdk\utils\timer\timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\strafe.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\clicker.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\sprint.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\fastplace.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\fly.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main\cheats\impl\src\velocity.cpp">
+    <ClCompile Include="sdk\minecraft\itemstack\itemstack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -182,19 +161,10 @@
     <ClInclude Include="main\cheats\cheat.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\aimbot.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="main\cheats\impl\headers\impl.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\reach.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="sdk\utils\timer\timer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\strafe.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="sdk\jni\classfile_constants.h">
@@ -221,19 +191,7 @@
     <ClInclude Include="sdk\jni\jvmticmlr.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\clicker.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\sprint.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\fastplace.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\fly.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="main\cheats\impl\headers\velocity.h">
+    <ClInclude Include="sdk\minecraft\itemstack\itemstack.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -18,24 +18,24 @@ namespace wrapper {
 	const inline bool handle_issue(const char* name, void* ptr)
 	{
 		/// Constant formatting message
-		const auto s_formatting = xorstr_("%s not intialized, value -> 0x%X");
+		//const auto s_formatting = xorstr_("%s not intialized, value -> 0x%X");
 
 		/// Value isn't initialized
 		if (!ptr)
 		{
-			size_t len = std::snprintf(nullptr, 0, s_formatting, name, ptr) + 1; /// Had issues with terminator
+			//size_t len = std::snprintf(nullptr, 0, s_formatting, name, ptr) + 1; /// Had issues with terminator
 
-			if (len <= 0)
-				show_message(xorstr_("Issue formatting issue_handler wrapper::#handle_issue#26"));
+			//if (len <= 0)
+				//show_message(xorstr_("Issue formatting issue_handler wrapper::#handle_issue#26"));
 
 			/// Allocate buffer with lenght of message 
-			auto buffer = std::make_unique<char[]>(len);
+			//auto buffer = std::make_unique<char[]>(len);
 
 			/// Format the message to buffer
-			std::snprintf(buffer.get(), len, s_formatting, name, ptr);
+			//std::snprintf(buffer.get(), len, s_formatting, name, ptr);
 
 			/// Show the message
-			show_message(std::string(buffer.get(), buffer.get() + len - 1));
+			//show_message(std::string(buffer.get(), buffer.get() + len - 1));
 
 			/// Show that an issue occured
 			return true;
@@ -49,8 +49,8 @@ namespace wrapper {
 	inline void* get_module_handle(const char* name) {
 		auto h_module = GetModuleHandleA(name);
 
-		if (handle_issue(name, h_module))
-			std::exit(0);
+		//if (handle_issue(name, h_module))
+			//std::exit(0);
 
 		return h_module;
 	}
@@ -60,8 +60,8 @@ namespace wrapper {
 	{
 		auto res = BADLION_CLIENT ? FindWindowA("LWJGL", nullptr) : FindWindowA(nullptr, name);
 
-		if (handle_issue(name, res))
-			std::exit(0);
+		//if (handle_issue(name, res))
+			//std::exit(0);
 
 		return res;
 	}
@@ -79,8 +79,8 @@ namespace wrapper {
 	{
 		auto p_procedure = GetProcAddress(reinterpret_cast<HMODULE>(handle), name);
 
-		if (handle_issue(name, p_procedure))
-			std::exit(0);
+		//if (handle_issue(name, p_procedure))
+			//std::exit(0);
 
 		return p_procedure;
 	}

@@ -1,6 +1,6 @@
 
 #include "itemstack.h"
-#include "../../gasper.h"
+#include "../../../main/gasper.h"
 
 itemstack::itemstack(jobject obj) {
 	item_obj = obj;

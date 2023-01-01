@@ -1,13 +1,6 @@
 #include "../gasper.h"
 
 /// Include cheats for settings
-#include "../cheats/impl/headers/reach.h"
-#include "../cheats/impl/headers/aimbot.h"
-#include "../cheats/impl/headers/strafe.h"
-#include "../cheats/impl/headers/clicker.h"
-#include "../cheats/impl/headers/sprint.h"
-#include "../cheats/impl/headers/fly.h"
-#include "../cheats/impl/headers/velocity.h"
 
 /// Context
 std::shared_ptr<wrapper::c_context> gasper::hooks::gl_context = nullptr;
@@ -81,32 +74,14 @@ int __stdcall gasper::hooks::swap_buffers_hk(HDC hdc) {
 		if (logged)
 		{
 			ImGui::Begin(xorstr_("Skidware"), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-			ImGui::Separator();
 			ImGui::Text("Combat");
 			ImGui::Separator();
 			ImGui::Text("Clicker:");
-			ImGui::Checkbox(xorstr_("AutoClicker enabled"), &clicker::m_enabled);
-			ImGui::SliderFloat(xorstr_("CPS (Beta)"), &clicker::f_cps, 1.0f, 20.f, xorstr_("%.1f"));
 			ImGui::Text("Reach:");
 			ImGui::Separator();
-			ImGui::Checkbox(xorstr_("Reach enabled"), &reach::m_enabled);
-			ImGui::SliderFloat(xorstr_("Distance"), &reach::m_reach, 0.0f, 1.5f, xorstr_("%.1f"));
 			ImGui::Text("Aimassist:");
 			ImGui::Separator();
-			ImGui::Checkbox(xorstr_("AimAssist enabled"), &aimbot::m_enabled);
-			ImGui::Checkbox(xorstr_("ClickAim"), &aimbot::m_clickaim);
-			ImGui::SliderFloat(xorstr_("Speed"), &aimbot::m_speed, 1.0f, 10.0f, xorstr_("%.1f"));
-			ImGui::SliderFloat(xorstr_("Speed on Body"), &aimbot::m_speed_body, 1.0f, 10.0f, xorstr_("%.1f"));
-			ImGui::SliderFloat(xorstr_("AimAssist Distance"), &aimbot::m_aim_distance, 1.0f, 10.0f, xorstr_("%.1f"));
-			ImGui::SliderFloat(xorstr_("FOV"), &aimbot::m_fov, 10.0f, 360.0f, xorstr_("%.1f"));
-			ImGui::Text("Velocity:");
-			ImGui::Separator();
-			ImGui::Checkbox(xorstr_("Velocity enabled"), &velocity::m_enabled);
-			ImGui::Text("Movement:");
-			ImGui::Separator();
-			ImGui::Checkbox(xorstr_("Strafe"), &strafe::m_enabled);
-			ImGui::Checkbox(xorstr_("AutoSprint(CRASH!)"), &sprint::m_enabled);
-			ImGui::Checkbox(xorstr_("Fly(CRASH!)"), &fly::m_enabled);
+			//ImGui::Text("Misc:");
 		}
 
 		ImGui::End();

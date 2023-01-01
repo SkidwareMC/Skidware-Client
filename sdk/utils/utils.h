@@ -1,4 +1,5 @@
 #pragma once
+#include <random>
 
 namespace sdk {
 
@@ -46,6 +47,14 @@ namespace sdk {
 
 		inline static double distance(double x, double y) {
 			return sqrt(pow(x, 2) + pow(y, 2));
+		}
+
+		inline float get_random(float start, float end)
+		{
+			std::random_device rd;
+			std::mt19937_64 mt(rd());
+			std::uniform_real_distribution<float> dist(start, end);
+			return dist(mt);
 		}
 
 		inline static double distance(double x1, double y1, double z1, double x2, double y2, double z2) {

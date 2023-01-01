@@ -2,7 +2,6 @@
 
 #include "../../../main/gasper.h"
 #include "../axisaligned/axisalignedbb.h"
-#include "../../../main/cheats/impl/headers/clicker.h"
 using std::string;
 
 c_player::c_player(jobject obj)
