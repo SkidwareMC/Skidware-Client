@@ -6,6 +6,7 @@
 
 #include "cheats/cheat.h"
 #include <iostream>
+#include "cheats/impl/headers/clicker.h"
 
 jvmtiEnv* jvmti_env;
 
@@ -52,6 +53,7 @@ void gasper::c_gasper::run()
 	cheats::instance = std::make_unique<cheats::c_cheats>();
 
 	/// Register all our cheats
+	cheats::instance->register_function(clicker::invoke);
 	
 	//wrapper::show_message("Modules Created");
 

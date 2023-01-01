@@ -8,6 +8,11 @@ C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\util
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  clicker.cpp
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
   gasper.cpp
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
@@ -64,6 +69,8 @@ C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\util
   hde64.c
   hook.c
   trampoline.c
+player.obj : warning LNK4006: "public: void __cdecl c_player::swingItem(void)" (?swingItem@c_player@@QEAAXXZ) already defined in clicker.obj; second definition ignored
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\x64\Release\skidwar.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
   Generating code
   Not all modules are compiled with -Gy (function comdat), build without incremental LTCG.
   Finished generating code
