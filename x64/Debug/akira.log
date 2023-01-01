@@ -1,0 +1,10 @@
+﻿LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+swapBuffers.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+wndproc.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+clickgui.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+dllmain.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+minecraft.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+player.obj : warning LNK4006: "__int64 (__cdecl* akira::hooks::originalWndproc)(struct HWND__ *,unsigned int,unsigned __int64,__int64)" (?originalWndproc@hooks@akira@@3P6A_JPEAUHWND__@@I_K_J@ZEA) already defined in akira.obj; second definition ignored
+akira.obj : error LNK2019: unresolved external symbol "int __cdecl akira::hooks::swapBuffersHook(struct HDC__ *)" (?swapBuffersHook@hooks@akira@@YAHPEAUHDC__@@@Z) referenced in function "public: void __cdecl akira::c_akira::hook(void)" (?hook@c_akira@akira@@QEAAXXZ)
+C:\Users\Renovo\Downloads\ClientBase-main\ClientBase-main\x64\Debug\akira.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
+  akira.vcxproj -> C:\Users\Renovo\Downloads\ClientBase-main\ClientBase-main\x64\Debug\akira.dll
