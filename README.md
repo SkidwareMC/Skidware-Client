@@ -1,6 +1,6 @@
 # Skidware
 Minecraft injection client <br>
-![url](https://github.com/SkidwareMC/Skidware-1.8.9/blob/main/skidware.png) <br>
+![url](https://github.com/SkidwareMC/Skidware-Client/blob/main/skidware.png) <br>
 
 # How 2 Use
 
