@@ -39,8 +39,6 @@ public:
 	int get_entity_id();
 	int get_item_index(std::string name);
 
-	float get_health();
-
 	float get_fall_distance();
 	void set_fall_distance(float val);
 
@@ -76,7 +74,6 @@ public:
 	float get_movestrafe();
 	sdk::vec3d get_motion_vector();
 	void set_motion_vector(sdk::vec3d vec);
-	bool is_on_ground();
 	float get_health();
 	sdk::vec3d get_position();
 	void set_yaw(float yaw);
@@ -90,8 +87,4 @@ public:
 	jobject getCapabilities();
 	void setFlying(bool state);
 
-	const jobject get_object()
-	{
-		return player_obj;
-	}
 };

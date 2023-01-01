@@ -1,0 +1,149 @@
+﻿  main.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  cheat.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  aimbot.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\main\cheats\impl\src\aimbot.cpp(38,10): warning C4804: '>': unsafe use of type 'bool' in operation
+E:\Repos\Skidware-Client\main\cheats\impl\src\aimbot.cpp(97,9): warning C4804: '>': unsafe use of type 'bool' in operation
+  clicker.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  fastplace.cpp
+  reach.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\main\cheats\impl\src\reach.cpp(24,8): warning C4804: '>': unsafe use of type 'bool' in operation
+E:\Repos\Skidware-Client\main\cheats\impl\src\reach.cpp(35,17): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+  fly.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  sprint.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  strafe.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\main\cheats\impl\src\strafe.cpp(80,13): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+  velocity.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  gasper.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  swap_buffers.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  wndproc.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\main\hooks\wndproc.cpp(70,24): warning C4244: 'return': conversion from 'LRESULT' to 'long', possible loss of data
+  minecraft.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  player.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  world.cpp
+E:\Repos\Skidware-Client\sdk\utils\utils.h(26,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(31,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(41,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+E:\Repos\Skidware-Client\sdk\utils\utils.h(42,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+  Generating Code...
+  buffer.c
+  hde32.c
+  hde64.c
+  hook.c
+  trampoline.c
+  Generating Code...
+LINK : warning LNK4075: ignoring '/INCREMENTAL' due to '/FORCE' specification
+gasper.obj : warning LNK4006: "float clicker::m_delay" (?m_delay@clicker@@3MA) already defined in clicker.obj; second definition ignored
+gasper.obj : warning LNK4006: "float clicker::m_random" (?m_random@clicker@@3MA) already defined in clicker.obj; second definition ignored
+gasper.obj : warning LNK4006: "float clicker::f_cps" (?f_cps@clicker@@3MA) already defined in clicker.obj; second definition ignored
+gasper.obj : warning LNK4006: "int velocity::m_horizontal" (?m_horizontal@velocity@@3HA) already defined in velocity.obj; second definition ignored
+gasper.obj : warning LNK4006: "int velocity::m_vertical" (?m_vertical@velocity@@3HA) already defined in velocity.obj; second definition ignored
+gasper.obj : warning LNK4006: "bool velocity::m_enabled" (?m_enabled@velocity@@3_NA) already defined in velocity.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "float clicker::m_delay" (?m_delay@clicker@@3MA) already defined in clicker.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "float clicker::m_random" (?m_random@clicker@@3MA) already defined in clicker.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "float clicker::f_cps" (?f_cps@clicker@@3MA) already defined in clicker.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "int velocity::m_horizontal" (?m_horizontal@velocity@@3HA) already defined in velocity.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "int velocity::m_vertical" (?m_vertical@velocity@@3HA) already defined in velocity.obj; second definition ignored
+swap_buffers.obj : warning LNK4006: "bool velocity::m_enabled" (?m_enabled@velocity@@3_NA) already defined in velocity.obj; second definition ignored
+player.obj : warning LNK4006: "float clicker::m_delay" (?m_delay@clicker@@3MA) already defined in clicker.obj; second definition ignored
+player.obj : warning LNK4006: "float clicker::m_random" (?m_random@clicker@@3MA) already defined in clicker.obj; second definition ignored
+player.obj : warning LNK4006: "float clicker::f_cps" (?f_cps@clicker@@3MA) already defined in clicker.obj; second definition ignored
+aimbot.obj : error LNK2019: unresolved external symbol "public: bool __cdecl c_player::is_invisible(void)" (?is_invisible@c_player@@QEAA_NXZ) referenced in function "public: __cdecl `void __cdecl aimbot::invoke(class std::shared_ptr<class c_context>)'::`8'::<lambda_2>::operator()(void)const " (??R<lambda_2>@?7??invoke@aimbot@@YAXV?$shared_ptr@Vc_context@@@std@@@Z@QEBA@XZ)
+strafe.obj : error LNK2019: unresolved external symbol "public: float __cdecl c_player::get_hurt_time(void)" (?get_hurt_time@c_player@@QEAAMXZ) referenced in function "void __cdecl strafe::invoke(class std::shared_ptr<class c_context>)" (?invoke@strafe@@YAXV?$shared_ptr@Vc_context@@@std@@@Z)
+velocity.obj : error LNK2001: unresolved external symbol "public: float __cdecl c_player::get_hurt_time(void)" (?get_hurt_time@c_player@@QEAAMXZ)
+strafe.obj : error LNK2019: unresolved external symbol "public: float __cdecl c_player::get_moveforward(void)" (?get_moveforward@c_player@@QEAAMXZ) referenced in function "float __cdecl get_direction(class std::shared_ptr<class c_context>)" (?get_direction@@YAMV?$shared_ptr@Vc_context@@@std@@@Z)
+strafe.obj : error LNK2019: unresolved external symbol "public: float __cdecl c_player::get_movestrafe(void)" (?get_movestrafe@c_player@@QEAAMXZ) referenced in function "float __cdecl get_direction(class std::shared_ptr<class c_context>)" (?get_direction@@YAMV?$shared_ptr@Vc_context@@@std@@@Z)
+strafe.obj : error LNK2019: unresolved external symbol "public: struct sdk::vec3d __cdecl c_player::get_motion_vector(void)" (?get_motion_vector@c_player@@QEAA?AUvec3d@sdk@@XZ) referenced in function "float __cdecl get_speed(class std::shared_ptr<class c_context>)" (?get_speed@@YAMV?$shared_ptr@Vc_context@@@std@@@Z)
+velocity.obj : error LNK2019: unresolved external symbol "public: void __cdecl c_player::set_motion_vector(struct sdk::vec3d)" (?set_motion_vector@c_player@@QEAAXUvec3d@sdk@@@Z) referenced in function "void __cdecl velocity::invoke(class std::shared_ptr<class c_context>)" (?invoke@velocity@@YAXV?$shared_ptr@Vc_context@@@std@@@Z)
+gasper.obj : error LNK2019: unresolved external symbol __imp_wglDeleteContext referenced in function "public: void __cdecl gasper::c_gasper::dispose(void)" (?dispose@c_gasper@gasper@@QEAAXXZ)
+swap_buffers.obj : error LNK2019: unresolved external symbol __imp_wglCreateContext referenced in function "class std::shared_ptr<struct wrapper::c_context> __cdecl wrapper::create_gl_context(void)" (?create_gl_context@wrapper@@YA?AV?$shared_ptr@Uc_context@wrapper@@@std@@XZ)
+swap_buffers.obj : error LNK2019: unresolved external symbol __imp_wglGetCurrentContext referenced in function "class std::shared_ptr<struct wrapper::c_context> __cdecl wrapper::create_gl_context(void)" (?create_gl_context@wrapper@@YA?AV?$shared_ptr@Uc_context@wrapper@@@std@@XZ)
+swap_buffers.obj : error LNK2019: unresolved external symbol __imp_wglMakeCurrent referenced in function "int __cdecl gasper::hooks::swap_buffers_hk(struct HDC__ *)" (?swap_buffers_hk@hooks@gasper@@YAHPEAUHDC__@@@Z)
+swap_buffers.obj : error LNK2019: unresolved external symbol __imp_glViewport referenced in function "int __cdecl gasper::hooks::swap_buffers_hk(struct HDC__ *)" (?swap_buffers_hk@hooks@gasper@@YAHPEAUHDC__@@@Z)
+imgui_impl_opengl2.obj : error LNK2001: unresolved external symbol __imp_glViewport
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glBindTexture referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glBlendFunc referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glColorPointer referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glDeleteTextures referenced in function "void __cdecl ImGui_ImplOpenGL2_DestroyFontsTexture(void)" (?ImGui_ImplOpenGL2_DestroyFontsTexture@@YAXXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glDisable referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glDisableClientState referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glDrawElements referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glEnable referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glEnableClientState referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glGenTextures referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glGetIntegerv referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glLoadIdentity referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glMatrixMode referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glOrtho referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPixelStorei referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPolygonMode referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPopAttrib referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPopMatrix referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPushAttrib referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glPushMatrix referenced in function "void __cdecl ImGui_ImplOpenGL2_SetupRenderState(struct ImDrawData *,int,int)" (?ImGui_ImplOpenGL2_SetupRenderState@@YAXPEAUImDrawData@@HH@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glScissor referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glTexCoordPointer referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glTexImage2D referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glTexParameteri referenced in function "bool __cdecl ImGui_ImplOpenGL2_CreateFontsTexture(void)" (?ImGui_ImplOpenGL2_CreateFontsTexture@@YA_NXZ)
+imgui_impl_opengl2.obj : error LNK2019: unresolved external symbol __imp_glVertexPointer referenced in function "void __cdecl ImGui_ImplOpenGL2_RenderDrawData(struct ImDrawData *)" (?ImGui_ImplOpenGL2_RenderDrawData@@YAXPEAUImDrawData@@@Z)
+player.obj : error LNK2019: unresolved external symbol "public: __cdecl itemstack::itemstack(class _jobject *)" (??0itemstack@@QEAA@PEAV_jobject@@@Z) referenced in function "public: class itemstack __cdecl c_player::get_current_item(void)" (?get_current_item@c_player@@QEAA?AVitemstack@@XZ)
+player.obj : error LNK2019: unresolved external symbol "public: __cdecl itemstack::~itemstack(void)" (??1itemstack@@QEAA@XZ) referenced in function "public: void __cdecl c_player::drop_item(class itemstack,bool)" (?drop_item@c_player@@QEAAXVitemstack@@_N@Z)
+player.obj : error LNK2019: unresolved external symbol "public: class _jobject * __cdecl itemstack::get_object(void)" (?get_object@itemstack@@QEAAPEAV_jobject@@XZ) referenced in function "public: void __cdecl c_player::drop_item(class itemstack,bool)" (?drop_item@c_player@@QEAAXVitemstack@@_N@Z)
+player.obj : error LNK2019: unresolved external symbol "public: class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > __cdecl itemstack::get_name(void)" (?get_name@itemstack@@QEAA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ) referenced in function "public: int __cdecl c_player::get_item_index(class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >)" (?get_item_index@c_player@@QEAAHV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z)
+E:\Repos\Skidware-Client\x64\Debug\skidwar.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
+  gasper-cpp.vcxproj -> E:\Repos\Skidware-Client\x64\Debug\skidwar.dll

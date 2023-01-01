@@ -11,7 +11,7 @@ namespace wrapper {
 
 	/// Simple wrapper to show MessageBox
 	const inline void show_message(std::string msg) {
-		MessageBoxA(nullptr, msg.c_str(), xorstr_("[dbg] gasper"), MB_OK);
+		MessageBoxA(nullptr, msg.c_str(), xorstr_("[dbg] skidware"), MB_OK);
 	}
 
 	/// Simple wrapper to handle issues
