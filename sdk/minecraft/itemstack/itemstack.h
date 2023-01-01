@@ -1,6 +1,6 @@
 #pragma once
 
-#include "minecraft.h"
+#include "../minecraft.h"
 
 using std::string;
 

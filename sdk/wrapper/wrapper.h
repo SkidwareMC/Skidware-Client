@@ -122,7 +122,7 @@ namespace wrapper {
 			0, 0, 0
 		};
 
-		res->m_hdc_devicectx = GetDC(find_window(xorstr_("Minecraft 1.7.10")));
+		res->m_hdc_devicectx = GetDC(find_window(xorstr_("Minecraft 1.8.9")));
 
 		int pixel_format = ChoosePixelFormat(res->m_hdc_devicectx, &pfd);
 		SetPixelFormat(res->m_hdc_devicectx, pixel_format, &pfd);
