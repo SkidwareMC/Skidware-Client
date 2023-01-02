@@ -1,12 +1,17 @@
 #include "gasper.h"
 
+// Mappings:
 #include "../sdk/minecraft/minecraft.h"
 #include "../sdk/minecraft/player/player.h"
 #include "../sdk/minecraft/world/world.h"
 
+// Functions:
 #include "cheats/cheat.h"
 #include <iostream>
+
+// Cheats:
 #include "cheats/impl/headers/clicker.h"
+#include "cheats/impl/headers/reach.h"
 
 jvmtiEnv* jvmti_env;
 
@@ -54,21 +59,24 @@ void gasper::c_gasper::run()
 
 	/// Register all our cheats
 	cheats::instance->register_function(clicker::invoke);
+	//cheats::instance->register_function(reach::invoke);
 	
 	//wrapper::show_message("Modules Created");
 
 	//Give it a console for debugging purposes
-	AllocConsole();
+	//AllocConsole();
 	
 	//Allow you to close the console without the host process closing too
-	SetConsoleCtrlHandler(NULL, true);
+	//SetConsoleCtrlHandler(NULL, true);
 	//Assign console in and out to pass to the create console rather than minecraft's
-	FILE* fIn;
-	FILE* fOut;
-	freopen_s(&fIn, "conin$", "r", stdin);
-	freopen_s(&fOut, "conout$", "w", stdout);
-	freopen_s(&fOut, "conout$", "w", stderr);
-	std::cout << "[Test] Console created 1/10" << std::endl;
+	//FILE* fIn;
+	//FILE* fOut;
+	//freopen_s(&fIn, "conin$", "r", stdin);
+	//freopen_s(&fOut, "conout$", "w", stdout);
+	//freopen_s(&fOut, "conout$", "w", stderr);
+
+	wrapper::show_message("Injected.");
+	
 	/// We better be running
 	while (b_running)
 	{
@@ -79,20 +87,9 @@ void gasper::c_gasper::run()
 		/// Le epic flag for le epic modern C++
 		static std::once_flag flag;
 
-		std::cout << "[Test] Thread made 2/10" << std::endl;
-		Sleep(500);
-
 		/// Keep references simple so that we can easily dispose of them later (they're all localref btw)
 		/// but they last for one cycle of this thread so we shouldn't worry about them being accidentally destroyed suddenly
 		auto minecraft_inst = sdk::instance->get_minecraft();
-
-		std::cout << "[Test] Attaching started 3/10" << std::endl;
-		Sleep(2000);
-
-		std::cout << "[Test] JavaVM created 4/10" << std::endl;
-		Sleep(500);
-
-		std::cout << "[Test] Found and attached to JNIEnv 5/10" << std::endl;
 
 		/// Notify of injection (this is for testing)
 		/// Note to self: release mode currently contains pretty much the same debug info as debug config
@@ -104,12 +101,6 @@ void gasper::c_gasper::run()
 		auto world = std::make_shared<c_world>(sdk::instance->get_world(minecraft_inst));
 
 		cheats::instance->invoke(std::make_shared<c_context>(local, world, !sdk::instance->get_current_screen(minecraft_inst), false));
-
-		std::cout << "[Test] Attached to thread 6/10" << std::endl;
-		std::cout << "[Test] Started hooking 7/10" << std::endl;
-		Sleep(750);
-
-		std::cout << "[Test] Hooked swapbuffers 8/10" << std::endl;
 
 		/// Delete the reference
 		get_env()->DeleteLocalRef(minecraft_inst);
@@ -134,9 +125,9 @@ void gasper::c_gasper::dispose()
 	MH_Uninitialize();
 
 	SetWindowLongPtrA(wrapper::find_window(xorstr_("Minecraft 1.8.9")), GWLP_WNDPROC, (LONG_PTR)hooks::original_wndproc);
-	std::cout << "[Test] WindowProc set 9/10" << std::endl;
-	Sleep(1000);
-	std::cout << "[Test] Injected :)" << std::endl;
+	//std::cout << "[Test] WindowProc set" << std::endl;
+	//Sleep(1000);
+	//std::cout << "[Test] Injected :)" << std::endl;
 
 	env = nullptr;
 	hooks::gl_context = nullptr;

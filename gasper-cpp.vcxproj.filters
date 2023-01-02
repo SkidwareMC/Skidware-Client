@@ -200,6 +200,15 @@
     <ClInclude Include="main\cheats\impl\headers\clicker.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="main\hooks\swap_buffers.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\cheats\impl\headers\reach.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="main\cheats\impl\src\reach.cpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="gdi32.dll" />
