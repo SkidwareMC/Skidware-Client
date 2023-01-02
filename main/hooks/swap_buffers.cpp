@@ -1,7 +1,9 @@
 #include "../gasper.h"
+#include "swap_buffers.h"
 
 /// Include cheats for settings
 #include "../cheats/impl/headers/clicker.h"
+#include "../cheats/impl/headers/reach.h"
 
 /// Context
 std::shared_ptr<wrapper::c_context> gasper::hooks::gl_context = nullptr;
@@ -75,15 +77,16 @@ int __stdcall gasper::hooks::swap_buffers_hk(HDC hdc) {
 		if (logged)
 		{
 			ImGui::Begin(xorstr_("Skidware"), nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-			ImGui::Text("Combat");
+			ImGui::Text(xorstr_("Clicker:"));
 			ImGui::Separator();
-			ImGui::Text("Clicker:");
 			ImGui::Checkbox(xorstr_("Enable"), &clicker::m_enabled);
 			ImGui::SliderFloat(xorstr_("CPS"), &clicker::m_cps, 1.f, 20.f);
 			ImGui::Checkbox(xorstr_("Randomisation"), &clicker::m_randomize);
-			ImGui::Text("Reach:");
+			ImGui::Text(xorstr_("Reach:"));
 			ImGui::Separator();
-			ImGui::Text("Aimassist:");
+			ImGui::Checkbox(xorstr_("Enable"), &reach::m_enabled);
+			ImGui::SliderFloat(xorstr_("Distance"), &reach::m_distance, 3.f, 6.f);
+			ImGui::Text(xorstr_("Aim:"));
 			ImGui::Separator();
 			//ImGui::Text("Misc:");
 		}

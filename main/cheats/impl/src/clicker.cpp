@@ -1,5 +1,4 @@
 #include "../headers/clicker.h"
-#include "../../../../sdk/minecraft/player/player.h"
 #include <windows.h>
 #include "../../../gasper.h"
 #include "../../../../sdk/minecraft/player/player.h"
@@ -14,14 +13,13 @@ void c_player::swingItem()
 
 void clicker::invoke(std::shared_ptr<c_context> ctx) {
 
-    /*auto is_sane = [ctx]() {
+    auto is_sane = [ctx]() {
         return ctx->ingame && ctx->local != nullptr && ctx->local->get_object() != nullptr && ctx->world != nullptr &&
             ctx->world->get_object() != nullptr && m_enabled;
     };
-        
     if (!is_sane())
         return;
-        */
+        
 
     if (GetAsyncKeyState(VK_LBUTTON) && GetForegroundWindow() == hwnd)
     {
@@ -32,10 +30,10 @@ void clicker::invoke(std::shared_ptr<c_context> ctx) {
         if (m_randomize)
             cps += (int)floorf(sdk::util::get_random(-3, 4));
 
-        long long delay = (long long)(1000 / (cps - 1));
+        long delay = (long)(1000 / (cps - 1));
 
-    
-        SendMessage(hwnd, WM_LBUTTONDOWN, MK_LBUTTON, MAKELPARAM(0, 0));\
+
+        SendMessage(hwnd, WM_LBUTTONDOWN, MK_LBUTTON, MAKELPARAM(0, 0));
         std::this_thread::sleep_for(std::chrono::milliseconds(delay / 2));
         SendMessage(hwnd, WM_LBUTTONUP, MK_LBUTTON, MAKELPARAM(0, 0));
         std::this_thread::sleep_for(std::chrono::milliseconds(delay / 2));

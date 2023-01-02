@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 
 /// Thought about wrapping certain WinAPI functions to keep syntax consistancy 
 /// also handy when obfuscating these calls :)
@@ -9,9 +10,15 @@ namespace wrapper {
 		return CreateThread(0, 0, routine, 0, 0, 0);
 	}
 
+	inline void output(std::string msg)
+	{
+		std::cout << msg << std::endl;
+		Sleep(10);
+	}
+
 	/// Simple wrapper to show MessageBox
 	const inline void show_message(std::string msg) {
-		MessageBoxA(nullptr, msg.c_str(), xorstr_("[dbg] skidware"), MB_OK);
+		MessageBoxA(nullptr, msg.c_str(), xorstr_("skidware"), MB_OK);
 	}
 
 	/// Simple wrapper to handle issues

@@ -1,18 +1,4 @@
-﻿  main.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  cheat.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  clicker.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(517,5): warning MSB8028: The intermediate directory (x64\Release\) contains files shared from another project (skidwar.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   gasper.cpp
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
@@ -23,55 +9,9 @@ C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\util
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
 C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  wndproc.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\main\hooks\wndproc.cpp(70,24): warning C4244: 'return': conversion from 'LRESULT' to 'long', possible loss of data
-  imgui.cpp
-  imgui_draw.cpp
-  imgui_impl_opengl2.cpp
-  imgui_impl_win32.cpp
-  imgui_widgets.cpp
-  axisalignedbb.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  itemstack.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  minecraft.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  player.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  world.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  timer.cpp
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(27,21): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(32,20): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(42,37): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\sdk\utils\utils.h(43,34): warning C4244: 'argument': conversion from 'double' to 'float', possible loss of data
-  buffer.c
-  hde32.c
-  hde64.c
-  hook.c
-  trampoline.c
 player.obj : warning LNK4006: "public: void __cdecl c_player::swingItem(void)" (?swingItem@c_player@@QEAAXXZ) already defined in clicker.obj; second definition ignored
-C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\x64\Release\skidwar.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
+C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\x64\Release\skidware.dll : warning LNK4088: image being generated due to /FORCE option; image may not run
   Generating code
   Not all modules are compiled with -Gy (function comdat), build without incremental LTCG.
   Finished generating code
-  gasper-cpp.vcxproj -> C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\x64\Release\skidwar.dll
+  gasper-cpp.vcxproj -> C:\Users\Liam\Downloads\Skidware-Client-main\Skidware-Client-main\x64\Release\skidware.dll

@@ -2,7 +2,6 @@
 
 /*
 	Main includes for gasper-cpp, would be a pain to write this constantly wouldn't it?
-	
 */
 
 #include <Windows.h>
