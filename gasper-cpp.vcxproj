@@ -23,7 +23,7 @@
     <ProjectGuid>{0F49A3C8-151C-466C-98E5-43E8EFC24D41}</ProjectGuid>
     <RootNamespace>gaspercpp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>skidwar</ProjectName>
+    <ProjectName>skidware</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,6 +148,7 @@
   <ItemGroup>
     <ClCompile Include="entry\main.cpp" />
     <ClCompile Include="main\cheats\cheat.cpp" />
+    <ClCompile Include="main\cheats\impl\src\clicker.cpp" />
     <ClCompile Include="main\gasper.cpp" />
     <ClCompile Include="main\hooks\swap_buffers.cpp" />
     <ClCompile Include="main\hooks\wndproc.cpp" />
@@ -170,6 +171,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="main\cheats\cheat.h" />
+    <ClInclude Include="main\cheats\impl\headers\clicker.h" />
     <ClInclude Include="main\cheats\impl\headers\impl.h" />
     <ClInclude Include="main\gasper.h" />
     <ClInclude Include="sdk\hook\buffer.h" />

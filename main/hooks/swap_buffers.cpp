@@ -1,4 +1,6 @@
 #include "../gasper.h"
+#include "../cheats/impl/headers/clicker.h"
+
 
 /// Include cheats for settings
 
@@ -77,11 +79,14 @@ int __stdcall gasper::hooks::swap_buffers_hk(HDC hdc) {
 			ImGui::Text("Combat");
 			ImGui::Separator();
 			ImGui::Text("Clicker:");
+			ImGui::Checkbox(xorstr_("Enable"), &clicker::m_enabled);
+			ImGui::SliderFloat(xorstr_("CPS"), &clicker::m_cps, 1.f, 20.f);
 			ImGui::Text("Reach:");
 			ImGui::Separator();
 			ImGui::Text("Aimassist:");
 			ImGui::Separator();
-			//ImGui::Text("Misc:");
+			ImGui::Text("Blatent:");
+			ImGui::Separator();
 		}
 
 		ImGui::End();

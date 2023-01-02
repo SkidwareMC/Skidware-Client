@@ -3,6 +3,10 @@
 #include "../../sdk/minecraft/player/player.h"
 #include "../../sdk/minecraft/world/world.h"
 
+enum type {
+	COMBAT, VISUAL, UTILITY, MISC
+};
+
 cheats::c_cheats::~c_cheats()
 {
 	_functions.clear();

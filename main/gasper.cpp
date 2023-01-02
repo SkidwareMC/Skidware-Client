@@ -3,6 +3,7 @@
 #include "../sdk/minecraft/minecraft.h"
 #include "../sdk/minecraft/player/player.h"
 #include "../sdk/minecraft/world/world.h"
+#include "cheats/impl/headers/clicker.h"
 
 #include "cheats/cheat.h"
 #include <iostream>
@@ -52,8 +53,10 @@ void gasper::c_gasper::run()
 	cheats::instance = std::make_unique<cheats::c_cheats>();
 
 	/// Register all our cheats
-	
-	//wrapper::show_message("Modules Created");
+	cheats::instance->register_function(clicker::invoke);
+
+	wrapper::show_message("Modules Created");
+	Sleep(2000);
 
 	//Give it a console for debugging purposes
 	AllocConsole();
