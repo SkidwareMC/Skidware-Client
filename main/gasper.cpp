@@ -3,10 +3,10 @@
 #include "../sdk/minecraft/minecraft.h"
 #include "../sdk/minecraft/player/player.h"
 #include "../sdk/minecraft/world/world.h"
-#include "cheats/impl/headers/clicker.h"
 
 #include "cheats/cheat.h"
 #include <iostream>
+#include "cheats/impl/headers/clicker.h"
 
 jvmtiEnv* jvmti_env;
 
@@ -54,9 +54,8 @@ void gasper::c_gasper::run()
 
 	/// Register all our cheats
 	cheats::instance->register_function(clicker::invoke);
-
-	wrapper::show_message("Modules Created");
-	Sleep(2000);
+	
+	//wrapper::show_message("Modules Created");
 
 	//Give it a console for debugging purposes
 	AllocConsole();
