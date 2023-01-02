@@ -13,11 +13,14 @@ jvmtiEnv* jvmti_env;
 /// Attach to the JVM
 bool gasper::c_gasper::attach()
 {
+	std::cout << "[Test] Attaching started 3/10" << std::endl;
 	auto jvm_dll = wrapper::get_module_handle(xorstr_("jvm.dll"));
 
 	auto created_java_vms = reinterpret_cast<sdk::t_createdvms>(wrapper::get_proc_address(xorstr_("JNI_GetCreatedJavaVMs"), jvm_dll));
 
 	auto ret = created_java_vms(&vm, 1, nullptr);
+
+	std::cout << "[Test] JavaVM created 4/10" << std::endl;
 
 	if (ret != JNI_OK)
 		return false;
@@ -31,6 +34,8 @@ bool gasper::c_gasper::attach()
 
 	if (!jvmti_env)
 		return false;
+
+	std::cout << "[Test] Found and attached to JNIEnv 5/10" << std::endl;
 
 	/// Get the launchwrapper instance so that we can use findClass
 	get_launchwrapper();
@@ -55,11 +60,8 @@ void gasper::c_gasper::run()
 	/// Register all our cheats
 	cheats::instance->register_function(clicker::invoke);
 	
-	//wrapper::show_message("Modules Created");
-
-	//Give it a console for debugging purposes
 	AllocConsole();
-	
+
 	//Allow you to close the console without the host process closing too
 	SetConsoleCtrlHandler(NULL, true);
 	//Assign console in and out to pass to the create console rather than minecraft's
@@ -68,6 +70,10 @@ void gasper::c_gasper::run()
 	freopen_s(&fIn, "conin$", "r", stdin);
 	freopen_s(&fOut, "conout$", "w", stdout);
 	freopen_s(&fOut, "conout$", "w", stderr);
+
+	//wrapper::show_message("Modules Created");
+
+	//Give it a console for debugging purposes
 	std::cout << "[Test] Console created 1/10" << std::endl;
 	/// We better be running
 	while (b_running)
@@ -79,20 +85,12 @@ void gasper::c_gasper::run()
 		/// Le epic flag for le epic modern C++
 		static std::once_flag flag;
 
-		std::cout << "[Test] Thread made 2/10" << std::endl;
-		Sleep(500);
 
 		/// Keep references simple so that we can easily dispose of them later (they're all localref btw)
 		/// but they last for one cycle of this thread so we shouldn't worry about them being accidentally destroyed suddenly
 		auto minecraft_inst = sdk::instance->get_minecraft();
 
-		std::cout << "[Test] Attaching started 3/10" << std::endl;
-		Sleep(2000);
 
-		std::cout << "[Test] JavaVM created 4/10" << std::endl;
-		Sleep(500);
-
-		std::cout << "[Test] Found and attached to JNIEnv 5/10" << std::endl;
 
 		/// Notify of injection (this is for testing)
 		/// Note to self: release mode currently contains pretty much the same debug info as debug config
@@ -103,13 +101,10 @@ void gasper::c_gasper::run()
 		auto local = std::make_shared<c_player>(sdk::instance->get_player(minecraft_inst));
 		auto world = std::make_shared<c_world>(sdk::instance->get_world(minecraft_inst));
 
-		cheats::instance->invoke(std::make_shared<c_context>(local, world, !sdk::instance->get_current_screen(minecraft_inst), false));
+		if (clicker::m_enabled) {
+			cheats::instance->invoke(std::make_shared<c_context>(local, world, !sdk::instance->get_current_screen(minecraft_inst), false));
+		}
 
-		std::cout << "[Test] Attached to thread 6/10" << std::endl;
-		std::cout << "[Test] Started hooking 7/10" << std::endl;
-		Sleep(750);
-
-		std::cout << "[Test] Hooked swapbuffers 8/10" << std::endl;
 
 		/// Delete the reference
 		get_env()->DeleteLocalRef(minecraft_inst);
