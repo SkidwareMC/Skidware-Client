@@ -28,10 +28,8 @@ void start_gasper_thread() {
     gasper::instance = std::make_unique<gasper::c_gasper>();
 
     /// Try to attach, if we fail the attach function will be sure to drop an error message
-    if (!gasper::instance->attach()) {
-        Sleep(1000);
+    if (!gasper::instance->attach())
         std::exit(0);
-    }
 
     /// Let's get this started 
     gasper::instance->run();

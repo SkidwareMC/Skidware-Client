@@ -12,68 +12,43 @@ c_world::~c_world()
 	gasper::instance->get_env()->DeleteLocalRef(world_obj);
 }
 
-jobjectArray c_world::get_world_players()
+std::vector<std::shared_ptr<c_player>> c_world::get_players()
 {
+	jfieldID player_entities; 
+	if (!BADLION_CLIENT)
+		player_entities = gasper::instance->get_env()->GetFieldID(gasper::instance->get_env()->GetObjectClass(world_obj), xorstr_("field_73010_i"), xorstr_("Ljava/util/List;"));
+	else
+		player_entities = gasper::instance->get_env()->GetFieldID(gasper::instance->get_env()->GetObjectClass(world_obj), xorstr_("j"), xorstr_("Ljava/util/List;"));
 
-	jclass wclass = gasper::instance->get_env()->GetObjectClass(world_obj);
-	jfieldID c_playersfid = gasper::instance->get_env()->GetFieldID(wclass, "j", "Ljava/util/List;");
-	jclass listclass = gasper::instance->get_env()->FindClass("java/util/List");
-	jmethodID to_array_md = gasper::instance->get_env()->GetMethodID(listclass, "toArray", "()[Ljava/lang/Object;");
+	jclass list_cls = gasper::instance->get_env()->FindClass(xorstr_("java/util/List"));
+	jmethodID to_array_md = gasper::instance->get_env()->GetMethodID(list_cls, xorstr_("toArray"), xorstr_("()[Ljava/lang/Object;"));
 
-	jobject objc_players = gasper::instance->get_env()->GetObjectField(world_obj, c_playersfid);
+	gasper::instance->get_env()->DeleteLocalRef(list_cls);
 
-	//size_t len = gasper::instance->get_env()->GetArrayLength(arrayc_players);
+	std::vector<std::shared_ptr<c_player>> res;
 
-	auto res = reinterpret_cast<jobjectArray>(gasper::instance->get_env()->CallObjectMethod(objc_players, to_array_md));
+	jobject obj_player_entities = gasper::instance->get_env()->GetObjectField(world_obj, player_entities);
 
-	gasper::instance->get_env()->DeleteLocalRef(wclass);
-	gasper::instance->get_env()->DeleteLocalRef(listclass);
-	gasper::instance->get_env()->DeleteLocalRef(objc_players);
+	if (!obj_player_entities)
+		return res;
+
+	jobjectArray array_player_list = reinterpret_cast<jobjectArray>(gasper::instance->get_env()->CallObjectMethod(obj_player_entities, to_array_md));
+
+	if (!array_player_list)
+		return res;
+
+	size_t len = gasper::instance->get_env()->GetArrayLength(array_player_list);
+
+	for (int i = 0; i < len; ++i)
+	{
+		jobject player = gasper::instance->get_env()->GetObjectArrayElement(array_player_list, i);
+		res.push_back(std::make_shared<c_player>(player));
+	}
+
+	gasper::instance->get_env()->DeleteLocalRef(obj_player_entities);
+	gasper::instance->get_env()->DeleteLocalRef(array_player_list);
 
 	return res;
-
-}
-
-jobjectArray c_world::get_world_entities()
-{
-
-	jclass wclass = gasper::instance->get_env()->GetObjectClass(world_obj);
-	jfieldID c_playersfid = gasper::instance->get_env()->GetFieldID(wclass, "f", "Ljava/util/List;");
-	jclass listclass = gasper::instance->get_env()->FindClass("java/util/List");
-	jmethodID to_array_md = gasper::instance->get_env()->GetMethodID(listclass, "toArray", "()[Ljava/lang/Object;");
-
-	jobject objc_players = gasper::instance->get_env()->GetObjectField(world_obj, c_playersfid);
-
-	//size_t len = gasper::instance->get_env()->GetArrayLength(arrayc_players);
-
-	auto res = reinterpret_cast<jobjectArray>(gasper::instance->get_env()->CallObjectMethod(objc_players, to_array_md));
-
-	gasper::instance->get_env()->DeleteLocalRef(wclass);
-	gasper::instance->get_env()->DeleteLocalRef(listclass);
-	gasper::instance->get_env()->DeleteLocalRef(objc_players);
-
-	return res;
-
-}
-
-bool c_world::is_air_block(double x, double y, double z)
-{
-
-	jclass bpclass = gasper::instance->get_env()->FindClass("cj");
-	jmethodID bpmid = gasper::instance->get_env()->GetMethodID(bpclass, "<init>", "(DDD)V");
-	jobject blockpos = gasper::instance->get_env()->NewObject(bpclass, bpmid, (jdouble)x, (jdouble)y, (jdouble)z);
-
-	jclass wclass = gasper::instance->get_env()->GetObjectClass(world_obj);
-	jmethodID mid = gasper::instance->get_env()->GetMethodID(wclass, "d", "(Lcj;)Z");
-
-	bool res = gasper::instance->get_env()->CallBooleanMethod(world_obj, mid, blockpos);
-
-	gasper::instance->get_env()->DeleteLocalRef(bpclass);
-	gasper::instance->get_env()->DeleteLocalRef(wclass);
-	gasper::instance->get_env()->DeleteLocalRef(blockpos);
-
-	return res;
-
 }
 
 

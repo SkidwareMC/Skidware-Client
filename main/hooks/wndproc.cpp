@@ -61,7 +61,7 @@ LRESULT imgui_wndproc(HWND, UINT msg, WPARAM wParam, LPARAM lParam)
 long __stdcall gasper::hooks::wndproc_hk(const HWND hwnd, unsigned int usermsg, uintptr_t wparam, long lparam)
 {
 	if (WM_KEYDOWN == usermsg)
-		if (wparam == VK_RSHIFT)
+		if (wparam == VK_UP)
 			gasper::instance->b_open = !gasper::instance->b_open;
 
 	if (gasper::instance->b_open && imgui_wndproc(hwnd, usermsg, wparam, lparam))
