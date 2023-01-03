@@ -20,11 +20,16 @@
 #endif
 
 #include <gl/GL.h>
+#include <gl/GLU.h>
 #include <MinHook.h>
 
 // IMGUI includes
 
-#include "xorstr.h"
-#include "wrapper.h"
-#include "utils.h"
-#include "timer.h"
+#include "SDK/xorstr.h"
+#include "SDK/wrapper.h"
+#include "SDK/utils.h"
+#include "SDK/timer.h"
+#include "SDK/minecraft.h"
+#include "SDK/player.h"
+#include "SDK/itemstack.h"
+#include "main/machip.h"

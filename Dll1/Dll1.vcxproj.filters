@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="machip.cpp">
-      <Filter>machip</Filter>
-    </ClCompile>
     <ClCompile Include="MinHook\buffer.c">
       <Filter>sdk\hook</Filter>
     </ClCompile>
@@ -20,99 +16,34 @@
     <ClCompile Include="MinHook\hde\hde64.c">
       <Filter>sdk\hook\hde</Filter>
     </ClCompile>
-    <ClCompile Include="swapbuffers.cpp">
-      <Filter>machip\hooks</Filter>
-    </ClCompile>
-    <ClCompile Include="wndproc.cpp">
-      <Filter>machip\hooks</Filter>
-    </ClCompile>
-    <ClCompile Include="minecraft.cpp">
-      <Filter>sdk\minecraft</Filter>
-    </ClCompile>
-    <ClCompile Include="player.cpp">
-      <Filter>sdk\minecraft\player</Filter>
-    </ClCompile>
-    <ClCompile Include="world.cpp">
-      <Filter>sdk\minecraft\world</Filter>
-    </ClCompile>
-    <ClCompile Include="timer.cpp">
-      <Filter>sdk\utils\timer</Filter>
-    </ClCompile>
-    <ClCompile Include="module.cpp">
-      <Filter>machip\cheat</Filter>
-    </ClCompile>
-    <ClCompile Include="keep_sprint.cpp">
-      <Filter>machip\cheat\modules\keep_sprint</Filter>
-    </ClCompile>
-    <ClCompile Include="itemstack.cpp">
-      <Filter>sdk\minecraft\itemstack</Filter>
-    </ClCompile>
-    <ClCompile Include="fastplace.cpp">
-      <Filter>machip\cheat\modules\fastplace</Filter>
-    </ClCompile>
-    <ClCompile Include="fullbright.cpp">
-      <Filter>machip\cheat\modules\fullbright</Filter>
-    </ClCompile>
-    <ClCompile Include="antiafk.cpp">
-      <Filter>machip\cheat\modules\antiafk</Filter>
-    </ClCompile>
-    <ClCompile Include="bunnyhop.cpp">
-      <Filter>machip\cheat\modules\bunnyhop</Filter>
-    </ClCompile>
-    <ClCompile Include="killaura.cpp">
-      <Filter>machip\cheat\modules\killaura</Filter>
-    </ClCompile>
-    <ClCompile Include="timer_module.cpp">
-      <Filter>machip\cheat\modules\timer</Filter>
-    </ClCompile>
-    <ClCompile Include="velocity.cpp">
-      <Filter>machip\cheat\modules\velocity</Filter>
-    </ClCompile>
-    <ClCompile Include="scaffold.cpp">
-      <Filter>machip\cheat\modules\scaffold</Filter>
-    </ClCompile>
-    <ClCompile Include="nofall.cpp">
-      <Filter>machip\cheat\modules\nofall</Filter>
-    </ClCompile>
-    <ClCompile Include="noslowdown.cpp">
-      <Filter>machip\cheat\modules\noslowdown</Filter>
-    </ClCompile>
-    <ClCompile Include="fly.cpp">
-      <Filter>machip\cheat\modules\fly</Filter>
-    </ClCompile>
-    <ClCompile Include="chest_steal.cpp">
-      <Filter>machip\cheat\modules\chest_steal</Filter>
-    </ClCompile>
-    <ClCompile Include="autoclick.cpp">
-      <Filter>machip\cheat\modules\autoclick</Filter>
-    </ClCompile>
-    <ClCompile Include="autosoup.cpp">
-      <Filter>machip\cheat\modules\autosoup</Filter>
-    </ClCompile>
-    <ClCompile Include="refill.cpp">
-      <Filter>machip\cheat\modules\refill</Filter>
-    </ClCompile>
-    <ClCompile Include="jhook.cpp">
-      <Filter>machip\hooks</Filter>
-    </ClCompile>
-    <ClCompile Include="reach.cpp">
-      <Filter>machip\cheat\modules\reach</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui.cpp">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_draw.cpp">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_impl_opengl2.cpp">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_impl_win32.cpp">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_widgets.cpp">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClCompile>
+    <ClCompile Include="main\dllmain.cpp" />
+    <ClCompile Include="main\jhook.cpp" />
+    <ClCompile Include="main\machip.cpp" />
+    <ClCompile Include="main\swapbuffers.cpp" />
+    <ClCompile Include="main\wndproc.cpp" />
+    <ClCompile Include="modules\Blatent\bunnyhop.cpp" />
+    <ClCompile Include="modules\Blatent\fly.cpp" />
+    <ClCompile Include="modules\Blatent\killaura.cpp" />
+    <ClCompile Include="modules\Blatent\nofall.cpp" />
+    <ClCompile Include="modules\Blatent\noslowdown.cpp" />
+    <ClCompile Include="modules\Combat\autoclick.cpp" />
+    <ClCompile Include="modules\Combat\autosoup.cpp" />
+    <ClCompile Include="modules\Combat\keep_sprint.cpp" />
+    <ClCompile Include="modules\Combat\reach.cpp" />
+    <ClCompile Include="modules\Combat\refill.cpp" />
+    <ClCompile Include="modules\Combat\timer_module.cpp" />
+    <ClCompile Include="modules\Combat\velocity.cpp" />
+    <ClCompile Include="modules\Misc\fastplace.cpp" />
+    <ClCompile Include="modules\Utiliy\antiafk.cpp" />
+    <ClCompile Include="modules\Utiliy\chest_steal.cpp" />
+    <ClCompile Include="modules\Utiliy\scaffold.cpp" />
+    <ClCompile Include="modules\Visual\fullbright.cpp" />
+    <ClCompile Include="modules\module.cpp" />
+    <ClCompile Include="SDK\itemstack.cpp" />
+    <ClCompile Include="SDK\minecraft.cpp" />
+    <ClCompile Include="SDK\player.cpp" />
+    <ClCompile Include="SDK\timer.cpp" />
+    <ClCompile Include="SDK\world.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="sdk">
@@ -213,12 +144,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="includes.h">
-      <Filter>sdk</Filter>
-    </ClInclude>
-    <ClInclude Include="machip.h">
-      <Filter>machip</Filter>
-    </ClInclude>
     <ClInclude Include="MinHook\buffer.h">
       <Filter>sdk\hook</Filter>
     </ClInclude>
@@ -243,107 +168,45 @@
     <ClInclude Include="MinHook\hde\table64.h">
       <Filter>sdk\hook\hde</Filter>
     </ClInclude>
-    <ClInclude Include="minecraft.h">
-      <Filter>sdk\minecraft</Filter>
-    </ClInclude>
-    <ClInclude Include="player.h">
-      <Filter>sdk\minecraft\player</Filter>
-    </ClInclude>
-    <ClInclude Include="world.h">
-      <Filter>sdk\minecraft\world</Filter>
-    </ClInclude>
-    <ClInclude Include="utils.h">
-      <Filter>sdk\utils</Filter>
-    </ClInclude>
-    <ClInclude Include="timer.h">
-      <Filter>sdk\utils\timer</Filter>
-    </ClInclude>
-    <ClInclude Include="xorstr.h">
-      <Filter>sdk\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="module.h">
-      <Filter>machip\cheat</Filter>
-    </ClInclude>
-    <ClInclude Include="wrapper.h">
-      <Filter>sdk\libs</Filter>
-    </ClInclude>
-    <ClInclude Include="keep_sprint.h">
-      <Filter>machip\cheat\modules\keep_sprint</Filter>
-    </ClInclude>
-    <ClInclude Include="itemstack.h">
-      <Filter>sdk\minecraft\itemstack</Filter>
-    </ClInclude>
-    <ClInclude Include="fastplace.h">
-      <Filter>machip\cheat\modules\fastplace</Filter>
-    </ClInclude>
-    <ClInclude Include="fullbright.h">
-      <Filter>machip\cheat\modules\fullbright</Filter>
-    </ClInclude>
-    <ClInclude Include="antiafk.h">
-      <Filter>machip\cheat\modules\antiafk</Filter>
-    </ClInclude>
-    <ClInclude Include="bunnyhop.h">
-      <Filter>machip\cheat\modules\bunnyhop</Filter>
-    </ClInclude>
-    <ClInclude Include="killaura.h">
-      <Filter>machip\cheat\modules\killaura</Filter>
-    </ClInclude>
-    <ClInclude Include="timer_module.h">
-      <Filter>machip\cheat\modules\timer</Filter>
-    </ClInclude>
-    <ClInclude Include="velocity.h">
-      <Filter>machip\cheat\modules\velocity</Filter>
-    </ClInclude>
-    <ClInclude Include="scaffold.h">
-      <Filter>machip\cheat\modules\scaffold</Filter>
-    </ClInclude>
-    <ClInclude Include="nofall.h">
-      <Filter>machip\cheat\modules\nofall</Filter>
-    </ClInclude>
-    <ClInclude Include="noslowdown.h">
-      <Filter>machip\cheat\modules\noslowdown</Filter>
-    </ClInclude>
-    <ClInclude Include="fly.h">
-      <Filter>machip\cheat\modules\fly</Filter>
-    </ClInclude>
-    <ClInclude Include="chest_steal.h">
-      <Filter>machip\cheat\modules\chest_steal</Filter>
-    </ClInclude>
-    <ClInclude Include="autoclick.h">
-      <Filter>machip\cheat\modules\autoclick</Filter>
-    </ClInclude>
-    <ClInclude Include="autosoup.h">
-      <Filter>machip\cheat\modules\autosoup</Filter>
-    </ClInclude>
-    <ClInclude Include="refill.h">
-      <Filter>machip\cheat\modules\refill</Filter>
-    </ClInclude>
-    <ClInclude Include="reach.h">
-      <Filter>machip\cheat\modules\reach</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imconfig.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_impl_opengl2.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_impl_win32.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imgui_internal.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imstb_rectpack.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imstb_textedit.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\Skidware-Client-main\Skidware-Client-main\sdk\libraries\imgui\imstb_truetype.h">
-      <Filter>sdk\libs\imgui</Filter>
-    </ClInclude>
+    <ClInclude Include="JNI\classfile_constants.h" />
+    <ClInclude Include="JNI\jawt.h" />
+    <ClInclude Include="JNI\jawt_md.h" />
+    <ClInclude Include="JNI\jdwpTransport.h" />
+    <ClInclude Include="JNI\jni.h" />
+    <ClInclude Include="JNI\jni_md.h" />
+    <ClInclude Include="JNI\jvmti.h" />
+    <ClInclude Include="JNI\jvmticmlr.h" />
+    <ClInclude Include="main\jhook.h" />
+    <ClInclude Include="main\machip.h" />
+    <ClInclude Include="modules\Blatent\bunnyhop.h" />
+    <ClInclude Include="modules\Blatent\fly.h" />
+    <ClInclude Include="modules\Blatent\killaura.h" />
+    <ClInclude Include="modules\Blatent\nofall.h" />
+    <ClInclude Include="modules\Blatent\noslowdown.h" />
+    <ClInclude Include="modules\Combat\autoclick.h" />
+    <ClInclude Include="modules\Combat\autosoup.h" />
+    <ClInclude Include="modules\Combat\keep_sprint.h" />
+    <ClInclude Include="modules\Combat\reach.h" />
+    <ClInclude Include="modules\Combat\refill.h" />
+    <ClInclude Include="modules\Combat\timer_module.h" />
+    <ClInclude Include="modules\Combat\velocity.h" />
+    <ClInclude Include="modules\Misc\fastplace.h" />
+    <ClInclude Include="modules\Utiliy\antiafk.h" />
+    <ClInclude Include="modules\Utiliy\chest_steal.h" />
+    <ClInclude Include="modules\Utiliy\scaffold.h" />
+    <ClInclude Include="modules\Visual\fullbright.h" />
+    <ClInclude Include="modules\module.h" />
+    <ClInclude Include="SDK\itemstack.h" />
+    <ClInclude Include="SDK\minecraft.h" />
+    <ClInclude Include="SDK\player.h" />
+    <ClInclude Include="SDK\timer.h" />
+    <ClInclude Include="SDK\utils.h" />
+    <ClInclude Include="SDK\world.h" />
+    <ClInclude Include="SDK\wrapper.h" />
+    <ClInclude Include="SDK\xorstr.h" />
+    <ClInclude Include="includes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="jvm.lib" />
   </ItemGroup>
 </Project>
