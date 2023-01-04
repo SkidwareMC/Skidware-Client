@@ -1,7 +1,9 @@
 #pragma once
 
-#include "../includes.h"
-
+#include "includes.h"
+#include "player.h"
+#include "world.h"
+#include "machip.h"
 
 class c_context 
 {

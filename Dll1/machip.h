@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../includes.h"
+#include "includes.h"
 
 namespace machip 
 {
@@ -9,9 +9,6 @@ namespace machip
 	private:
 		JNIEnv* env;
 		JavaVM* vm;
-
-		jmethodID findclass_md;
-		jobject classloader_obj;
 	public:
 		bool is_running;
 		bool is_open = false;
@@ -20,9 +17,8 @@ namespace machip
 
 		bool attach();
 		void run();
+		void destroy();
 		void hook();
-		void get_launchwrapper();
-		void dispose();
 
 		const auto get_env() 
 		{
@@ -37,22 +33,11 @@ namespace machip
 
 	namespace hooks 
 	{
-		// Function template of SwapBuffers
 		using swap_buffers_fn = int(__stdcall*)(HDC);
-
-		// Store pointer to the original SwapBuffers function
 		inline swap_buffers_fn oswap_buffers = nullptr;
-
-		// Simple glcontext wrapper to make life easy
 		extern std::shared_ptr<wrapper::c_context> gl_context;
-
-		// The actual hook
 		int __stdcall swap_buffers_hk(HDC);
-
-		// Original WndProc of the Window we're hooking
 		inline WNDPROC original_wndproc = nullptr;
-
-		// Actual "hook", this really isn't a hook but it's whatever
 		long __stdcall wndproc_hk(const HWND hwnd, unsigned int usermsg, uintptr_t wparam, long lparam);
 
 		namespace jhooks

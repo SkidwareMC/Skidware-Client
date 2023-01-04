@@ -20,7 +20,6 @@ namespace sdk
 	};
 
 	using qword = unsigned long long;
-	using t_createdvms = jint(__stdcall*)(JavaVM**, jsize, jsize*);
 
 	inline float get_random(float start, float end)
 	{

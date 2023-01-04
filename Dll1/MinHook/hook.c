@@ -35,10 +35,10 @@
 #include "trampoline.h"
 
 #ifndef ARRAYSIZE
-#define ARRAYSIZE(A) (sizeof(A)/sizeof((A)[0]))
+    #define ARRAYSIZE(A) (sizeof(A)/sizeof((A)[0]))
 #endif
 
- // Initial capacity of the HOOK_ENTRY buffer.
+// Initial capacity of the HOOK_ENTRY buffer.
 #define INITIAL_HOOK_CAPACITY   32
 
 // Initial capacity of the thread IDs buffer.
@@ -65,14 +65,14 @@ typedef struct _HOOK_ENTRY
     LPVOID pTrampoline;         // Address of the trampoline function.
     UINT8  backup[8];           // Original prologue of the target function.
 
-    UINT8  patchAbove : 1;     // Uses the hot patch area.
-    UINT8  isEnabled : 1;     // Enabled.
+    UINT8  patchAbove  : 1;     // Uses the hot patch area.
+    UINT8  isEnabled   : 1;     // Enabled.
     UINT8  queueEnable : 1;     // Queued for enabling/disabling when != isEnabled.
 
     UINT   nIP : 4;             // Count of the instruction boundaries.
     UINT8  oldIPs[8];           // Instruction boundaries of the target function.
     UINT8  newIPs[8];           // Instruction boundaries of the trampoline function.
-} HOOK_ENTRY, * PHOOK_ENTRY;
+} HOOK_ENTRY, *PHOOK_ENTRY;
 
 // Suspended threads for Freeze()/Unfreeze().
 typedef struct _FROZEN_THREADS
@@ -80,7 +80,7 @@ typedef struct _FROZEN_THREADS
     LPDWORD pItems;         // Data heap
     UINT    capacity;       // Size of allocated data heap, items
     UINT    size;           // Actual number of data items
-} FROZEN_THREADS, * PFROZEN_THREADS;
+} FROZEN_THREADS, *PFROZEN_THREADS;
 
 //-------------------------------------------------------------------------
 // Global Variables:
@@ -203,9 +203,9 @@ static void ProcessThreadIPs(HANDLE hThread, UINT pos, UINT action)
 
     CONTEXT c;
 #if defined(_M_X64) || defined(__x86_64__)
-    DWORD64* pIP = &c.Rip;
+    DWORD64 *pIP = &c.Rip;
 #else
-    DWORD* pIP = &c.Eip;
+    DWORD   *pIP = &c.Eip;
 #endif
     UINT count;
 
@@ -306,9 +306,9 @@ static VOID EnumerateThreads(PFROZEN_THREADS pThreads)
 //-------------------------------------------------------------------------
 static VOID Freeze(PFROZEN_THREADS pThreads, UINT pos, UINT action)
 {
-    pThreads->pItems = NULL;
+    pThreads->pItems   = NULL;
     pThreads->capacity = 0;
-    pThreads->size = 0;
+    pThreads->size     = 0;
     EnumerateThreads(pThreads);
 
     if (pThreads->pItems != NULL)
@@ -352,13 +352,13 @@ static MH_STATUS EnableHookLL(UINT pos, BOOL enable)
 {
     PHOOK_ENTRY pHook = &g_hooks.pItems[pos];
     DWORD  oldProtect;
-    SIZE_T patchSize = sizeof(JMP_REL);
+    SIZE_T patchSize    = sizeof(JMP_REL);
     LPBYTE pPatchTarget = (LPBYTE)pHook->pTarget;
 
     if (pHook->patchAbove)
     {
         pPatchTarget -= sizeof(JMP_REL);
-        patchSize += sizeof(JMP_REL_SHORT);
+        patchSize    += sizeof(JMP_REL_SHORT);
     }
 
     if (!VirtualProtect(pPatchTarget, patchSize, PAGE_EXECUTE_READWRITE, &oldProtect))
@@ -390,7 +390,7 @@ static MH_STATUS EnableHookLL(UINT pos, BOOL enable)
     // Just-in-case measure.
     FlushInstructionCache(GetCurrentProcess(), pPatchTarget, patchSize);
 
-    pHook->isEnabled = enable;
+    pHook->isEnabled   = enable;
     pHook->queueEnable = enable;
 
     return MH_OK;
@@ -516,9 +516,9 @@ MH_STATUS WINAPI MH_Uninitialize(VOID)
 
             g_hHeap = NULL;
 
-            g_hooks.pItems = NULL;
+            g_hooks.pItems   = NULL;
             g_hooks.capacity = 0;
-            g_hooks.size = 0;
+            g_hooks.size     = 0;
         }
     }
     else
@@ -532,7 +532,7 @@ MH_STATUS WINAPI MH_Uninitialize(VOID)
 }
 
 //-------------------------------------------------------------------------
-MH_STATUS WINAPI MH_CreateHook(LPVOID pTarget, LPVOID pDetour, LPVOID* ppOriginal)
+MH_STATUS WINAPI MH_CreateHook(LPVOID pTarget, LPVOID pDetour, LPVOID *ppOriginal)
 {
     MH_STATUS status = MH_OK;
 
@@ -550,25 +550,25 @@ MH_STATUS WINAPI MH_CreateHook(LPVOID pTarget, LPVOID pDetour, LPVOID* ppOrigina
                 {
                     TRAMPOLINE ct;
 
-                    ct.pTarget = pTarget;
-                    ct.pDetour = pDetour;
+                    ct.pTarget     = pTarget;
+                    ct.pDetour     = pDetour;
                     ct.pTrampoline = pBuffer;
                     if (CreateTrampolineFunction(&ct))
                     {
                         PHOOK_ENTRY pHook = AddHookEntry();
                         if (pHook != NULL)
                         {
-                            pHook->pTarget = ct.pTarget;
+                            pHook->pTarget     = ct.pTarget;
 #if defined(_M_X64) || defined(__x86_64__)
-                            pHook->pDetour = ct.pRelay;
+                            pHook->pDetour     = ct.pRelay;
 #else
-                            pHook->pDetour = ct.pDetour;
+                            pHook->pDetour     = ct.pDetour;
 #endif
                             pHook->pTrampoline = ct.pTrampoline;
-                            pHook->patchAbove = ct.patchAbove;
-                            pHook->isEnabled = FALSE;
+                            pHook->patchAbove  = ct.patchAbove;
+                            pHook->isEnabled   = FALSE;
                             pHook->queueEnable = FALSE;
-                            pHook->nIP = ct.nIP;
+                            pHook->nIP         = ct.nIP;
                             memcpy(pHook->oldIPs, ct.oldIPs, ARRAYSIZE(ct.oldIPs));
                             memcpy(pHook->newIPs, ct.newIPs, ARRAYSIZE(ct.newIPs));
 
@@ -833,7 +833,7 @@ MH_STATUS WINAPI MH_ApplyQueued(VOID)
 //-------------------------------------------------------------------------
 MH_STATUS WINAPI MH_CreateHookApiEx(
     LPCWSTR pszModule, LPCSTR pszProcName, LPVOID pDetour,
-    LPVOID* ppOriginal, LPVOID* ppTarget)
+    LPVOID *ppOriginal, LPVOID *ppTarget)
 {
     HMODULE hModule;
     LPVOID  pTarget;
@@ -846,7 +846,7 @@ MH_STATUS WINAPI MH_CreateHookApiEx(
     if (pTarget == NULL)
         return MH_ERROR_FUNCTION_NOT_FOUND;
 
-    if (ppTarget != NULL)
+    if(ppTarget != NULL)
         *ppTarget = pTarget;
 
     return MH_CreateHook(pTarget, pDetour, ppOriginal);
@@ -854,13 +854,13 @@ MH_STATUS WINAPI MH_CreateHookApiEx(
 
 //-------------------------------------------------------------------------
 MH_STATUS WINAPI MH_CreateHookApi(
-    LPCWSTR pszModule, LPCSTR pszProcName, LPVOID pDetour, LPVOID* ppOriginal)
+    LPCWSTR pszModule, LPCSTR pszProcName, LPVOID pDetour, LPVOID *ppOriginal)
 {
-    return MH_CreateHookApiEx(pszModule, pszProcName, pDetour, ppOriginal, NULL);
+   return MH_CreateHookApiEx(pszModule, pszProcName, pDetour, ppOriginal, NULL);
 }
 
 //-------------------------------------------------------------------------
-const char* WINAPI MH_StatusToString(MH_STATUS status)
+const char * WINAPI MH_StatusToString(MH_STATUS status)
 {
 #define MH_ST2STR(x)    \
     case x:             \
@@ -868,19 +868,19 @@ const char* WINAPI MH_StatusToString(MH_STATUS status)
 
     switch (status) {
         MH_ST2STR(MH_UNKNOWN)
-            MH_ST2STR(MH_OK)
-            MH_ST2STR(MH_ERROR_ALREADY_INITIALIZED)
-            MH_ST2STR(MH_ERROR_NOT_INITIALIZED)
-            MH_ST2STR(MH_ERROR_ALREADY_CREATED)
-            MH_ST2STR(MH_ERROR_NOT_CREATED)
-            MH_ST2STR(MH_ERROR_ENABLED)
-            MH_ST2STR(MH_ERROR_DISABLED)
-            MH_ST2STR(MH_ERROR_NOT_EXECUTABLE)
-            MH_ST2STR(MH_ERROR_UNSUPPORTED_FUNCTION)
-            MH_ST2STR(MH_ERROR_MEMORY_ALLOC)
-            MH_ST2STR(MH_ERROR_MEMORY_PROTECT)
-            MH_ST2STR(MH_ERROR_MODULE_NOT_FOUND)
-            MH_ST2STR(MH_ERROR_FUNCTION_NOT_FOUND)
+        MH_ST2STR(MH_OK)
+        MH_ST2STR(MH_ERROR_ALREADY_INITIALIZED)
+        MH_ST2STR(MH_ERROR_NOT_INITIALIZED)
+        MH_ST2STR(MH_ERROR_ALREADY_CREATED)
+        MH_ST2STR(MH_ERROR_NOT_CREATED)
+        MH_ST2STR(MH_ERROR_ENABLED)
+        MH_ST2STR(MH_ERROR_DISABLED)
+        MH_ST2STR(MH_ERROR_NOT_EXECUTABLE)
+        MH_ST2STR(MH_ERROR_UNSUPPORTED_FUNCTION)
+        MH_ST2STR(MH_ERROR_MEMORY_ALLOC)
+        MH_ST2STR(MH_ERROR_MEMORY_PROTECT)
+        MH_ST2STR(MH_ERROR_MODULE_NOT_FOUND)
+        MH_ST2STR(MH_ERROR_FUNCTION_NOT_FOUND)
     }
 
 #undef MH_ST2STR

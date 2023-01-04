@@ -1,5 +1,5 @@
 #include "bunnyhop.h"
-#include "../../main/machip.h"
+#include "machip.h"
 
 void bunnyhop::invoke(std::shared_ptr<c_context> ctx) {
 

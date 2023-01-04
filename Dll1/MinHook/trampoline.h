@@ -30,21 +30,21 @@
 
 #pragma pack(push, 1)
 
- // Structs for writing x86/x64 instructions.
+// Structs for writing x86/x64 instructions.
 
- // 8-bit relative jump.
+// 8-bit relative jump.
 typedef struct _JMP_REL_SHORT
 {
     UINT8  opcode;      // EB xx: JMP +2+xx
     UINT8  operand;
-} JMP_REL_SHORT, * PJMP_REL_SHORT;
+} JMP_REL_SHORT, *PJMP_REL_SHORT;
 
 // 32-bit direct relative jump/call.
 typedef struct _JMP_REL
 {
     UINT8  opcode;      // E9/E8 xxxxxxxx: JMP/CALL +5+xxxxxxxx
     UINT32 operand;     // Relative destination address
-} JMP_REL, * PJMP_REL, CALL_REL;
+} JMP_REL, *PJMP_REL, CALL_REL;
 
 // 64-bit indirect absolute jump.
 typedef struct _JMP_ABS
@@ -53,7 +53,7 @@ typedef struct _JMP_ABS
     UINT8  opcode1;
     UINT32 dummy;
     UINT64 address;     // Absolute destination address
-} JMP_ABS, * PJMP_ABS;
+} JMP_ABS, *PJMP_ABS;
 
 // 64-bit indirect absolute call.
 typedef struct _CALL_ABS
@@ -100,6 +100,6 @@ typedef struct _TRAMPOLINE
     UINT   nIP;             // [Out] Number of the instruction boundaries.
     UINT8  oldIPs[8];       // [Out] Instruction boundaries of the target function.
     UINT8  newIPs[8];       // [Out] Instruction boundaries of the trampoline function.
-} TRAMPOLINE, * PTRAMPOLINE;
+} TRAMPOLINE, *PTRAMPOLINE;
 
 BOOL CreateTrampolineFunction(PTRAMPOLINE ct);
