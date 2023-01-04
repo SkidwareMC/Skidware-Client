@@ -106,8 +106,10 @@ void machip::c_machip::run()
 		if (wrapper::get_keystate(VK_END))
 			is_running = false;
 
-		if (wrapper::get_keystate(VK_HOME))
+		if (wrapper::get_keystate(VK_HOME)) {
 			bunnyhop::m_enabled = !bunnyhop::m_enabled;
+			wrapper::output("Bhop Enabled" + std::to_string(bunnyhop::m_enabled));
+		}
 
 		if (wrapper::get_keystate(VK_INSERT)) {
 			reach::m_enabled = !reach::m_enabled;
