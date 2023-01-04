@@ -59,9 +59,6 @@
     <ClCompile Include="bunnyhop.cpp">
       <Filter>machip\cheat\modules\bunnyhop</Filter>
     </ClCompile>
-    <ClCompile Include="killaura.cpp">
-      <Filter>machip\cheat\modules\killaura</Filter>
-    </ClCompile>
     <ClCompile Include="timer_module.cpp">
       <Filter>machip\cheat\modules\timer</Filter>
     </ClCompile>
@@ -97,6 +94,27 @@
     </ClCompile>
     <ClCompile Include="reach.cpp">
       <Filter>machip\cheat\modules\reach</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_demo.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_opengl2.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_tables.cpp">
+      <Filter>sdk\imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>sdk\imgui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -157,9 +175,6 @@
     <Filter Include="machip\cheat\modules\bunnyhop">
       <UniqueIdentifier>{7c81ee06-6d20-471c-b9a1-1f64264cd6f9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="machip\cheat\modules\killaura">
-      <UniqueIdentifier>{fb6d6821-59f8-4fe5-8a7f-30d769ec1d2c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="machip\cheat\modules\timer">
       <UniqueIdentifier>{1ac6c9aa-b62a-4789-98e3-3afd4e231dcd}</UniqueIdentifier>
     </Filter>
@@ -192,6 +207,9 @@
     </Filter>
     <Filter Include="machip\cheat\modules\reach">
       <UniqueIdentifier>{03fcd8a3-e06c-40e2-bc2e-0c4a87d033c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\imgui">
+      <UniqueIdentifier>{bb10389c-e010-4735-b511-a6392bdcb2c2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -267,9 +285,6 @@
     <ClInclude Include="bunnyhop.h">
       <Filter>machip\cheat\modules\bunnyhop</Filter>
     </ClInclude>
-    <ClInclude Include="killaura.h">
-      <Filter>machip\cheat\modules\killaura</Filter>
-    </ClInclude>
     <ClInclude Include="timer_module.h">
       <Filter>machip\cheat\modules\timer</Filter>
     </ClInclude>
@@ -303,5 +318,32 @@
     <ClInclude Include="reach.h">
       <Filter>machip\cheat\modules\reach</Filter>
     </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_opengl2.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>sdk\imgui</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="jvm.lib" />
   </ItemGroup>
 </Project>

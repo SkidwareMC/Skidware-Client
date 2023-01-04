@@ -1,17 +1,10 @@
-# Skidware
-Minecraft injection client <br>
-![url](https://github.com/SkidwareMC/Skidware-Client/blob/main/skidware.png) <br>
+# minecraft internal client
+this is a new version and more accurate one of my previous one
 
-# Devs
-Made by `Smellon#8460` and `NoSword#8418` 
+it also hooks minecraft's methods
 
-# How 2 Use
+see also more comment about [hooking mc methods](https://stackoverflow.com/questions/72915869/how-to-hook-java-method-with-jni-during-runtime/73533143?noredirect=1#comment129904620_73533143)
 
-Grab a dll injector, preferably [this](https://github.com/0xfce/Injector) one. Drag the dll of the latest version onto <br>
-the injector. If your game is running, it should inject.
+### i wont be maintaining this but i'd love to help you develop your own minecraft client, so hit me up on discord `kp#1337`
 
-# Discord
-[here](https://discord.gg/95rcRgnwfJ)
-
-# Docs
-docs/Intro.md
+### credits to `sesh#2622` for contributing to this project with the base

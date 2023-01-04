@@ -12,4 +12,7 @@ namespace bunnyhop {
 
 	void reset(std::shared_ptr<c_context> ctx);
 
+	void renderSets();
+
 }
+

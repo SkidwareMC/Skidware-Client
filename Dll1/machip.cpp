@@ -25,15 +25,22 @@
 #include "reach.h"
 
 
+#include "includes.h"
+#include "imgui/imgui.h"
+#include "imgui/imgui_impl_win32.h"
+#include "imgui/imgui_impl_opengl2.h"
+
+
 bool machip::c_machip::attach()
 {
 	wrapper::output(xorstr_("Attaching started"));
-
+	Sleep(1500);
 	jsize count;
 	if (JNI_GetCreatedJavaVMs(&vm, 1, &count) != JNI_OK || count == 0)
 		return false;
 
 	wrapper::output(xorstr_("JVM created"));
+	Sleep(2000);
 
 	jint res = vm->GetEnv((void**)&env, JNI_VERSION_1_6);
 
@@ -43,6 +50,7 @@ bool machip::c_machip::attach()
 		res = vm->AttachCurrentThread((void**)&env, nullptr);
 
 	wrapper::output(xorstr_("Attached to current thread"));
+	Sleep(1000);
 
 	if (res != JNI_OK)
 		return false;
@@ -55,33 +63,88 @@ bool machip::c_machip::attach()
 	is_running = true;
 
 	wrapper::output(xorstr_("Attaching finished"));
+	Sleep(1000);
 
 	return true;
 }
 
 void machip::c_machip::run()
 {
-
+	wrapper::output(xorstr_("Creating Cheats..."));
 	modules::instance->create(keep_sprint::invoke);
+	wrapper::output(xorstr_("KeepSprint"));
+	Sleep(500);
 	modules::instance->create(fastplace::invoke);
+	wrapper::output(xorstr_("Fastplace"));
+	Sleep(500);
 	modules::instance->create(fullbright::invoke);
+	wrapper::output(xorstr_("Fullbright"));
+	Sleep(500);
 	modules::instance->create(antiafk::invoke);
+	wrapper::output(xorstr_("AntiAfk"));
+	Sleep(500);
 	modules::instance->create(bunnyhop::invoke);
+	wrapper::output(xorstr_("BHop"));
+	Sleep(500);
 	modules::instance->create(killaura::invoke);
+	wrapper::output(xorstr_("Killaura (broken)"));
+	Sleep(500);
 	modules::instance->create(timer::invoke);
+	wrapper::output(xorstr_("Timer"));
+	Sleep(500);
 	modules::instance->create(velocity::invoke);
+	wrapper::output(xorstr_("Velocity"));
+	Sleep(500);
 	modules::instance->create(scaffold::invoke);
+	wrapper::output(xorstr_("Scaffold"));
+	Sleep(500);
 	modules::instance->create(nofall::invoke);
+	wrapper::output(xorstr_("NoFall"));
+	Sleep(500);
 	modules::instance->create(noslowdown::invoke);
+	wrapper::output(xorstr_("NoSlow"));
+	Sleep(500);
 	modules::instance->create(fly::invoke);
+	wrapper::output(xorstr_("Fly"));
+	Sleep(500);
 	modules::instance->create(chest_steal::invoke);
+	wrapper::output(xorstr_("Stealer"));
+	Sleep(500);
 	modules::instance->create(autoclick::invoke);
+	wrapper::output(xorstr_("Autoclicker"));
+	Sleep(500);
 	modules::instance->create(autosoup::invoke);
+	wrapper::output(xorstr_("AutoPot"));
+	Sleep(500);
 	modules::instance->create(refill::invoke);
+	wrapper::output(xorstr_("Refill"));
+	Sleep(500);
 	modules::instance->create(reach::invoke);
+	wrapper::output(xorstr_("Reach"));
+	Sleep(3000);
 
+	wrapper::output(xorstr_("Creating resets..."));
 	modules::instance->create_reset(bunnyhop::reset);
+	wrapper::output(xorstr_("BHop"));
+	Sleep(500);
 	modules::instance->create_reset(timer::reset);
+	wrapper::output(xorstr_("Timer"));
+	Sleep(500);
+	Sleep(3000);
+
+	wrapper::output(xorstr_("Finding window..."));
+	Sleep(500);
+	//ImGui Setup
+	static auto mc_window = wrapper::find_window();
+	auto window_rect = wrapper::get_rect();
+
+	wrapper::output(xorstr_("Creating ImGui Context"));
+	Sleep(500);
+	IMGUI_CHECKVERSION();
+	ImGui::CreateContext();
+	ImGui_ImplWin32_Init(mc_window);
+	ImGui_ImplOpenGL2_Init();
+	ImGui::StyleColorsDark();
 
 	bool first = true;
 
@@ -96,20 +159,42 @@ void machip::c_machip::run()
 #if DEBUG
 			wrapper::clear();
 #else
-			FreeConsole();
-			fclose(stdout);
 #endif
 
 			first = false;
 		}
 
+		if (GetAsyncKeyState(VK_RSHIFT))
+			machip::instance->is_open = !machip::instance->is_open;
+
+		if (machip::instance->is_open) 
+		{
+
+			ImGuiIO& io = ImGui::GetIO();
+			io.MouseDrawCursor = true;
+			
+			ImGui::Begin(xorstr_("Skidware b0.2 - 1.8.9"), NULL);
+			ImGui::Separator();
+			bunnyhop::renderSets();
+			ImGui::Separator();
+			ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / ImGui::GetIO().Framerate, ImGui::GetIO().Framerate);
+			ImGui::End();
+
+			ImGui::Render();
+
+			glViewport(0, 0, window_rect.right, window_rect.top);
+			ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
+		}
+
+		ImGuiIO& io = ImGui::GetIO();
+		io.MouseDrawCursor = false;
+
+		/*
 		if (wrapper::get_keystate(VK_END))
 			is_running = false;
 
-		if (wrapper::get_keystate(VK_HOME)) {
+		if (wrapper::get_keystate(VK_HOME))
 			bunnyhop::m_enabled = !bunnyhop::m_enabled;
-			wrapper::output("Bhop Enabled" + std::to_string(bunnyhop::m_enabled));
-		}
 
 		if (wrapper::get_keystate(VK_INSERT)) {
 			reach::m_enabled = !reach::m_enabled;
@@ -127,6 +212,7 @@ void machip::c_machip::run()
 			chest_steal::m_enabled = !chest_steal::m_enabled;
 			wrapper::output("switch chest steal! " + std::to_string(chest_steal::m_enabled));
 		}
+		*/
 
 		if (!is_running)
 		{
