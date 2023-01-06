@@ -1,6 +1,6 @@
 # Skidware
 Minecraft injection client <br>
-![url](https://github.com/SkidwareMC/Skidware-Client/blob/main/skidware.png) <br>
+![url](https://github.com/SkidwareMC/Skidware-Client/blob/New-1.8.9/skidware.png) <br>
 
 # Devs
 Made by `Smellon#8460` and `NoSword#8418` 
