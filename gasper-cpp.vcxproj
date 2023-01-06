@@ -105,6 +105,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ForceFileOutput>Enabled</ForceFileOutput>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -216,6 +217,13 @@
     <ClInclude Include="sdk\utils\timer\timer.h" />
     <ClInclude Include="sdk\utils\utils.h" />
     <ClInclude Include="sdk\wrapper\wrapper.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="gdi32.dll" />
+    <None Include="jvm.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="jvm.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

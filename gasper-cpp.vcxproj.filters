@@ -231,4 +231,11 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="gdi32.dll" />
+    <None Include="jvm.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="jvm.lib" />
+  </ItemGroup>
 </Project>
