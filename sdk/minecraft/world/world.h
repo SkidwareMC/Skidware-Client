@@ -1,9 +1,10 @@
 #pragma once
 
-#include "../minecraft.h"
-#include "../player/player.h"
+#include "minecraft.h"
+#include "player.h"
 
-class c_world {
+class c_world 
+{
 private:
 	jobject world_obj;
 public:
@@ -15,5 +16,8 @@ public:
 		return world_obj;
 	}
 
-	std::vector<std::shared_ptr<c_player>> get_players();
+	jobjectArray get_world_players();
+	jobjectArray get_world_entities();
+	bool is_air_block(double x, double y, double z);
+
 };
