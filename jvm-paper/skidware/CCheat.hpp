@@ -12,6 +12,7 @@ struct CMinecraft;
 
 struct CIntelligentMappings;
 
+typedef struct CCheat {
 	CCheat(JNIEnv*, JavaVM*);
 	static CCheat* getInstance() {
 		return theCheat;
