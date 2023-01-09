@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\jvm_sdk">
+      <UniqueIdentifier>{3d21b7d5-49d8-4867-a9a6-7a91ff8e34fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\minhook">
+      <UniqueIdentifier>{1c6ff41a-6446-4e08-8fe8-f301d179f99b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\jni">
+      <UniqueIdentifier>{03207d10-4c1c-44ba-b38c-dab7f8e15874}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mc_sdk">
+      <UniqueIdentifier>{d334d235-e1da-4db0-b181-edb289b66838}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules">
+      <UniqueIdentifier>{eaa5cefb-453a-458d-89e5-d48bc16cd449}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\impl">
+      <UniqueIdentifier>{cb2b93b0-b954-42b0-af1a-32db0fbbfbbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mc_sdk\renderer">
+      <UniqueIdentifier>{ad2575e9-0825-4470-a4ac-5f46ae3ee653}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mc_sdk\settings">
+      <UniqueIdentifier>{dad5188a-f9be-4165-855a-9bd5d843a137}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mc_sdk\util">
+      <UniqueIdentifier>{baea0f77-2afc-48ad-a5f5-5b9efef79319}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\mc_sdk\mappings">
+      <UniqueIdentifier>{062aecf0-216a-43db-a537-103493b020c6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\eventsystem">
+      <UniqueIdentifier>{7942fc54-b00c-41db-98e4-0a06c3a440fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="imgui">
+      <UniqueIdentifier>{c0a7fecf-5f5f-43f5-84c4-75bfb10ce818}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\impl\movement">
+      <UniqueIdentifier>{5a433575-16cf-41ba-827f-1fefb69ed0ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\impl\render">
+      <UniqueIdentifier>{2bfc2634-3039-4015-acf3-9bc2d0dc11fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\modules\impl\combat">
+      <UniqueIdentifier>{691a7f92-816c-4592-9e15-7caaa829f598}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CArray.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CConstantPool.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CInstanceKlass.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CJavaHook.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CMethod.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CSymbol.hpp">
+      <Filter>Header Files\jvm_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\buffer.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde32.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde64.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\MinHook.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\pstdint.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table32.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table64.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\trampoline.h">
+      <Filter>Header Files\minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="jni.h">
+      <Filter>Header Files\jni</Filter>
+    </ClInclude>
+    <ClInclude Include="jni_md.h">
+      <Filter>Header Files\jni</Filter>
+    </ClInclude>
+    <ClInclude Include="jvmti.h">
+      <Filter>Header Files\jni</Filter>
+    </ClInclude>
+    <ClInclude Include="CUniqueReference.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CUtils.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CMinecraft.hpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayer.hpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CModule.hpp">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="CModuleManager.hpp">
+      <Filter>Header Files\modules</Filter>
+    </ClInclude>
+    <ClInclude Include="CCheat.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CEntityRenderer.hpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CFontRenderer.hpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CMovementInput.hpp">
+      <Filter>Header Files\mc_sdk\util</Filter>
+    </ClInclude>
+    <ClInclude Include="CMinecraftType.hpp">
+      <Filter>Header Files\mc_sdk\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="MinecraftFontRenderer.hpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="CGameSettings.hpp">
+      <Filter>Header Files\mc_sdk\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CKeyBinding.hpp">
+      <Filter>Header Files\mc_sdk\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="CIntelligentMappings.hpp">
+      <Filter>Header Files\mc_sdk\mappings</Filter>
+    </ClInclude>
+    <ClInclude Include="CSimpleEventSystem.hpp">
+      <Filter>Header Files\eventsystem</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_truetype.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imconfig.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_opengl2.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_impl_win32.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imgui_internal.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_rectpack.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="imgui\imstb_textedit.h">
+      <Filter>imgui</Filter>
+    </ClInclude>
+    <ClInclude Include="CAirJumpModule.hpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CFlyModule.hpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrafeModule.hpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CHUDModule.hpp">
+      <Filter>Header Files\modules\impl\render</Filter>
+    </ClInclude>
+    <ClInclude Include="CClickGUIModule.hpp">
+      <Filter>Header Files\modules\impl\render</Filter>
+    </ClInclude>
+    <ClInclude Include="CWorld.hpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CPlayerController.hpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="CKillauraModule.hpp">
+      <Filter>Header Files\modules\impl\combat</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\buffer.c">
+      <Filter>Header Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\trampoline.c">
+      <Filter>Header Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde64.c">
+      <Filter>Header Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde32.c">
+      <Filter>Header Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hook.c">
+      <Filter>Header Files\minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="CUtils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayer.cpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="CCheat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CModuleManager.cpp">
+      <Filter>Header Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="CModule.cpp">
+      <Filter>Header Files\modules</Filter>
+    </ClCompile>
+    <ClCompile Include="CEntityRenderer.cpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CFontRenderer.cpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="MinecraftFontRenderer.cpp">
+      <Filter>Header Files\mc_sdk\renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="CGameSettings.cpp">
+      <Filter>Header Files\mc_sdk\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="CIntelligentMappings.cpp">
+      <Filter>Header Files\mc_sdk\mappings</Filter>
+    </ClCompile>
+    <ClCompile Include="CKeyBinding.cpp">
+      <Filter>Header Files\mc_sdk\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="CMinecraft.cpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_draw.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_opengl2.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_impl_win32.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="imgui\imgui_widgets.cpp">
+      <Filter>imgui</Filter>
+    </ClCompile>
+    <ClCompile Include="CAirJumpModule.cpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CFlyModule.cpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CStrafeModule.cpp">
+      <Filter>Header Files\modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CHUDModule.cpp">
+      <Filter>Header Files\modules\impl\render</Filter>
+    </ClCompile>
+    <ClCompile Include="CClickGUIModule.cpp">
+      <Filter>Header Files\modules\impl\render</Filter>
+    </ClCompile>
+    <ClCompile Include="CMovementInput.cpp">
+      <Filter>Header Files\mc_sdk\util</Filter>
+    </ClCompile>
+    <ClCompile Include="CWorld.cpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="CPlayerController.cpp">
+      <Filter>Header Files\mc_sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="CKillauraModule.cpp">
+      <Filter>Header Files\modules\impl\combat</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
