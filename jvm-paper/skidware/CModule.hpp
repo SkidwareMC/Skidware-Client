@@ -5,13 +5,19 @@
 #include "common.h"
 #include "CSimpleEventSystem.hpp"
 
+enum CATAGORY {
+	MOVEMENT, COMBAT, RENDER, UTIL, MISC
+};
+
 typedef struct CModule : CEventListener {
 	std::string name = "Module";
 	bool state = false;
 	int keyBind = 0x0;
+	CATAGORY catagory;
 protected:
-	CModule(std::string, int);
+	CModule(std::string name, int keyBind, CATAGORY catagory);
 public:
+
 	virtual ~CModule();
 	virtual void setState(bool);
 	virtual void toggle();

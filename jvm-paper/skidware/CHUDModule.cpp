@@ -1,7 +1,7 @@
 #include "CHUDModule.hpp"
 #include "CCheat.hpp"
 
-CHUDModule::CHUDModule() : CModule("HUD", 'H') {
+CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER) {
 	this->toggle();
 }
 

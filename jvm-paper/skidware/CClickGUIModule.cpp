@@ -1,7 +1,7 @@
 #include "CClickGUIModule.hpp"
 #include "CCheat.hpp"
 
-CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT) {
+CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT, RENDER) {
 	//this->toggle();
 }
 
@@ -30,11 +30,34 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
-		ImGui::Begin("Lightning", nullptr, ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
+		ImGui::Text("Skidware");
+
+		ImGui::Begin("Movement", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
 
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (ImGui::Button(module->name.c_str())) module->toggle();
+			if (module->catagory == MOVEMENT)	
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+		}
+
+		ImGui::End();
+
+		ImGui::Begin("Misc", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
+
+		for (CModule* module : CCheat::moduleManager->modules) {
+			//ImGui::Checkbox(module->name.c_str(), &module->state);
+			if (module->catagory == MISC)
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+		}
+
+		ImGui::End();
+
+		ImGui::Begin("Render", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
+
+		for (CModule* module : CCheat::moduleManager->modules) {
+			//ImGui::Checkbox(module->name.c_str(), &module->state);
+			if (module->catagory == RENDER)
+				if (ImGui::Button(module->name.c_str())) module->toggle();
 		}
 
 		ImGui::End();

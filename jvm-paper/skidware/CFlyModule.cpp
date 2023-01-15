@@ -1,7 +1,7 @@
 #include "CFlyModule.hpp"
 #include "CCheat.hpp"
 
-CFlyModule::CFlyModule() : CModule("Fly", 'V') {
+CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT) {
 
 }
 

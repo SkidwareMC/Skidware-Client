@@ -1,7 +1,7 @@
 #include "CStrafeModule.hpp"
 #include "CCheat.hpp"
 
-CStrafeModule::CStrafeModule() : CModule("Spartan Speed", 'B') {
+CStrafeModule::CStrafeModule() : CModule("Spartan Speed", 'B', MOVEMENT) {
 
 }
 
