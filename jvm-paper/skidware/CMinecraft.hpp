@@ -10,6 +10,7 @@
 #include "CGameSettings.hpp"
 #include "CWorld.hpp"
 #include "CPlayerController.hpp"
+#include "CUniqueReference.hpp"
 
 typedef struct CWorld CWorld;
 typedef struct CPlayer CPlayer;
@@ -26,7 +27,9 @@ typedef struct CMinecraft {
 	jobject getNativePlayer();
 	jobject getNativeWorld();
 	jobject getNativePlayerController();
+
 	void runTick();
+	jni_ptr<bool> isGameHasFocus = make_jni_ptr<bool>(this->getNativeMinecraft(), "", "Z");
 private:
 	static CMinecraft* theMinecraft;
 public:
@@ -37,6 +40,7 @@ public:
 	MinecraftFontRenderer* fontRendererObj = nullptr;
 	//CWorld* theWorld = nullptr;
 	CPlayerController* playerController = nullptr;
+
 } CMinecraft;
 
 #endif //CMINECRAFT_HPP_GUARD

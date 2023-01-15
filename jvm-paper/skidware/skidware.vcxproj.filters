@@ -53,6 +53,12 @@
     <Filter Include="modules\impl\combat">
       <UniqueIdentifier>{691a7f92-816c-4592-9e15-7caaa829f598}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\util">
+      <UniqueIdentifier>{f71fee37-43f8-4055-bd49-be5c67fe28a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="sdk\util\Memory">
+      <UniqueIdentifier>{69acfeae-1311-4e1d-b3c8-1aae499ea77a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -194,16 +200,19 @@
       <Filter>modules\impl\combat</Filter>
     </ClInclude>
     <ClInclude Include="CCheat.hpp">
-      <Filter>sdk</Filter>
+      <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="common.h">
-      <Filter>sdk</Filter>
+      <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="CUniqueReference.hpp">
-      <Filter>sdk</Filter>
+      <Filter>main</Filter>
     </ClInclude>
     <ClInclude Include="CUtils.hpp">
-      <Filter>sdk</Filter>
+      <Filter>main</Filter>
+    </ClInclude>
+    <ClInclude Include="CPatch.hpp">
+      <Filter>sdk\util\Memory</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

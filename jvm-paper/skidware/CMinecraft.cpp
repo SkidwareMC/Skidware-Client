@@ -35,6 +35,7 @@ CMinecraft::CMinecraft() {
 	if (this->thePlayer && this->thePlayer->theWorld) {
 		this->playerController = new CPlayerController(this->getNativePlayerController());
 	}
+
 }
 
 CMinecraft* CMinecraft::getMinecraft() {

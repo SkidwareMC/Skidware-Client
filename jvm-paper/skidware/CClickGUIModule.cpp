@@ -6,6 +6,9 @@ CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT) {
 }
 
 void CClickGUIModule::onEnable() {
+	CMinecraft* mc = CCheat::theMinecraft;
+
+	mc->isGameHasFocus = false;
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = true;
 
@@ -13,6 +16,8 @@ void CClickGUIModule::onEnable() {
 }
 
 void CClickGUIModule::onDisable() {
+	CMinecraft* mc = CCheat::theMinecraft;
+	mc->isGameHasFocus = true;
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = false;
 

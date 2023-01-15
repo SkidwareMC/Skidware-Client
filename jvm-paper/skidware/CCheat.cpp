@@ -275,7 +275,7 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 	if (FindWindowA(nullptr, "Minecraft 1.12.2"))
 		CIntelligentMappings::init(ONE_TWELVE_TWO);
 	else {
-		std::cout << "1.8.9 support isnt ready yet" << "\n";
+		std::cout << "Client support isnt ready yet" << "\n";
 		Sleep(1000);
 		exit(-1);
 	}

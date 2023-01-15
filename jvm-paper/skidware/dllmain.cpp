@@ -149,7 +149,6 @@ void start() {
 			Sleep(500);
 			while (true) {
 				mc->runTick();
-				std::cout << "Debug Message" << "\n";
 				Sleep(50);
 			}
 		}
