@@ -6,6 +6,6 @@ Minecraft injection client <br>
 1.8.9 support soon
 use your favorite mods along with skidware
 
-credits to me, nxtbyte (on unknowncheats), and liam
+credits to me, nxtbyte (on unknowncheats), and Liam5750
 
 based from lightning-client
