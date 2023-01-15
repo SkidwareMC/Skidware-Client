@@ -1,7 +1,7 @@
 #include "CKillauraModule.hpp"
 #include "CCheat.hpp"
 
-CKillauraModule::CKillauraModule() : CModule("Destruct", '-') {
+CKillauraModule::CKillauraModule() : CModule("Destruct", '-', MISC) {
 
 }
 
