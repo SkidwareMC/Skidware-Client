@@ -11,7 +11,7 @@ Minecraft injection client <br>
 1.8.9 support soon <br>
 use your favorite mods along with skidware
 
-credits to Liam5750, nxtbyte, and ocornut.
+credits to Liam5750, nxtbyte, ocornut, and CheatMaker
 
 # Discord
 https://discord.gg/N8eAv9QRpE
