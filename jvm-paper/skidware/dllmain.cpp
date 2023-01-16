@@ -7,6 +7,7 @@
 #include "CJavaHook.hpp"
 #include "CCheat.hpp"
 #include "xorstr.hpp"
+#include "wrapper.h"
 
 typedef long(__stdcall* _JNI_GetCreatedJavaVMs)(JavaVM**, long, long*);
 _JNI_GetCreatedJavaVMs ORIG_JNI_GetCreatedJavaVMs;
@@ -137,18 +138,33 @@ bool MathUtil(const char* resu, const char* hjkhjk)
 	}
 	return true;
 }
-
+int tries;
 void start() {
 	AllocConsole();
 	FILE* in;
 	FILE* out;
 	freopen_s(&in, "conin$", "r", stdin);
 	freopen_s(&out, "conout$", "w", stdout);
-	std::cout << xorstr_("Please enter in your username and product key") << std::endl;
-	const char* emanresu;
-	const char* resu;
+	login:
+		std::cout << xorstr_("Please enter in your username and product key") << std::endl;
+		std::string emanresu;
+		std::string yek;
+		out::display(xorstr_("Username"));
+		std::cin >> emanresu;
+		out::display(xorstr_("Key"));
+		std::cin >> yek;
+		bool valid = MathUtil(emanresu.data(), yek.data());
 
-	
+	if (!valid) {
+		out::display("Key is Invalid. Please try again.");
+		goto login;
+		tries++;
+		if (tries >= 15) {
+			out::display("Too many tries");
+			exit(1);
+		}
+	}
+
 
 	std::cout << "[1/5] Console Allocated" << "\n";
 	Sleep(1500);

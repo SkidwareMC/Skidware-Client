@@ -164,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="CAirJumpModule.cpp" />
     <ClCompile Include="CCheat.cpp" />
+    <ClCompile Include="CClickerModule.cpp" />
     <ClCompile Include="CClickGUIModule.cpp" />
     <ClCompile Include="CEntityRenderer.cpp" />
     <ClCompile Include="CFlyModule.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="CAirJumpModule.hpp" />
     <ClInclude Include="CArray.hpp" />
     <ClInclude Include="CCheat.hpp" />
+    <ClInclude Include="CClickerModule.hpp" />
     <ClInclude Include="CClickGUIModule.hpp" />
     <ClInclude Include="CConstantPool.hpp" />
     <ClInclude Include="CEntityRenderer.hpp" />
@@ -249,6 +251,7 @@
     <ClInclude Include="minhook\hde\table64.h" />
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
+    <ClInclude Include="wrapper.h" />
     <ClInclude Include="xorstr.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
