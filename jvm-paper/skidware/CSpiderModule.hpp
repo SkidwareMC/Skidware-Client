@@ -1,15 +1,15 @@
-#ifndef CKILLAURAMODULE_HPP_GUARD
-#define CKILLAURAMODULE_HPP_GUARD
+#ifndef CSPIDERMODULE_HPP_GUARD
+#define CSPIDERMODULE_HPP_GUARD
 #pragma once
 
 #include "CModule.hpp"
 
-typedef struct CKillauraModule : CModule {
-	CKillauraModule();
+typedef struct CSpiderModule : CModule {
+	CSpiderModule();
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
-} CKillauraModule;
+};
 
-#endif //CKILLAURAMODULE_HPP_GUARD
+#endif //CFLYMODULE_HPP_GUARD

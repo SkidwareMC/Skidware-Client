@@ -9,6 +9,7 @@ typedef struct CHUDModule : CModule {
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
+	virtual void renderSettings();
 };
 
 #endif //CHUDMODULE_HPP_GUARD

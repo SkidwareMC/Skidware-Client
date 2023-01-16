@@ -21,6 +21,7 @@ public:
 	virtual ~CModule();
 	virtual void setState(bool);
 	virtual void toggle();
+	virtual void renderSettings();
 	virtual void onEnable();
 	virtual void onDisable();
 } CModule;

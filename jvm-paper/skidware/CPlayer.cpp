@@ -40,6 +40,10 @@ float CPlayer::getSpeed() {
 	return sqrt(this->motionX * this->motionX + this->motionZ * this->motionZ);
 }
 
+void CPlayer::jump() {
+	CUtils::CallMethod<void>(this->_klass, "jump", "()V");
+}
+
 double CPlayer::getDirection() {
 	float rotationYaw = this->rotationYaw;
 

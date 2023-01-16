@@ -10,6 +10,11 @@ void CAirJumpModule::onEvent(const CSimpleEvent* event) {
 	}
 }
 
+void CAirJumpModule::renderSettings()
+{
+	return;
+}
+
 void CAirJumpModule::onEnable() {
 	CCheat::eventBus->registerListener(this);
 }
@@ -17,3 +22,4 @@ void CAirJumpModule::onEnable() {
 void CAirJumpModule::onDisable() {
 	CCheat::eventBus->unregisterListener(this);
 }
+
