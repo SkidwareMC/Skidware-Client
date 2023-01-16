@@ -59,6 +59,9 @@
     <Filter Include="sdk\util\Memory">
       <UniqueIdentifier>{69acfeae-1311-4e1d-b3c8-1aae499ea77a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\util\obf">
+      <UniqueIdentifier>{0631a3ec-101e-4c30-acd4-6e456ff5b8e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -196,9 +199,6 @@
     <ClInclude Include="CPlayerController.hpp">
       <Filter>sdk\mc_sdk</Filter>
     </ClInclude>
-    <ClInclude Include="CKillauraModule.hpp">
-      <Filter>modules\impl\combat</Filter>
-    </ClInclude>
     <ClInclude Include="CCheat.hpp">
       <Filter>main</Filter>
     </ClInclude>
@@ -213,6 +213,13 @@
     </ClInclude>
     <ClInclude Include="CPatch.hpp">
       <Filter>sdk\util\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpiderModule.hpp" />
+    <ClInclude Include="CKillauraModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="xorstr.hpp">
+      <Filter>sdk\util\obf</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -308,6 +315,9 @@
     </ClCompile>
     <ClCompile Include="CPlayerController.cpp">
       <Filter>sdk\mc_sdk</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpiderModule.cpp">
+      <Filter>main</Filter>
     </ClCompile>
     <ClCompile Include="CKillauraModule.cpp">
       <Filter>modules\impl\combat</Filter>

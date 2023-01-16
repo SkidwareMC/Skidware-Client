@@ -6,6 +6,7 @@
 #include "CMethod.hpp"
 #include "CJavaHook.hpp"
 #include "CCheat.hpp"
+#include "xorstr.hpp"
 
 typedef long(__stdcall* _JNI_GetCreatedJavaVMs)(JavaVM**, long, long*);
 _JNI_GetCreatedJavaVMs ORIG_JNI_GetCreatedJavaVMs;
@@ -111,12 +112,44 @@ break;
 				}
 			}*/
 
+static const char letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+bool MathUtil(const char* resu, const char* hjkhjk)
+{
+	std::string license;
+	size_t ll = strlen(hjkhjk);
+	size_t l = strlen(resu), lic_ctr = 0;
+	int add = 0;
+
+	for (size_t i = 0; i < ll; i++)
+		if (hjkhjk[i] != '-')
+			license += hjkhjk[i];
+
+	while (lic_ctr < license.length()) {
+		size_t i = lic_ctr;
+		i %= l;
+		int current = 0;
+		while (i < l) current += resu[i++];
+		current += add;
+		add++;
+		if (license[lic_ctr] != letters[current % sizeof letters])
+			return false;
+		lic_ctr++;
+	}
+	return true;
+}
+
 void start() {
 	AllocConsole();
 	FILE* in;
 	FILE* out;
 	freopen_s(&in, "conin$", "r", stdin);
 	freopen_s(&out, "conout$", "w", stdout);
+	std::cout << xorstr_("Please enter in your username and product key") << std::endl;
+	const char* emanresu;
+	const char* resu;
+
+	
+
 	std::cout << "[1/5] Console Allocated" << "\n";
 	Sleep(1500);
 	void* handle;

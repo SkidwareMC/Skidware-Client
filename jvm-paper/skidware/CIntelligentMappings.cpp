@@ -87,7 +87,7 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedMethod jumpMethod = make_method("jump", "()V",
 			"func_70664_aZ", "cu", "()V", "()V");
 
-		// CIntelligentMappedField hurttimeField = make_field("hurttime", "I", );
+		// CIntelligentMappedField hurttimeField = make_field("hurttime", "I", "field_70737_aN", "ay", "I", "I");
 
 		CIntelligentMappedClass playerKlass = make_klass("net.minecraft.client.entity.EntityPlayerSP",
 			"net.minecraft.client.entity.EntityPlayerSP", "bud", std::vector({ onGroundField, moveForwardField,
