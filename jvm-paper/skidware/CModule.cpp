@@ -33,3 +33,5 @@ void CModule::setState(bool state) {
 void CModule::toggle() {
 	this->setState(!this->state);
 }
+
+void CModule::renderSettings() {}

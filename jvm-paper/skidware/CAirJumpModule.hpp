@@ -10,6 +10,7 @@ typedef struct CAirJumpModule : CModule {
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
+	virtual void renderSettings();
 } CAirJumpModule;
 
 #endif //CAIRJUMPMODULE_HPP_GUARD

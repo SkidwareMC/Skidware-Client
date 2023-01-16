@@ -38,7 +38,7 @@ public:
 	CPlayer* thePlayer = nullptr;
 	CGameSettings* gameSettings = nullptr;
 	MinecraftFontRenderer* fontRendererObj = nullptr;
-	//CWorld* theWorld = nullptr;
+	CWorld* theWorld = nullptr;
 	CPlayerController* playerController = nullptr;
 
 } CMinecraft;

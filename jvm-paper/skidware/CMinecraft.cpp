@@ -28,10 +28,10 @@ CMinecraft::CMinecraft() {
 		minecraftClass.getField("entityRenderer").name(), minecraftClass.getField("entityRenderer").signature()));
 	this->gameSettings = new CGameSettings(CUtils::GetField<jobject>(getNativeMinecraft(),
 		minecraftClass.getField("gameSettings").name(), minecraftClass.getField("gameSettings").signature()));
-	/*jobject theWorldField = this->getNativeWorld();
+	jobject theWorldField = this->getNativeWorld();
 	if (theWorldField) {
 		this->theWorld = new CWorld(theWorldField);
-	}*/
+	}
 	if (this->thePlayer && this->thePlayer->theWorld) {
 		this->playerController = new CPlayerController(this->getNativePlayerController());
 	}

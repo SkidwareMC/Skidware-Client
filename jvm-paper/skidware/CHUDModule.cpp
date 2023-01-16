@@ -206,3 +206,8 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 		}
 	}
 }
+
+void CHUDModule::renderSettings()
+{
+	return;
+}

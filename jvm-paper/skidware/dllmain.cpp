@@ -129,7 +129,7 @@ void start() {
 		ORIG_JNI_GetCreatedJavaVMs = reinterpret_cast<_JNI_GetCreatedJavaVMs>(GetProcAddress(reinterpret_cast<HMODULE>(handle), "JNI_GetCreatedJavaVMs"));
 		JavaVM* javavm;
 		ORIG_JNI_GetCreatedJavaVMs(&javavm, 1, nullptr);
-		std::cout << "[3/5]  JVM Created" << "\n";
+		std::cout << "[3/5] JVM Created" << "\n";
 		Sleep(1500);
 		javavm->AttachCurrentThread(reinterpret_cast<void**>(&env), nullptr);
 		std::cout << "[4/5] Thread Attached" << "\n";

@@ -36,8 +36,12 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == MOVEMENT)	
-				if (ImGui::Button(module->name.c_str())) module->toggle();
+			if (module->catagory == MOVEMENT) {
+				ImGui::Checkbox(module->name.c_str(), &module->state);
+				module->renderSettings();
+			}
+
+				// if (ImGui::Button(module->name.c_str())) module->toggle();
 		}
 
 		ImGui::End();
@@ -46,8 +50,10 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == MISC)
-				if (ImGui::Button(module->name.c_str())) module->toggle();
+			if (module->catagory == MISC) {
+				ImGui::Checkbox(module->name.c_str(), &module->state);
+				module->renderSettings();
+			}
 		}
 
 		ImGui::End();
@@ -56,8 +62,11 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == RENDER)
-				if (ImGui::Button(module->name.c_str())) module->toggle();
+			if (module->catagory == RENDER) {
+				ImGui::Checkbox(module->name.c_str(), &module->state);
+				module->renderSettings();
+			}
+				// if (ImGui::Button(module->name.c_str())) module->toggle();
 		}
 
 		ImGui::End();
@@ -68,4 +77,9 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		glViewport(0, 0, viewport[2], viewport[3]);
 		ImGui_ImplOpenGL2_RenderDrawData(ImGui::GetDrawData());
 	}
+}
+
+void CClickGUIModule::renderSettings()
+{
+	return;
 }

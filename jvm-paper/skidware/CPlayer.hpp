@@ -34,6 +34,7 @@ typedef struct CPlayer {
 	bool isStrafing();
 	bool isMovingForwardOrBackwards();
 	float getSpeed();
+	void jump();
 	jobject GetKlass() {
 		return this->_klass;
 	}

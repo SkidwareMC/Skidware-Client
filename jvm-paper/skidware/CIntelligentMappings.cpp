@@ -191,6 +191,13 @@ void CIntelligentMappings::init(Version ver) {
 			"net.minecraft.client.multiplayer.PlayerControllerMP", "bsa", std::vector({ nullField }), std::vector({ attackEntityMethod }));
 		_klasses.push_back(playerControllerKlass);
 
+		/*--------------------------*/
+
+		/*       AxisAlignedBB      */
+
+		/*--------------------------*/
+		// CIntelligentMappedField isCollidedWithX = make_field("collideWithXPlane")
+
 	}
 
 	/* -------------- */
