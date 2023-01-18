@@ -1,6 +1,5 @@
-#pragma once
-#ifndef CAIRJUMPMODULE_HPP_GUARD
-#define CAIRJUMPMODULE_HPP_GUARD
+#ifndef CCLICKERMODULE_HPP_GUARD
+#define CCLICKERMODULE_HPP_GUARD
 #pragma once
 
 #include "CModule.hpp"
@@ -12,10 +11,9 @@ typedef struct CClickerModule : CModule {
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
-} CAirJumpModule;
+} CClickerModule;
 
 float m_delay = {};
 float m_random = {};
 float f_cps = {};
-
-#endif //CAIRJUMPMODULE_HPP_GUARD
+#endif // !CCLICKERMODULE_HPP_GUARD

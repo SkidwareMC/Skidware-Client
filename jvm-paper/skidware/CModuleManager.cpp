@@ -6,6 +6,7 @@
 #include "CClickGUIModule.hpp"
 #include "CKillauraModule.hpp"
 #include "CSpiderModule.hpp"
+#include "CClickerModule.hpp"
 
 void CModuleManager::registerModules() {
 	this->registerModule(new CAirJumpModule());
@@ -15,4 +16,5 @@ void CModuleManager::registerModules() {
 	this->registerModule(new CClickGUIModule());
 	this->registerModule(new CKillauraModule());
 	this->registerModule(new CSpiderModule());
+	this->registerModule(new CClickerModule());
 }

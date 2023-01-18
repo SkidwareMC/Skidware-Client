@@ -71,6 +71,19 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 
 		ImGui::End();
 
+		ImGui::Begin("Combat", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
+
+		for (CModule* module : CCheat::moduleManager->modules) {
+			//ImGui::Checkbox(module->name.c_str(), &module->state);
+			if (module->catagory == COMBAT) {
+				ImGui::Checkbox(module->name.c_str(), &module->state);
+				module->renderSettings();
+			}
+			// if (ImGui::Button(module->name.c_str())) module->toggle();
+		}
+
+		ImGui::End();
+
 		ImGui::Render();
 		GLint viewport[4];
 		glGetIntegerv(GL_VIEWPORT, viewport);

@@ -1,6 +1,6 @@
 #include "CClickerModule.hpp"
 
-CClickerModule::CClickerModule() : CModule("AirJump", 'F', MOVEMENT) {
+CClickerModule::CClickerModule() : CModule("Clicker", 'O', COMBAT) {
 
 }
 

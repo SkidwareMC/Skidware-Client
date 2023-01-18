@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CModule.hpp"
+#include "CCheat.hpp"
 
 typedef struct CSpiderModule : CModule {
 	CSpiderModule();
@@ -12,4 +13,4 @@ typedef struct CSpiderModule : CModule {
 	virtual void renderSettings();
 };
 
-#endif //CFLYMODULE_HPP_GUARD
+#endif //CSPIDERMODULE_HPP_GUARD
