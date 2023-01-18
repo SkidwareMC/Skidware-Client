@@ -164,6 +164,7 @@
   <ItemGroup>
     <ClCompile Include="CAirJumpModule.cpp" />
     <ClCompile Include="CCheat.cpp" />
+    <ClCompile Include="CClickerModule.cpp" />
     <ClCompile Include="CClickGUIModule.cpp" />
     <ClCompile Include="CEntityRenderer.cpp" />
     <ClCompile Include="CFlyModule.cpp" />
@@ -180,6 +181,7 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CPlayerController.cpp" />
     <ClCompile Include="CSpiderModule.cpp" />
+    <ClCompile Include="CSpeedModule.cpp" />
     <ClCompile Include="CStrafeModule.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="CWorld.cpp" />
@@ -200,6 +202,7 @@
     <ClInclude Include="CAirJumpModule.hpp" />
     <ClInclude Include="CArray.hpp" />
     <ClInclude Include="CCheat.hpp" />
+    <ClInclude Include="CClickerModule.hpp" />
     <ClInclude Include="CClickGUIModule.hpp" />
     <ClInclude Include="CConstantPool.hpp" />
     <ClInclude Include="CEntityRenderer.hpp" />
@@ -224,6 +227,7 @@
     <ClInclude Include="CPlayerController.hpp" />
     <ClInclude Include="CSimpleEventSystem.hpp" />
     <ClInclude Include="CSpiderModule.hpp" />
+    <ClInclude Include="CSpeedModule.hpp" />
     <ClInclude Include="CStrafeModule.hpp" />
     <ClInclude Include="CSymbol.hpp" />
     <ClInclude Include="CUniqueReference.hpp" />
@@ -249,6 +253,8 @@
     <ClInclude Include="minhook\hde\table64.h" />
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
+    <ClInclude Include="wrapper.h" />
+    <ClInclude Include="xorstr.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

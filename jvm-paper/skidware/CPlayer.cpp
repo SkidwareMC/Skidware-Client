@@ -5,10 +5,11 @@ CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 	CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("onGround").name(), "Z"), moveForward(klass,
 		CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveForward").name(), "F"), moveStrafing(klass,
 			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveStrafing").name(), "F"), motionX(klass,
-			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionX").name(), "D"), motionY(klass, 
-				CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionY").name(), "D"), motionZ(klass,
-					CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionZ").name(), "D"), rotationYaw(klass,
-						CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"){
+			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionX").name(), "D"), motionY(klass,
+				// CIntelligentMappings::getClass("net.minecraft.entity.EntityLivingBase").getField("hurttime").name(), "D"), hurttime(klass,
+					CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionY").name(), "D"), motionZ(klass,
+							CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionZ").name(), "D"), rotationYaw(klass,
+								CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"){
 	this->_klass = klass;
 	CIntelligentMappedClass intelligent = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
 	this->movementInput = new CMovementInput(CUtils::GetField<jobject>(this->_klass,

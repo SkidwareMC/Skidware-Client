@@ -6,6 +6,8 @@
 #include "CMethod.hpp"
 #include "CJavaHook.hpp"
 #include "CCheat.hpp"
+#include "xorstr.hpp"
+#include "wrapper.h"
 
 typedef long(__stdcall* _JNI_GetCreatedJavaVMs)(JavaVM**, long, long*);
 _JNI_GetCreatedJavaVMs ORIG_JNI_GetCreatedJavaVMs;
@@ -111,12 +113,59 @@ break;
 				}
 			}*/
 
+static const char letters[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+bool MathUtil(const char* resu, const char* hjkhjk)
+{
+	std::string license;
+	size_t ll = strlen(hjkhjk);
+	size_t l = strlen(resu), lic_ctr = 0;
+	int add = 0;
+
+	for (size_t i = 0; i < ll; i++)
+		if (hjkhjk[i] != '-')
+			license += hjkhjk[i];
+
+	while (lic_ctr < license.length()) {
+		size_t i = lic_ctr;
+		i %= l;
+		int current = 0;
+		while (i < l) current += resu[i++];
+		current += add;
+		add++;
+		if (license[lic_ctr] != letters[current % sizeof letters])
+			return false;
+		lic_ctr++;
+	}
+	return true;
+}
+int tries;
 void start() {
 	AllocConsole();
 	FILE* in;
 	FILE* out;
 	freopen_s(&in, "conin$", "r", stdin);
 	freopen_s(&out, "conout$", "w", stdout);
+	login:
+		std::cout << xorstr_("Please enter in your username and product key") << std::endl;
+		std::string emanresu;
+		std::string yek;
+		out::display(xorstr_("Username"));
+		std::cin >> emanresu;
+		out::display(xorstr_("Key"));
+		std::cin >> yek;
+		bool valid = MathUtil(emanresu.data(), yek.data());
+
+	if (!valid) {
+		out::display("Key is Invalid. Please try again.");
+		goto login;
+		tries++;
+		if (tries >= 15) {
+			out::display("Too many tries");
+			exit(1);
+		}
+	}
+
+
 	std::cout << "[1/5] Console Allocated" << "\n";
 	Sleep(1500);
 	void* handle;

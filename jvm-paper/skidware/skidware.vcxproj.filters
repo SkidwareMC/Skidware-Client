@@ -59,6 +59,9 @@
     <Filter Include="sdk\util\Memory">
       <UniqueIdentifier>{69acfeae-1311-4e1d-b3c8-1aae499ea77a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\util\obf">
+      <UniqueIdentifier>{0631a3ec-101e-4c30-acd4-6e456ff5b8e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -181,7 +184,7 @@
     <ClInclude Include="CFlyModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </ClInclude>
-    <ClInclude Include="CStrafeModule.hpp">
+    <ClInclude Include="CSpeedModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </ClInclude>
     <ClInclude Include="CHUDModule.hpp">
@@ -195,9 +198,6 @@
     </ClInclude>
     <ClInclude Include="CPlayerController.hpp">
       <Filter>sdk\mc_sdk</Filter>
-    </ClInclude>
-    <ClInclude Include="CKillauraModule.hpp">
-      <Filter>modules\impl\combat</Filter>
     </ClInclude>
     <ClInclude Include="CCheat.hpp">
       <Filter>main</Filter>
@@ -213,6 +213,24 @@
     </ClInclude>
     <ClInclude Include="CPatch.hpp">
       <Filter>sdk\util\Memory</Filter>
+    </ClInclude>
+    <ClInclude Include="CKillauraModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="xorstr.hpp">
+      <Filter>sdk\util\obf</Filter>
+    </ClInclude>
+    <ClInclude Include="wrapper.h">
+      <Filter>sdk\util</Filter>
+    </ClInclude>
+    <ClInclude Include="CSpiderModule.hpp">
+      <Filter>modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CClickerModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrafeModule.hpp">
+      <Filter>modules\impl\movement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -291,7 +309,7 @@
     <ClCompile Include="CFlyModule.cpp">
       <Filter>modules\impl\movement</Filter>
     </ClCompile>
-    <ClCompile Include="CStrafeModule.cpp">
+    <ClCompile Include="CSpeedModule.cpp">
       <Filter>modules\impl\movement</Filter>
     </ClCompile>
     <ClCompile Include="CHUDModule.cpp">
@@ -311,6 +329,15 @@
     </ClCompile>
     <ClCompile Include="CKillauraModule.cpp">
       <Filter>modules\impl\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="CClickerModule.cpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="CSpiderModule.cpp">
+      <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CStrafeModule.cpp">
+      <Filter>modules\impl\movement</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

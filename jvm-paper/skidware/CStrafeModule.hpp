@@ -9,7 +9,6 @@ typedef struct CStrafeModule : CModule {
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
-	virtual void renderSettings();
 };
 
 #endif //CSTRAFEMODULE_HPP_GUARD
