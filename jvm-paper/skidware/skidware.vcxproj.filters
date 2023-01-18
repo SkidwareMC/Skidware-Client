@@ -184,7 +184,7 @@
     <ClInclude Include="CFlyModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </ClInclude>
-    <ClInclude Include="CStrafeModule.hpp">
+    <ClInclude Include="CSpeedModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </ClInclude>
     <ClInclude Include="CHUDModule.hpp">
@@ -228,6 +228,9 @@
     </ClInclude>
     <ClInclude Include="CClickerModule.hpp">
       <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CStrafeModule.hpp">
+      <Filter>modules\impl\movement</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -306,7 +309,7 @@
     <ClCompile Include="CFlyModule.cpp">
       <Filter>modules\impl\movement</Filter>
     </ClCompile>
-    <ClCompile Include="CStrafeModule.cpp">
+    <ClCompile Include="CSpeedModule.cpp">
       <Filter>modules\impl\movement</Filter>
     </ClCompile>
     <ClCompile Include="CHUDModule.cpp">
@@ -331,6 +334,9 @@
       <Filter>modules\impl\combat</Filter>
     </ClCompile>
     <ClCompile Include="CSpiderModule.cpp">
+      <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CStrafeModule.cpp">
       <Filter>modules\impl\movement</Filter>
     </ClCompile>
   </ItemGroup>

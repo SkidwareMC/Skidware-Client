@@ -1,7 +1,7 @@
 #include "CStrafeModule.hpp"
 #include "CCheat.hpp"
 
-CStrafeModule::CStrafeModule() : CModule("Spartan Speed", 'B', MOVEMENT) {
+CStrafeModule::CStrafeModule() : CModule("Strafe", 'J', MOVEMENT) {
 
 }
 
@@ -19,12 +19,7 @@ void CStrafeModule::onEvent(const CSimpleEvent* event) {
 		CMinecraft* mc = CCheat::theMinecraft;
 
 		if (!mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
-			mc->thePlayer->strafe(mc->thePlayer->getSpeed() * 1.1);
+			mc->thePlayer->strafe(mc->thePlayer->getSpeed());
 		}
 	}
-}
-
-void CStrafeModule::renderSettings()
-{
-	return;
 }

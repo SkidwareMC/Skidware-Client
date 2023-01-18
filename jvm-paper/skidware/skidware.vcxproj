@@ -181,6 +181,7 @@
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CPlayerController.cpp" />
     <ClCompile Include="CSpiderModule.cpp" />
+    <ClCompile Include="CSpeedModule.cpp" />
     <ClCompile Include="CStrafeModule.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="CWorld.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="CPlayerController.hpp" />
     <ClInclude Include="CSimpleEventSystem.hpp" />
     <ClInclude Include="CSpiderModule.hpp" />
+    <ClInclude Include="CSpeedModule.hpp" />
     <ClInclude Include="CStrafeModule.hpp" />
     <ClInclude Include="CSymbol.hpp" />
     <ClInclude Include="CUniqueReference.hpp" />
