@@ -1,5 +1,6 @@
 #include "CFlyModule.hpp"
 #include "CCheat.hpp"
+#include "wrapper.h"
 
 CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT) {
 
@@ -25,7 +26,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 			mc->thePlayer->motionX = 0;
 			mc->thePlayer->motionY = -0.1;
 			mc->thePlayer->motionZ = 0;
-
+			
 			if (mc->gameSettings->isAnyKeyDown()) {
 				if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
 					mc->thePlayer->strafe(2);
@@ -33,6 +34,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 			}
 
 			if (mc->gameSettings->keyBindJump->pressed) {
+				out::display("Jumped");
 				mc->thePlayer->motionY = 0.7;
 			}
 			if (mc->gameSettings->keyBindSneak->pressed) {
@@ -41,7 +43,14 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 
 		else if (current_mode == "Hypixel")
 		{
-			mc->thePlayer->motionY = 0;
+				mc->thePlayer->motionX = 0;
+				mc->thePlayer->motionY = 0;
+				mc->thePlayer->motionZ = 0;
+				if (mc->gameSettings->isAnyKeyDown()) {
+					if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
+						mc->thePlayer->strafe(2);
+					}
+				}
 		}
 	} 
 
@@ -50,7 +59,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 
 void CFlyModule::renderSettings()
 {
-
+	ImGui::Separator();
 	if (ImGui::BeginCombo("##combo", current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(modes); n++)

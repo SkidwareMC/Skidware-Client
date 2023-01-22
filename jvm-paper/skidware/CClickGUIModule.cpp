@@ -37,7 +37,8 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (module->catagory == MOVEMENT) {
-				ImGui::Checkbox(module->name.c_str(), &module->state);
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+				module->setState(module->state);
 				module->renderSettings();
 			}
 
@@ -51,7 +52,8 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (module->catagory == MISC) {
-				ImGui::Checkbox(module->name.c_str(), &module->state);
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+				module->setState(module->state);
 				module->renderSettings();
 			}
 		}
@@ -63,7 +65,8 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (module->catagory == RENDER) {
-				ImGui::Checkbox(module->name.c_str(), &module->state);
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+				module->setState(module->state);
 				module->renderSettings();
 			}
 				// if (ImGui::Button(module->name.c_str())) module->toggle();
@@ -76,7 +79,8 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		for (CModule* module : CCheat::moduleManager->modules) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (module->catagory == COMBAT) {
-				ImGui::Checkbox(module->name.c_str(), &module->state);
+				if (ImGui::Button(module->name.c_str())) module->toggle();
+				module->setState(module->state);
 				module->renderSettings();
 			}
 			// if (ImGui::Button(module->name.c_str())) module->toggle();

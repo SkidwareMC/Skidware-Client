@@ -29,10 +29,13 @@ typedef struct CMinecraft {
 	jobject getNativePlayerController();
 
 	void runTick();
+	std::vector<std::shared_ptr<CPlayer*>> get_players();
 	jni_ptr<bool> isGameHasFocus = make_jni_ptr<bool>(this->getNativeMinecraft(), "", "Z");
 private:
 	static CMinecraft* theMinecraft;
+	jobject __klass;
 public:
+	
 	CEntityRenderer* entityRenderer = nullptr;
 	CFontRenderer* fontRenderer = nullptr;
 	CPlayer* thePlayer = nullptr;

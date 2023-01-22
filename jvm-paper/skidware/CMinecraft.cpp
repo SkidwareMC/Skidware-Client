@@ -5,6 +5,7 @@
 #include "CIntelligentMappings.hpp"
 #include "CCheat.hpp"
 #include "CModule.hpp"
+#include "wrapper.h"
 
 typedef struct CPlayer CPlayer;
 
@@ -17,6 +18,8 @@ CMinecraft::CMinecraft() {
 	jobject thePlayerField = CUtils::GetField<jobject>(getNativeMinecraft(),
 		minecraftClass.getField("player").name(), minecraftClass.getField("player").signature());
 	if (thePlayerField) {
+		printf("creating Player Instance\n");
+		Sleep(500);
 		this->thePlayer = new CPlayer(thePlayerField);
 		if (this->thePlayer->theWorld == nullptr) {
 			printf("It seems like you have injected Lightning outside of the world.\n");
@@ -24,17 +27,27 @@ CMinecraft::CMinecraft() {
 	} else {
 		printf("It seems like you have injected Lightning outside of the world.\n");
 	}
+	printf("entityRenderer\n");
+	Sleep(500);
 	this->entityRenderer = new CEntityRenderer(CUtils::GetField<jobject>(getNativeMinecraft(),
 		minecraftClass.getField("entityRenderer").name(), minecraftClass.getField("entityRenderer").signature()));
+	printf("gameSettings\n");
+	Sleep(500);
 	this->gameSettings = new CGameSettings(CUtils::GetField<jobject>(getNativeMinecraft(),
 		minecraftClass.getField("gameSettings").name(), minecraftClass.getField("gameSettings").signature()));
 	jobject theWorldField = this->getNativeWorld();
+	printf("theworld\n");
 	if (theWorldField) {
 		this->theWorld = new CWorld(theWorldField);
 	}
+	
 	if (this->thePlayer && this->thePlayer->theWorld) {
+		printf("playercontroller\n");
+		Sleep(500);
 		this->playerController = new CPlayerController(this->getNativePlayerController());
 	}
+
+	// this->__klass = this->getNativeMinecraft();
 
 }
 
@@ -78,9 +91,9 @@ void CMinecraft::runTick() {
 		this->thePlayer = new CPlayer(this->getNativePlayer());
 	}
 	//making a new instance of the world in case of nullptr
-	//if (this->theWorld == nullptr && this->getNativeWorld()) {
-	//	this->theWorld = new CWorld(this->getNativeWorld());
-	//}
+	if (this->theWorld == nullptr && this->getNativeWorld()) {
+		this->theWorld = new CWorld(this->getNativeWorld());
+	}
 	if (this->playerController == nullptr && this->getNativePlayerController()) {
 		this->playerController = new CPlayerController(this->getNativePlayerController());
 	}
@@ -91,20 +104,22 @@ void CMinecraft::runTick() {
 		}
 	}
 	//same but for the world
-	//if (this->theWorld != nullptr && this->getNativeWorld()) {
-	//	if (!CCheat::getInstance()->env->IsSameObject(this->theWorld->GetKlass(), this->getNativeWorld())) {
-	//		this->theWorld = new CWorld(this->getNativeWorld());
-	//	}
-	//}
+	
+	if (this->theWorld != nullptr && this->getNativeWorld()) {
+		if (!CCheat::getInstance()->env->IsSameObject(this->theWorld->GetKlass(), this->getNativeWorld())) {
+			this->theWorld = new CWorld(this->getNativeWorld());
+		}
+	}
+	
 	//same but for player controller
 	if (this->playerController != nullptr && this->getNativePlayerController()) {
 		if (!CCheat::getInstance()->env->IsSameObject(this->playerController->GetKlass(), this->getNativePlayerController())) {
 			this->playerController = new CPlayerController(this->getNativePlayerController());
 		}
 	}
-	//if (this->theWorld != nullptr && !this->theWorld->GetKlass()) {
-	//	this->theWorld = nullptr;
-	//}
+	if (this->theWorld != nullptr && !this->theWorld->GetKlass()) {
+		this->theWorld = nullptr;
+	}
 	if (this->thePlayer != nullptr && !this->thePlayer->GetKlass()) {
 		this->thePlayer = nullptr;
 	}
@@ -113,12 +128,12 @@ void CMinecraft::runTick() {
 	}
 	//to be sure if the player isn't null
 	if (this->thePlayer != nullptr && this->thePlayer->GetKlass()) {
-		//if (this->theWorld != nullptr && this->theWorld->GetKlass()) {
+		if (this->theWorld != nullptr && this->theWorld->GetKlass()) {
 			if (CCheat::getInstance()->env->IsSameObject(this->thePlayer->GetKlass(), this->getNativePlayer())) {
-				//if (CCheat::getInstance()->env->IsSameObject(this->theWorld->GetKlass(), this->getNativeWorld())) {
+				if (CCheat::getInstance()->env->IsSameObject(this->theWorld->GetKlass(), this->getNativeWorld())) {
 					CCheat::eventBus->callEvent(new UpdateEvent());
-				//}
+				}
 			}
-		//}
+		}
 	}
 }

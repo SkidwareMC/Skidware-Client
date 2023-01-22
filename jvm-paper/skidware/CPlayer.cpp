@@ -5,11 +5,12 @@ CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 	CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("onGround").name(), "Z"), moveForward(klass,
 		CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveForward").name(), "F"), moveStrafing(klass,
 			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveStrafing").name(), "F"), motionX(klass,
-			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionX").name(), "D"), motionY(klass,
-				// CIntelligentMappings::getClass("net.minecraft.entity.EntityLivingBase").getField("hurttime").name(), "D"), hurttime(klass,
+				CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionX").name(), "D"), motionY(klass,
 					CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionY").name(), "D"), motionZ(klass,
-							CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionZ").name(), "D"), rotationYaw(klass,
-								CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"){
+						CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionZ").name(), "D"), headRotationYaw(klass,
+							CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("headRotationYaw").name(), "F"), rotationYaw(klass,
+								CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"), hurtTime(klass,
+									CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("hurttime").name(), "I"){
 	this->_klass = klass;
 	CIntelligentMappedClass intelligent = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
 	this->movementInput = new CMovementInput(CUtils::GetField<jobject>(this->_klass,
@@ -75,4 +76,8 @@ void CPlayer::strafe(float speed) {
 		this->motionX = -sin(yaw) * speed;
 		this->motionZ = cos(yaw) * speed;
 	}
+}
+
+bool CPlayer::IsHurt() {
+	return true; // this->hurtTime > 0;;
 }

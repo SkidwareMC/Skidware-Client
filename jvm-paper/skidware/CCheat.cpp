@@ -252,12 +252,12 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 	//Yes
 	//
 	theCheat = this;
-	std::cout << "[Null] Env Created" << "\n";
-	Sleep(500);
+	std::cout << "[Debug] Env Created" << "\n";
+
 	this->env = env;
 	this->javavm = javavm;
 	this->minecraftType = this->setMinecraftType();
-	std::cout << "[Null] Minecraft Type Initialized" << "\n";
+	std::cout << "[Dubug] Minecraft Type Initialized" << "\n";
 
 	//
 	//Set Up Mappings
@@ -275,21 +275,24 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 	if (FindWindowA(nullptr, "Minecraft 1.12.2"))
 		CIntelligentMappings::init(ONE_TWELVE_TWO);
 	else {
-		std::cout << "Client support isnt ready yet" << "\n";
+		std::cout << "1.8.9 Client support isnt ready yet" << "\n";
 		Sleep(1000);
 		exit(-1);
 	}
 
-	std::cout << "[Null] Mappings Created" << "\n";;
+	std::cout << "[Debug] Mappings Created" << "\n";;
+
+	std::cout << "[Debug] Creating MC instance" << "\n";;
+
 	this->theMinecraft = new CMinecraft();
-	std::cout << "[Null] Minecraft Created" << "\n";
+	std::cout << "[Debug] Minecraft Created" << "\n";
 	this->moduleManager = new CModuleManager();
 	this->eventBus = new CSimpleEventManager();
 	this->moduleManager->registerModules();
 
 	//Modules Setup
 
-	std::cout << "[Null] Event Manager and Modules Setup" << "\n";
+	std::cout << "[Debug] Event Manager and Modules Setup" << "\n";
 
 	//I HATE HOOKS
 

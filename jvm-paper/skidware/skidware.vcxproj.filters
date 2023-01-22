@@ -62,6 +62,9 @@
     <Filter Include="sdk\util\obf">
       <UniqueIdentifier>{0631a3ec-101e-4c30-acd4-6e456ff5b8e2}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\util\Math">
+      <UniqueIdentifier>{45642c3a-caa5-4438-aee3-3b5ddd742038}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -232,6 +235,15 @@
     <ClInclude Include="CStrafeModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </ClInclude>
+    <ClInclude Include="mathUtil.h">
+      <Filter>sdk\util\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="CAimAssistModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CVelocityModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -338,6 +350,12 @@
     </ClCompile>
     <ClCompile Include="CStrafeModule.cpp">
       <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CAimAssistModule.cpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="CVelocityModule.cpp">
+      <Filter>modules\impl\combat</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
