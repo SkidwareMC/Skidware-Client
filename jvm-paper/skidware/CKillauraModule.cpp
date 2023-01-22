@@ -25,5 +25,5 @@ void CKillauraModule::onEvent(const CSimpleEvent* event) {
 
 void CKillauraModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
 }

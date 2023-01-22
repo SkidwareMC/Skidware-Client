@@ -10,6 +10,7 @@ typedef struct CSpeedModule : CModule {
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
+	float multiplier;
 };
 
 #endif //CSpeedModule_HPP_GUARD

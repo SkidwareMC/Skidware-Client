@@ -23,3 +23,8 @@ void CStrafeModule::onEvent(const CSimpleEvent* event) {
 		}
 	}
 }
+
+void CStrafeModule::renderSettings()
+{
+	ImGui::Checkbox("OnlyInAir", &onlyInAir);
+}

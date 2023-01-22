@@ -26,5 +26,5 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 
 void CSpeedModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
 }

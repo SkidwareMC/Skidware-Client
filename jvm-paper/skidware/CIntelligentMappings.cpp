@@ -1,4 +1,5 @@
 #include "CIntelligentMappings.hpp"
+#include "wrapper.h"
 
 std::string CIntelligentMappedClass::name() {
 	return CCheat::getInstance()->getMinecraftType() == CMinecraftType::FORGE ? this->_names[this->_unmappedName].first : 
@@ -33,7 +34,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*        Minecraft        */
 
 		/*-------------------------*/
-
+		out::display("Minecraft");
+		Sleep(500);
 		CIntelligentMappedField thePlayerField = make_field("player", "Lnet/minecraft/client/entity/EntityPlayerSP;",
 			"field_71439_g", "h", "Lnet/minecraft/client/entity/EntityPlayerSP;", "Lbud;");
 		CIntelligentMappedField fontRendererField = make_field("fontRenderer", "Lnet/minecraft/client/gui/FontRenderer;",
@@ -51,7 +53,7 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedField isGameHadFocusField = make_field("isGameHasFocus", "Z", "field_71415_G", "w", "Z", "Z");
 		CIntelligentMappedClass minecraftKlass = make_klass("net.minecraft.client.Minecraft",
 			"net.minecraft.client.Minecraft", "bib", std::vector({ thePlayerField, fontRendererField, entityRendererField,
-				gameSettingsField, Minecraft__theWorldField, playerControllerField }), std::vector({ getMinecraftMethod }));
+				gameSettingsField, Minecraft__theWorldField, playerControllerField, isGameHadFocusField }), std::vector({ getMinecraftMethod }));
 		_klasses.push_back(minecraftKlass);
 
 		/*-------------------------*/
@@ -59,7 +61,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*      EntityPlayerSP     */
 
 		/*-------------------------*/
-
+		out::display("Player");
+		Sleep(500);
 		CIntelligentMappedField onGroundField = make_field("onGround", "Z",
 			"field_70122_E", "z", "Z", "Z");
 
@@ -68,8 +71,10 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedField moveStrafingField = make_field("moveStrafing", "F",
 			"field_70702_br", "be", "F", "F");
 
-		CIntelligentMappedField rotationYawField = make_field("rotationYaw", "F",
+		CIntelligentMappedField headRotationYawField = make_field("headRotationYaw", "F",
 			"field_70759_as", "aP", "F", "F");
+
+		CIntelligentMappedField rotationYawField = make_field("rotationYaw", "F", "field_70177_z", "v", "F", "F");
 
 		CIntelligentMappedField motionXField = make_field("motionX", "D",
 			"field_70159_w", "s", "D", "D");
@@ -87,11 +92,11 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedMethod jumpMethod = make_method("jump", "()V",
 			"func_70664_aZ", "cu", "()V", "()V");
 
-		// CIntelligentMappedField hurttimeField = make_field("hurttime", "I", "field_70737_aN", "ay", "I", "I");
+		CIntelligentMappedField hurttimeField = make_field("hurttime", "I", "field_70737_aN", "ay", "I", "I");
 
 		CIntelligentMappedClass playerKlass = make_klass("net.minecraft.client.entity.EntityPlayerSP",
 			"net.minecraft.client.entity.EntityPlayerSP", "bud", std::vector({ onGroundField, moveForwardField,
-				moveStrafingField, rotationYawField, motionXField, motionYField, motionZField, movementInputField, theWorldField }),
+				moveStrafingField, headRotationYawField, motionXField, motionYField, motionZField, hurttimeField,rotationYawField, movementInputField, theWorldField}),
 			std::vector({ jumpMethod }));
 		_klasses.push_back(playerKlass);
 
@@ -100,7 +105,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*       FontRenderer      */
 
 		/*-------------------------*/
-
+		out::display("FontRender");
+		Sleep(500);
 		CIntelligentMappedMethod drawStringWithShadowMethod = make_method("drawStringWithShadow", "(Ljava/lang/String;FFI)I",
 			"func_175063_a", "a", "(Ljava/lang/String;FFI)I", "(Ljava/lang/String;FFI)I");
 		CIntelligentMappedField fontHeightField = make_field("FONT_HEIGHT", "I",
@@ -114,7 +120,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*     EntityRenderer      */
 
 		/*-------------------------*/
-
+		out::display("EntityRender");
+		Sleep(500);
 		CIntelligentMappedMethod setupOverlayRenderingMethod = make_method("setupOverlayRendering", "()V",
 			"func_78478_c", "j", "()V", "()V");
 		CIntelligentMappedField bossColorModifierPrevField = make_field("bossColorModifierPrev", "F",
@@ -128,7 +135,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*     MovementInput       */
 
 		/*-------------------------*/
-
+		out::display("MoveIn");
+		Sleep(500);
 		CIntelligentMappedField moveStrafeField = make_field("moveStrafe", "F",
 			"field_78902_a", "a", "F", "F");
 		CIntelligentMappedField MovementInput__moveForwardField = make_field("moveForward", "F",
@@ -144,7 +152,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*       KeyBinding        */
 
 		/*-------------------------*/
-
+		out::display("KeyBind");
+		Sleep(500);
 		CIntelligentMappedField pressedField = make_field("pressed", "Z",
 			"field_74513_e", "i", "Z", "Z");
 		CIntelligentMappedField keyCodeField = make_field("keyCode", "I",
@@ -160,7 +169,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*      GameSettings       */
 
 		/*-------------------------*/
-
+		out::display("GameSets");
+		Sleep(500);
 		CIntelligentMappedField keyBindForwardField = make_field("keyBindForward", "Lnet/minecraft/client/settings/KeyBinding;",
 			"field_74351_w", "T", "Lnet/minecraft/client/settings/KeyBinding;", "Lbhy;");
 		CIntelligentMappedField keyBindBackField = make_field("keyBindBack", "Lnet/minecraft/client/settings/KeyBinding;",
@@ -184,7 +194,8 @@ void CIntelligentMappings::init(Version ver) {
 		/*    PlayerController     */
 
 		/*-------------------------*/
-
+		out::display("PlayerCtrl");
+		Sleep(500);
 		CIntelligentMappedField nullField = make_field("(null)", "(null)",
 			"(null)", "(null)", "x.x", "Default string");
 		CIntelligentMappedMethod attackEntityMethod = make_method("attackEntity", "(Lnet/minecraft/entity/player/EntityPlayer;Lnet/minecraft/entity/Entity;)V",
@@ -216,18 +227,19 @@ void CIntelligentMappings::init(Version ver) {
 
 		/*        Minecraft        */
 
-		/*-------------------------
+		/*------------------------- 
+		//Done
 
 		CIntelligentMappedField thePlayerField = make_field("player", "Lnet/minecraft/client/entity/EntityPlayerSP;",
-			"field_71439_g", "h", "Lnet/minecraft/client/entity/EntityPlayerSP;", "Lbud;");
+			"field_70475_c", "h", "Lnet/minecraft/client/entity/EntityPlayerSP;", "Lbud;");
 		CIntelligentMappedField fontRendererField = make_field("fontRenderer", "Lnet/minecraft/client/gui/FontRenderer;",
 			"field_71466_p", "k", "Lnet/minecraft/client/gui/FontRenderer", "Lbip;");
 		CIntelligentMappedField entityRendererField = make_field("entityRenderer", "Lnet/minecraft/client/renderer/EntityRenderer;",
 			"field_71460_t", "o", "Lnet/minecraft/client/renderer/EntityRenderer;", "Lbuq;");
 		CIntelligentMappedField gameSettingsField = make_field("gameSettings", "Lnet/minecraft/client/settings/GameSettings;",
-			"field_71474_y", "t", "Lnet/minecraft/client/settings/GameSettings;", "Lbid;");
+			"field_71474_y", "y", "Lnet/minecraft/client/settings/GameSettings;", "Lbid;");
 		CIntelligentMappedMethod getMinecraftMethod = make_method("getMinecraft", "()Lnet/minecraft/client/Minecraft;",
-			"func_71410_x", "z", "()Lnet/minecraft/client/Minecraft;", "()Lbib;");
+			"func_71410_x", "A", "()Lnet/minecraft/client/Minecraft;", "()Lbib;");
 		CIntelligentMappedField Minecraft__theWorldField = make_field("world", "Lnet/minecraft/client/multiplayer/WorldClient;",
 			"field_71441_e", "f", "Lbsb;", "Lnet/minecraft/client/multiplayer/WorldClient;");
 		CIntelligentMappedField playerControllerField = make_field("playerController", "Lnet/minecraft/client/multiplayer/PlayerControllerMP;",
@@ -245,15 +257,15 @@ void CIntelligentMappings::init(Version ver) {
 		/*-------------------------
 
 		CIntelligentMappedField onGroundField = make_field("onGround", "Z",
-			"field_70122_E", "z", "Z", "Z");
+			"field_149474_g", "C", "Z", "Z");
 
 		CIntelligentMappedField moveForwardField = make_field("moveForward", "F",
-			"field_191988_bg", "bg", "F", "F");
+			"field_78900_b", "b", "F", "F");
 		CIntelligentMappedField moveStrafingField = make_field("moveStrafing", "F",
-			"field_70702_br", "be", "F", "F");
+			"field_78902_a", "a", "F", "F");
 
 		CIntelligentMappedField rotationYawField = make_field("rotationYaw", "F",
-			"field_70759_as", "aP", "F", "F");
+			"field_70177_z", "y", "F", "F");
 
 		CIntelligentMappedField motionXField = make_field("motionX", "D",
 			"field_70159_w", "s", "D", "D");
@@ -267,6 +279,8 @@ void CIntelligentMappings::init(Version ver) {
 
 		CIntelligentMappedField movementInputField = make_field("movementInput", "Lnet/minecraft/util/MovementInput;",
 			"field_71158_b", "e", "Lnet/minecraft/util/MovementInput;", "Lbub;");
+
+		CIntelligentMappedField hurtTimeField = make_field("hurtTime", "I", "field_70737_aN", "au", "I", "I");
 
 		CIntelligentMappedMethod jumpMethod = make_method("jump", "()V",
 			"func_70664_aZ", "cu", "()V", "()V");

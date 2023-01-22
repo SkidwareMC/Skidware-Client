@@ -156,7 +156,7 @@ void start() {
 		bool valid = MathUtil(emanresu.data(), yek.data());
 
 	if (!valid) {
-		out::display("Key is Invalid. Please try again.");
+		out::display(xorstr_("Key is Invalid. Please try again."));
 		goto login;
 		tries++;
 		if (tries >= 15) {
@@ -174,22 +174,22 @@ void start() {
 	if (GetModuleInfo("jvm.dll", &handle, &base, &size)) {
 		MH_Initialize();
 		std::cout << "[2/5] MinHook initilized" << "\n";
-		Sleep(1500);
+		Sleep(500);
 		ORIG_JNI_GetCreatedJavaVMs = reinterpret_cast<_JNI_GetCreatedJavaVMs>(GetProcAddress(reinterpret_cast<HMODULE>(handle), "JNI_GetCreatedJavaVMs"));
 		JavaVM* javavm;
 		ORIG_JNI_GetCreatedJavaVMs(&javavm, 1, nullptr);
 		std::cout << "[3/5] JVM Created" << "\n";
-		Sleep(1500);
+		Sleep(500);
 		javavm->AttachCurrentThread(reinterpret_cast<void**>(&env), nullptr);
 		std::cout << "[4/5] Thread Attached" << "\n";
-		Sleep(1500);
+		Sleep(500);
 		jvmtiEnv* jvmti_env;
 		javavm->GetEnv(reinterpret_cast<void**>(&jvmti_env), JVMTI_VERSION);
 		std::cout << "[5/5] Java Enviroment Created" << "\n";
-		Sleep(1500);
+		Sleep(500);
 		if (env) {
 			std::cout << "Starting..." << "\n";
-			Sleep(1500);
+			Sleep(500);
 			CCheat* cheat = new CCheat(env, javavm);
 			std::cout << "Cheat Instance created" << "\n";
 			Sleep(500);
