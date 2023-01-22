@@ -25,8 +25,9 @@ typedef struct CPlayer {
 	jni_ptr<double> motionZ = make_jni_ptr<double>(this->_klass, "", "D");
 	
 	jni_ptr<float> rotationYaw = make_jni_ptr<float>(this->_klass, "", "F");
-	jni_ptr<int> hurtTime = make_jni_ptr<int>(this->_klass, "", "I");
 	jni_ptr<float> headRotationYaw = make_jni_ptr<float>(this->_klass, "", "F");
+
+	jni_ptr<int> hurtTime = make_jni_ptr<int>(this->_klass, "", "I");
 
 
 	CMovementInput* movementInput = nullptr;
