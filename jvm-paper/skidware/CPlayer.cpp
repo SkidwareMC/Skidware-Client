@@ -43,7 +43,9 @@ float CPlayer::getSpeed() {
 }
 
 void CPlayer::jump() {
-	CUtils::CallMethod<void>(this->_klass, "jump", "()V");
+	CIntelligentMappedClass playerClass = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
+	CUtils::CallMethod<void>(this->_klass, playerClass.getMethod("jump").name(),
+	playerClass.getMethod("jump").signature());
 }
 
 double CPlayer::getDirection() {
