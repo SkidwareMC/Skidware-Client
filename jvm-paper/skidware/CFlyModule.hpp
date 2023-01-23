@@ -14,7 +14,7 @@ typedef struct CFlyModule : CModule {
 
 };
 
-static const char* modes[] = { "Hypixel", "Spartan" };
-static const char* current_mode = "Spartan";
+static inline const char* fly_modes[] = { "Keep-Y", "Spartan" };
+static inline const char* fly_current_mode = "Spartan";
 
 #endif //CFLYMODULE_HPP_GUARD

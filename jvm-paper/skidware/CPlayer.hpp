@@ -29,6 +29,8 @@ typedef struct CPlayer {
 
 	jni_ptr<int> hurtTime = make_jni_ptr<int>(this->_klass, "", "I");
 
+	jni_ptr<float> speedInAir = make_jni_ptr<float>(this->_klass, "", "F");
+
 
 	CMovementInput* movementInput = nullptr;
 	CWorld* theWorld = nullptr;
@@ -40,6 +42,7 @@ typedef struct CPlayer {
 	bool isMovingForwardOrBackwards();
 	float getSpeed();
 	void jump();
+	void setSprint(bool state);
 	jobject GetKlass() {
 		return this->_klass;
 	}

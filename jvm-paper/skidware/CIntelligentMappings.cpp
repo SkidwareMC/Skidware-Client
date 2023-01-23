@@ -94,10 +94,14 @@ void CIntelligentMappings::init(Version ver) {
 
 		CIntelligentMappedField hurttimeField = make_field("hurttime", "I", "field_70737_aN", "ay", "I", "I");
 
+		CIntelligentMappedField speedInAirField = make_field("speedInAir", "F", "field_71102_ce", "bT", "F", "F");
+
+		CIntelligentMappedMethod setSprintMethod = make_method("setSprint", "(Z)V", "func_70031_b", "f", "(Z)V", "(Z)V");
+
 		CIntelligentMappedClass playerKlass = make_klass("net.minecraft.client.entity.EntityPlayerSP",
 			"net.minecraft.client.entity.EntityPlayerSP", "bud", std::vector({ onGroundField, moveForwardField,
-				moveStrafingField, headRotationYawField, motionXField, motionYField, motionZField, hurttimeField,rotationYawField, movementInputField, theWorldField}),
-			std::vector({ jumpMethod }));
+				moveStrafingField, headRotationYawField, speedInAirField, motionXField, motionYField, motionZField, hurttimeField, rotationYawField, movementInputField, theWorldField}),
+			std::vector({ jumpMethod, setSprintMethod }));
 		_klasses.push_back(playerKlass);
 
 		/*-------------------------*/

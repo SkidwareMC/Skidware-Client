@@ -7,7 +7,7 @@
 typedef struct CPlayerController {
 	CPlayerController(jobject);
 	~CPlayerController();
-
+	void attackEntity();
 	jobject GetKlass() {
 		return this->_klass;
 	}

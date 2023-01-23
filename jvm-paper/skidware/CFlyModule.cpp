@@ -22,7 +22,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
 		CMinecraft* mc = CCheat::theMinecraft;
 
-		if (current_mode == "Spartan")
+		if (fly_current_mode == "Spartan")
 			mc->thePlayer->motionX = 0;
 			mc->thePlayer->motionY = -0.1;
 			mc->thePlayer->motionZ = 0;
@@ -34,22 +34,25 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 			}
 
 			if (mc->gameSettings->keyBindJump->pressed) {
-				out::display("Jumped");
 				mc->thePlayer->motionY = 0.7;
 			}
 			if (mc->gameSettings->keyBindSneak->pressed) {
 				mc->thePlayer->motionY = -0.5;
 			}
 
-		else if (current_mode == "Hypixel")
+		else if (fly_current_mode == "Keep-Y")
 		{
+				ImGui::Separator();
 				mc->thePlayer->motionX = 0;
 				mc->thePlayer->motionY = 0;
 				mc->thePlayer->motionZ = 0;
 				if (mc->gameSettings->isAnyKeyDown()) {
 					if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
-						mc->thePlayer->strafe(2);
+						mc->thePlayer->strafe(mc->thePlayer->getSpeed()*1.05);
 					}
+				}
+				if (mc->gameSettings->keyBindSneak->pressed) {
+					mc->thePlayer->motionY = 0;
 				}
 		}
 	} 
@@ -60,13 +63,13 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 void CFlyModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##combo", current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("##combo", fly_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
-		for (int n = 0; n < IM_ARRAYSIZE(modes); n++)
+		for (int n = 0; n < IM_ARRAYSIZE(fly_modes); n++)
 		{
-			bool is_selected = (current_mode == modes[n]); // You can store your selection however you want, outside or inside your objects
-			if (ImGui::Selectable(modes[n], is_selected))
-				current_mode = modes[n];
+			bool is_selected = (fly_current_mode == fly_modes[n]); // You can store your selection however you want, outside or inside your objects
+			if (ImGui::Selectable(fly_modes[n], is_selected))
+				fly_current_mode = fly_modes[n];
 			if (is_selected)
 				ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
 		}

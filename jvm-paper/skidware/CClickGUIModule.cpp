@@ -30,60 +30,15 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
+		
+
+		ImGui::Begin("Skidware", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
 		ImGui::Text("Skidware");
-
-		ImGui::Begin("Movement", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-
+		ImGui::Text("Smellon#8460");
+		ImGui::Text("NoSword#8418");
 		for (CModule* module : CCheat::moduleManager->modules) {
-			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == MOVEMENT) {
-				if (ImGui::Button(module->name.c_str())) module->toggle();
-				module->setState(module->state);
-				module->renderSettings();
-			}
-
-				// if (ImGui::Button(module->name.c_str())) module->toggle();
-		}
-
-		ImGui::End();
-
-		ImGui::Begin("Misc", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-
-		for (CModule* module : CCheat::moduleManager->modules) {
-			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == MISC) {
-				if (ImGui::Button(module->name.c_str())) module->toggle();
-				module->setState(module->state);
-				module->renderSettings();
-			}
-		}
-
-		ImGui::End();
-
-		ImGui::Begin("Render", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-
-		for (CModule* module : CCheat::moduleManager->modules) {
-			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == RENDER) {
-				if (ImGui::Button(module->name.c_str())) module->toggle();
-				module->setState(module->state);
-				module->renderSettings();
-			}
-				// if (ImGui::Button(module->name.c_str())) module->toggle();
-		}
-
-		ImGui::End();
-
-		ImGui::Begin("Combat", nullptr, ImGuiWindowFlags_NoResize | ImGuiWindowFlags_AlwaysAutoResize);
-
-		for (CModule* module : CCheat::moduleManager->modules) {
-			//ImGui::Checkbox(module->name.c_str(), &module->state);
-			if (module->catagory == COMBAT) {
-				if (ImGui::Button(module->name.c_str())) module->toggle();
-				module->setState(module->state);
-				module->renderSettings();
-			}
-			// if (ImGui::Button(module->name.c_str())) module->toggle();
+			if (ImGui::Button(module->name.c_str())) module->toggle();
+			module->renderSettings();
 		}
 
 		ImGui::End();

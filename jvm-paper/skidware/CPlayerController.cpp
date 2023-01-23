@@ -9,3 +9,7 @@ CPlayerController::~CPlayerController() {
 	CCheat::getInstance()->env->DeleteLocalRef(this->_klass);
 }
 
+void CPlayerController::attackEntity() {
+	CUtils::CallMethod<void>()
+}
+

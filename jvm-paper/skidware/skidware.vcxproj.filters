@@ -65,6 +65,9 @@
     <Filter Include="sdk\util\Math">
       <UniqueIdentifier>{45642c3a-caa5-4438-aee3-3b5ddd742038}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\impl\Misc">
+      <UniqueIdentifier>{709cb20c-532c-4223-9920-2cac15f43244}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -241,8 +244,11 @@
     <ClInclude Include="CAimAssistModule.hpp">
       <Filter>modules\impl\combat</Filter>
     </ClInclude>
-    <ClInclude Include="CVelocityModule.hpp">
+    <ClInclude Include="CAntiKBModule.hpp">
       <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="NoFall.hpp">
+      <Filter>modules\impl\Misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -354,8 +360,16 @@
     <ClCompile Include="CAimAssistModule.cpp">
       <Filter>modules\impl\combat</Filter>
     </ClCompile>
-    <ClCompile Include="CVelocityModule.cpp">
+    <ClCompile Include="CAntiKBModule.cpp">
       <Filter>modules\impl\combat</Filter>
     </ClCompile>
+    <ClCompile Include="CAutoSprintModule.cpp">
+      <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CAutoSprintModule.hpp">
+      <Filter>modules\impl\movement</Filter>
+    </None>
   </ItemGroup>
 </Project>

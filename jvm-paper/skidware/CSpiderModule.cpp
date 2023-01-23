@@ -25,4 +25,5 @@ void CSpiderModule::onEvent(const CSimpleEvent* event) {
 
 void CSpiderModule::renderSettings()
 {
+	ImGui::Separator();
 }

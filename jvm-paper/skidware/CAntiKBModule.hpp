@@ -1,20 +1,19 @@
 #pragma once
-#ifndef CCVELOCITYMODULE_HPP_GUARD
-#define CAIVELOCITYMODULE_HPP_GUARD
+#ifndef CANTIKBMODULE_HPP_GUARD
+#define CANTIKBMODULE_HPP_GUARD
 
 
 #include "CModule.hpp"
 #include "CCheat.hpp"
 #include "mathUtil.h"
+#include "wrapper.h"
 
-typedef struct CVelocityModule : CModule {
-	CVelocityModule();
+typedef struct CAntiKBModule : CModule {
+	CAntiKBModule();
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
-	double horizontal = 0;
-	double vertical = 0;
-} CVelocityModule;
+} CAntiKBModule;
 
-#endif // !CCLICKERMODULE_HPP_GUARD
+#endif // !ANTIKBMODULE_CGUARD

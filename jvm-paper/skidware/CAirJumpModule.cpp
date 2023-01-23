@@ -12,7 +12,7 @@ void CAirJumpModule::onEvent(const CSimpleEvent* event) {
 
 void CAirJumpModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
 }
 
 void CAirJumpModule::onEnable() {

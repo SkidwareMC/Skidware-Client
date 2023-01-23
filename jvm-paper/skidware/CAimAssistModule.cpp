@@ -2,7 +2,7 @@
 
 CAimAssistModule::CAimAssistModule() : CModule("Rotation", 'I', COMBAT)
 {
-	float yaw;
+	float yaw = 0.0;
 }
 
 void CAimAssistModule::onEnable()
@@ -18,9 +18,9 @@ void CAimAssistModule::onDisable()
 void CAimAssistModule::onEvent(const CSimpleEvent*)
 {
 	CMinecraft* mc = CCheat::theMinecraft;
-	for (CPlayer* entityPlayer : mc->theWorld->getPlayers()) {
+	//for (CPlayer* entityPlayer : mc->theWorld->getPlayers()) {
 
-	}
+	//}
 		mc->thePlayer->headRotationYaw = 90;
 }
 

@@ -1,6 +1,7 @@
 #include "CCheat.hpp"
 #include "CModuleManager.hpp"
 #include "CClickGUIModule.hpp"
+#include "wrapper.h"
 
 namespace ImGui {
 	void setColors() {
@@ -287,7 +288,11 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 	this->theMinecraft = new CMinecraft();
 	std::cout << "[Debug] Minecraft Created" << "\n";
 	this->moduleManager = new CModuleManager();
+	out::display("Module Manager");
+	Sleep(500);
 	this->eventBus = new CSimpleEventManager();
+	out::display("EventManager... ");
+	Sleep(500);
 	this->moduleManager->registerModules();
 
 	//Modules Setup

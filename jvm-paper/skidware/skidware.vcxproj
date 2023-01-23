@@ -166,6 +166,8 @@
   <ItemGroup>
     <ClCompile Include="CAimAssistModule.cpp" />
     <ClCompile Include="CAirJumpModule.cpp" />
+    <ClCompile Include="CAntiKBModule.cpp" />
+    <ClCompile Include="CAutoSprintModule.cpp" />
     <ClCompile Include="CCheat.cpp" />
     <ClCompile Include="CClickerModule.cpp" />
     <ClCompile Include="CClickGUIModule.cpp" />
@@ -187,7 +189,6 @@
     <ClCompile Include="CSpeedModule.cpp" />
     <ClCompile Include="CStrafeModule.cpp" />
     <ClCompile Include="CUtils.cpp" />
-    <ClCompile Include="CVelocityModule.cpp" />
     <ClCompile Include="CWorld.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="imgui\imgui.cpp" />
@@ -205,6 +206,7 @@
   <ItemGroup>
     <ClInclude Include="CAimAssistModule.hpp" />
     <ClInclude Include="CAirJumpModule.hpp" />
+    <ClInclude Include="CAntiKBModule.hpp" />
     <ClInclude Include="CArray.hpp" />
     <ClInclude Include="CCheat.hpp" />
     <ClInclude Include="CClickerModule.hpp" />
@@ -237,7 +239,6 @@
     <ClInclude Include="CSymbol.hpp" />
     <ClInclude Include="CUniqueReference.hpp" />
     <ClInclude Include="CUtils.hpp" />
-    <ClInclude Include="CVelocityModule.hpp" />
     <ClInclude Include="CWorld.hpp" />
     <ClInclude Include="imgui\imconfig.h" />
     <ClInclude Include="imgui\imgui.h" />
@@ -260,8 +261,12 @@
     <ClInclude Include="minhook\hde\table64.h" />
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
+    <ClInclude Include="NoFall.hpp" />
     <ClInclude Include="wrapper.h" />
     <ClInclude Include="xorstr.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CAutoSprintModule.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

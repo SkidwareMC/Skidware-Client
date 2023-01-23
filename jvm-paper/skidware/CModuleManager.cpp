@@ -9,7 +9,8 @@
 #include "CClickerModule.hpp"
 #include "CStrafeModule.hpp"
 #include "CAimAssistModule.hpp"
-#include "CVelocityModule.hpp"
+#include "CAntiKBModule.hpp"
+#include "CAutoSprintModule.hpp"
 
 void CModuleManager::registerModules() {
 	this->registerModule(new CAirJumpModule());
@@ -22,5 +23,6 @@ void CModuleManager::registerModules() {
 	this->registerModule(new CClickerModule());
 	this->registerModule(new CStrafeModule());
 	this->registerModule(new CAimAssistModule());
-	this->registerModule(new CVelocityModule());
+	this->registerModule(new CAntiKBModule());
+	this->registerModule(new CAutoSprintModule());
 }
