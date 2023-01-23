@@ -8,8 +8,9 @@ CPlayerController::CPlayerController(jobject klass) : _klass(klass) {
 CPlayerController::~CPlayerController() {
 	CCheat::getInstance()->env->DeleteLocalRef(this->_klass);
 }
-
-void CPlayerController::attackEntity() {
+/*
+void CPlayerController::attackEntity(CPlayer* player, ) {
 	CUtils::CallMethod<void>()
 }
 
+*/
