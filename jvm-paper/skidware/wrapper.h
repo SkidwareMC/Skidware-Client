@@ -8,3 +8,11 @@ namespace out {
 		std::cout << str << std::endl;
 	}
 }
+
+namespace misc {
+	void thread(void* x) {
+
+		CreateThread(0, 0, (LPTHREAD_START_ROUTINE)x, 0, 0, 0);
+
+	}
+}

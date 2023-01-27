@@ -17,8 +17,12 @@ void CStrafeModule::onDisable() {
 void CStrafeModule::onEvent(const CSimpleEvent* event) {
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
 		CMinecraft* mc = CCheat::theMinecraft;
-
-		if (!mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+		if (onlyInAir) {
+			if (!mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+				mc->thePlayer->strafe(mc->thePlayer->getSpeed());
+			}
+		}
+		if (mc->gameSettings->isAnyKeyDown()) {
 			mc->thePlayer->strafe(mc->thePlayer->getSpeed());
 		}
 	}
@@ -26,5 +30,6 @@ void CStrafeModule::onEvent(const CSimpleEvent* event) {
 
 void CStrafeModule::renderSettings()
 {
+	ImGui::Separator();
 	ImGui::Checkbox("OnlyInAir", &onlyInAir);
 }

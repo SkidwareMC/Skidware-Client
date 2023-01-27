@@ -10,7 +10,8 @@ CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 						CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("motionZ").name(), "D"), headRotationYaw(klass,
 							CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("headRotationYaw").name(), "F"), rotationYaw(klass,
 								CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"), hurtTime(klass,
-									CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("hurttime").name(), "I"){
+									CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("hurttime").name(), "I"), speedInAir(klass,
+										CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("speedInAir").name(), "I") {
 	this->_klass = klass;
 	CIntelligentMappedClass intelligent = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
 	this->movementInput = new CMovementInput(CUtils::GetField<jobject>(this->_klass,
@@ -47,6 +48,11 @@ void CPlayer::jump() {
 	CUtils::CallMethod<void>(this->_klass, playerClass.getMethod("jump").name(),
 	playerClass.getMethod("jump").signature());
 }
+void CPlayer::setSprint(bool state) {
+	CIntelligentMappedClass playerClass = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
+	CUtils::CallMethod<void>(this->_klass, playerClass.getMethod("setSprint").name(),
+	playerClass.getMethod("setSprint").signature(), state);
+}
 
 double CPlayer::getDirection() {
 	float rotationYaw = this->rotationYaw;
@@ -81,5 +87,12 @@ void CPlayer::strafe(float speed) {
 }
 
 bool CPlayer::IsHurt() {
-	return true; // this->hurtTime > 0;;
+	return this->hurtTime > 0;
+}
+
+bool CPlayer::isCollidedHorizontally() {
+	CMinecraft* mc = CCheat::theMinecraft;
+	if (mc->gameSettings->isAnyKeyDown() && (motionX == 0 || motionZ == 0))
+		return true;
+	return false;
 }

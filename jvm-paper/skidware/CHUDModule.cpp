@@ -1,5 +1,7 @@
 #include "CHUDModule.hpp"
 #include "CCheat.hpp"
+#include "CFlyModule.hpp"
+#include "CSpeedModule.hpp"
 
 CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER) {
 	this->toggle();
@@ -195,6 +197,12 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 				glPopMatrix();
 				float yPos = 25;
 				for (CModule* module : CCheat::moduleManager->modules) {
+					/*
+					if (module->state == false) {
+						continue;
+					}
+					*/
+
 					glPushMatrix();
 					glScalef(2, 2, 2);
 					CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name + " [" + MapSpecialKeyToString(module->keyBind) + "]", 4,

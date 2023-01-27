@@ -14,6 +14,7 @@ typedef struct CModule : CEventListener {
 	bool state = false;
 	int keyBind = 0x0;
 	CATAGORY catagory;
+
 protected:
 	CModule(std::string name, int keyBind, CATAGORY catagory);
 public:

@@ -14,7 +14,11 @@ std::vector<CIntelligentMappedClass> CIntelligentMappings::_klasses;
 
 CMinecraft::CMinecraft() {
 	theMinecraft = this;
+	printf("creating Minecraft class\n");
+	Sleep(500);
 	CIntelligentMappedClass minecraftClass = CIntelligentMappings::getClass("net.minecraft.client.Minecraft");
+	printf("Getting player field\n");
+	Sleep(500);
 	jobject thePlayerField = CUtils::GetField<jobject>(getNativeMinecraft(),
 		minecraftClass.getField("player").name(), minecraftClass.getField("player").signature());
 	if (thePlayerField) {

@@ -49,7 +49,7 @@ public:
 	static inline CMinecraft* theMinecraft = nullptr;
 	static inline CModuleManager* moduleManager = nullptr;
 	static inline CSimpleEventManager* eventBus = nullptr;
-	std::string version = "b0.2"; //alpha
+	std::string version = "b0.3"; //alpha
 } CCheat;
 
 #endif //CCHEAT_HPP_GUARD
