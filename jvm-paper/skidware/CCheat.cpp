@@ -194,7 +194,8 @@ int __stdcall HOOKED_wglSwapBuffers(HDC a1) {
 	//}
 	if (firstRun) {
 		HWND minecraftWindow = FindWindowA("LWJGL", nullptr);
-
+		
+		IMGUI_CHECKVERSION();
 		ImGui::CreateContext();
 		ImGui::setColors();
 		ImGui_ImplWin32_Init(minecraftWindow);

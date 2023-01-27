@@ -3,11 +3,14 @@
 #pragma once
 
 #include "common.h"
+#include "CPlayer.hpp"
 
 typedef struct CPlayerController {
 	CPlayerController(jobject);
 	~CPlayerController();
-	void attackEntity();
+
+	void attackEntity(CPlayer* player, CPlayer* target);
+
 	jobject GetKlass() {
 		return this->_klass;
 	}

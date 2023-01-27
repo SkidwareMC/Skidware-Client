@@ -19,12 +19,14 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 		CMinecraft* mc = CCheat::theMinecraft;
 
 		if (speed_current_mode == "Spartan BHop") {
-			if (!mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+			if (mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+				mc->thePlayer->jump();
 				mc->thePlayer->strafe(mc->thePlayer->getSpeed() * 1.05);
 			}
 		}
 		else if (speed_current_mode == "AAC BHop") {
-			if (!mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+			if (mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+				mc->thePlayer->jump();
 				mc->thePlayer->strafe(mc->thePlayer->getSpeed() * 1.003);
 			}
 		}
@@ -34,6 +36,20 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 				mc->thePlayer->jump();
 			} else {
 				mc->thePlayer->motionY = -0.203;
+			}
+		}
+		/*
+		        if (mc.thePlayer.onGround) {
+					MovementUtils.strafe(1.1F);
+					mc.thePlayer.motionY = 0.44D;
+					return;
+				}
+		*/
+
+		else if (speed_current_mode == "Spectre BHop") {
+			if (mc->thePlayer->onGround) {
+				mc->thePlayer->strafe(1.1);
+				mc->thePlayer->motionY = 0.44;
 			}
 		}
 	}

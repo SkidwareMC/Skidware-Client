@@ -12,7 +12,7 @@ typedef struct CSpeedModule : CModule {
 	virtual void renderSettings();
 	float multiplier;
 };
-static const char* speed_modes[] = { "AAC BHop", "Spartan BHop", "MineGuard Y-Port"};
+static const char* speed_modes[] = { "AAC BHop", "Spartan BHop", "MineGuard Y-Port", "Spectre BHop"};
 static const char* speed_current_mode = "Spartan BHop";
 
 #endif //CSpeedModule_HPP_GUARD

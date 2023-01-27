@@ -87,5 +87,12 @@ void CPlayer::strafe(float speed) {
 }
 
 bool CPlayer::IsHurt() {
-	return this->hurtTime > 0 && this->hurtTime < 5;
+	return this->hurtTime > 0;
+}
+
+bool CPlayer::isCollidedHorizontally() {
+	CMinecraft* mc = CCheat::theMinecraft;
+	if (mc->gameSettings->isAnyKeyDown() && (motionX == 0 || motionZ == 0))
+		return true;
+	return false;
 }

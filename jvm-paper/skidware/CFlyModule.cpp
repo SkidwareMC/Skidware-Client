@@ -42,17 +42,11 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 
 		else if (fly_current_mode == "Keep-Y")
 		{
-				ImGui::Separator();
 				mc->thePlayer->motionX = 0;
 				mc->thePlayer->motionY = 0;
 				mc->thePlayer->motionZ = 0;
 				if (mc->gameSettings->isAnyKeyDown()) {
-					if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
 						mc->thePlayer->strafe(mc->thePlayer->getSpeed()*1.05);
-					}
-				}
-				if (mc->gameSettings->keyBindSneak->pressed) {
-					mc->thePlayer->motionY = 0;
 				}
 		}
 	} 
@@ -63,7 +57,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 void CFlyModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##combo", fly_current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("##kombo", fly_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(fly_modes); n++)
 		{

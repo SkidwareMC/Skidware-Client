@@ -1,4 +1,5 @@
 #include "CAutoSprintModule.hpp"
+#include "wrapper.h"
 
 CAutoSprintModule::CAutoSprintModule() : CModule("AutoSprint", '[', MOVEMENT)
 {
@@ -17,8 +18,9 @@ void CAutoSprintModule::onDisable()
 void CAutoSprintModule::onEvent(const CSimpleEvent*)
 {
 	CMinecraft* mc = CCheat::theMinecraft;
-	if (mc->gameSettings->keyBindForward->pressed == true) {
+	if (mc->gameSettings->keyBindForward->isKeyDown()) {
 		mc->thePlayer->setSprint(true);
+		out::display("Sprint\n");
 	}
 }
 

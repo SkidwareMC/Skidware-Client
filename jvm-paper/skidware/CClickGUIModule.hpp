@@ -12,4 +12,10 @@ typedef struct CClickGUIModule : CModule {
 	virtual void renderSettings();
 };
 
+namespace gui {
+	static int tab;
+	extern ImVec4 clear_col;
+	float color[3];
+}
+
 #endif //CCLICKGUIMODULE_HPP_GUARD

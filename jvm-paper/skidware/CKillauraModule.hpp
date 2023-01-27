@@ -10,6 +10,6 @@ typedef struct CKillauraModule : CModule {
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
-} CKillauraModule;
+} CNoFallModule;
 
 #endif //CKILLAURAMODULE_HPP_GUARD

@@ -183,6 +183,7 @@
     <ClCompile Include="CModule.cpp" />
     <ClCompile Include="CModuleManager.cpp" />
     <ClCompile Include="CMovementInput.cpp" />
+    <ClCompile Include="CNoFallModule.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CPlayerController.cpp" />
     <ClCompile Include="CSpiderModule.cpp" />
@@ -261,7 +262,7 @@
     <ClInclude Include="minhook\hde\table64.h" />
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
-    <ClInclude Include="NoFall.hpp" />
+    <ClInclude Include="CNoFallModule.hpp" />
     <ClInclude Include="wrapper.h" />
     <ClInclude Include="xorstr.hpp" />
   </ItemGroup>

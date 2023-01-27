@@ -38,6 +38,7 @@ typedef struct CPlayer {
 	double getDirection();
 	void strafe(float);
 	bool IsHurt();
+	bool isCollidedHorizontally();
 	bool isStrafing();
 	bool isMovingForwardOrBackwards();
 	float getSpeed();

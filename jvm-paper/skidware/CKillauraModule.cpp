@@ -1,7 +1,7 @@
 #include "CKillauraModule.hpp"
 #include "CCheat.hpp"
 
-CKillauraModule::CKillauraModule() : CModule("KillAura", 'G', MISC) {
+CKillauraModule::CKillauraModule() : CModule("Destruct", '-', MISC) {
 
 }
 
@@ -17,7 +17,7 @@ void CKillauraModule::onEvent(const CSimpleEvent* event) {
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
 		CMinecraft* mc = CCheat::theMinecraft;
 		
-		for (CPlayer* entityPlayer : mc->theWorld->getPlayers()) {
+		for (CPlayer* entityPlayer : mc->thePlayer->theWorld->getPlayers()) {
 			continue;
 		}
 	}

@@ -247,7 +247,7 @@
     <ClInclude Include="CAntiKBModule.hpp">
       <Filter>modules\impl\combat</Filter>
     </ClInclude>
-    <ClInclude Include="NoFall.hpp">
+    <ClInclude Include="CNoFallModule.hpp">
       <Filter>modules\impl\Misc</Filter>
     </ClInclude>
   </ItemGroup>
@@ -365,6 +365,9 @@
     </ClCompile>
     <ClCompile Include="CAutoSprintModule.cpp">
       <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CNoFallModule.cpp">
+      <Filter>modules\impl\Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

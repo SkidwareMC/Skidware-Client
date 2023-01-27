@@ -10,11 +10,10 @@ typedef struct CFlyModule : CModule {
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
-	
 
 };
 
-static inline const char* fly_modes[] = { "Keep-Y", "Spartan" };
-static inline const char* fly_current_mode = "Spartan";
+static const char* fly_modes[] = { "Keep-y", "Spartan" };
+static const char* fly_current_mode = "Spartan";
 
 #endif //CFLYMODULE_HPP_GUARD
