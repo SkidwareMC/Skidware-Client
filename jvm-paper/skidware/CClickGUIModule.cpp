@@ -22,8 +22,11 @@ void ChromaticTab(char* label, int& tabhandler, int tab)
 	}
 }
 
+
+
 CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT, RENDER) {
 	//this->toggle();
+
 }
 
 void CClickGUIModule::onEnable() {
@@ -38,12 +41,13 @@ void CClickGUIModule::onEnable() {
 	Style->FrameRounding = 2;
 	Style->ChildRounding = 0;
 	Style->FrameBorderSize = 0;
-	Style->Colors[ImGuiCol_WindowBg] = ImColor(0, 128, 255);
+	Style->Colors[ImGuiCol_WindowBg] = ImColor(25, 25, 25);
 	Style->Colors[ImGuiCol_ChildBg] = ImColor(25, 25, 25);
 	Style->Colors[ImGuiCol_Button] = ImColor(35, 35, 35);
+	Style->Colors[ImGuiCol_Text] = ImColor(52, 247, 213);
 	Style->Colors[ImGuiCol_ButtonHovered] = ImColor(gui::clear_col);
 	Style->Colors[ImGuiCol_ButtonActive] = ImColor(35, 35, 35);
-	Style->Colors[ImGuiCol_CheckMark] = ImColor(gui::clear_col);
+	Style->Colors[ImGuiCol_Button] = ImColor(26, 29, 174);
 	Style->Colors[ImGuiCol_FrameBg] = ImColor(35, 35, 35);
 	Style->Colors[ImGuiCol_FrameBgActive] = ImColor(35, 35, 35);
 	Style->Colors[ImGuiCol_FrameBgHovered] = ImColor(35, 35, 35);
@@ -53,7 +57,7 @@ void CClickGUIModule::onEnable() {
 
 	ImGui::GetStyle().ScrollbarRounding = 5.0f;
 	Style->GrabMinSize = 15.0f;
-	Style->ScrollbarSize = 150.0f;
+	Style->ScrollbarSize = 50.0f;
 	Style->Colors[ImGuiCol_Text] = ImColor(255, 255, 255);
 
 	io.IniFilename = NULL; // GET RID OF IMGUI.INI
@@ -77,7 +81,7 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		ImGui_ImplOpenGL2_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
-		ImGui::SetNextWindowSize(ImVec2(650 - 16, 400 - 39));
+		ImGui::SetNextWindowSize(ImVec2(650, 400));
 
 		ImGui::Begin("Skidware", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
 		ImGui::Text("Skidware b0.3");
@@ -92,26 +96,34 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (gui::tab == 0) {
 				if (module->catagory == COMBAT) {
-					if (ImGui::Button(module->name.c_str())) module->toggle();
+					ImGui::Text(module->name.c_str()); ImGui::SameLine();
+					if (ImGui::Button("Toggle")) module->toggle();
 					module->renderSettings();
+					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 1) {
 				if (module->catagory == MOVEMENT) {
-					if (ImGui::Button(module->name.c_str())) module->toggle();
+					ImGui::Text(module->name.c_str()); ImGui::SameLine();
+					if (ImGui::Button("Toggle")) module->toggle();
 					module->renderSettings();
+					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 2) {
 				if (module->catagory == RENDER) {
-					if (ImGui::Button(module->name.c_str())) module->toggle();
+					ImGui::Text(module->name.c_str()); ImGui::SameLine();
+					if (ImGui::Button("Toggle")) module->toggle();
 					module->renderSettings();
+					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 3) {
 				if (module->catagory == MISC) {
-					if (ImGui::Button(module->name.c_str())) module->toggle();
+					ImGui::Text(module->name.c_str()); ImGui::SameLine();
+					if (ImGui::Button("Toggle")) module->toggle();
 					module->renderSettings();
+					HelpMarker(module->desc);
 				}
 			}
 			/*

@@ -1,9 +1,10 @@
 #include "CModule.hpp"
 
-CModule::CModule(std::string name, int keyBind, CATAGORY catagory) {
+CModule::CModule(std::string name, int keyBind, CATAGORY catagory, const char* desc) {
 	this->name = name;
 	this->keyBind = keyBind;
 	this->catagory = catagory;
+	this->desc = desc;
 }
 
 CModule::~CModule() {

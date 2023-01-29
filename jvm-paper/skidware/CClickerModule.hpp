@@ -15,5 +15,5 @@ typedef struct CClickerModule : CModule {
 
 float m_delay = {};
 float m_random = {};
-float f_cps = {};
+float f_cps = 15;
 #endif // !CCLICKERMODULE_HPP_GUARD

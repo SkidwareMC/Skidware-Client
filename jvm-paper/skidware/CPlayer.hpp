@@ -30,7 +30,7 @@ typedef struct CPlayer {
 	jni_ptr<int> hurtTime = make_jni_ptr<int>(this->_klass, "", "I");
 
 	jni_ptr<float> speedInAir = make_jni_ptr<float>(this->_klass, "", "F");
-
+	jni_ptr<bool> inWater = make_jni_ptr<bool>(this->_klass, "", "Z");
 
 	CMovementInput* movementInput = nullptr;
 	CWorld* theWorld = nullptr;

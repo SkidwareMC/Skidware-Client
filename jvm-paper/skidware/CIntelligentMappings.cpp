@@ -89,6 +89,8 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedField movementInputField = make_field("movementInput", "Lnet/minecraft/util/MovementInput;",
 			"field_71158_b", "e", "Lnet/minecraft/util/MovementInput;", "Lbub;");
 
+		CIntelligentMappedField inWaterField = make_field("inWater", "Z", "field_70171_ac", "U", "Z", "Z");
+
 		CIntelligentMappedMethod jumpMethod = make_method("jump", "()V",
 			"func_70664_aZ", "cu", "()V", "()V");
 
@@ -100,7 +102,7 @@ void CIntelligentMappings::init(Version ver) {
 
 		CIntelligentMappedClass playerKlass = make_klass("net.minecraft.client.entity.EntityPlayerSP",
 			"net.minecraft.client.entity.EntityPlayerSP", "bud", std::vector({ onGroundField, moveForwardField,
-				moveStrafingField, headRotationYawField, speedInAirField, motionXField, motionYField, motionZField, hurttimeField, rotationYawField, movementInputField, theWorldField}),
+				moveStrafingField, headRotationYawField, inWaterField, speedInAirField, motionXField, motionYField, motionZField, hurttimeField, rotationYawField, movementInputField, theWorldField}),
 			std::vector({ jumpMethod, setSprintMethod }));
 		_klasses.push_back(playerKlass);
 

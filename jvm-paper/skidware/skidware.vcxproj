@@ -177,6 +177,7 @@
     <ClCompile Include="CGameSettings.cpp" />
     <ClCompile Include="CHUDModule.cpp" />
     <ClCompile Include="CIntelligentMappings.cpp" />
+    <ClCompile Include="CJesusModule.cpp" />
     <ClCompile Include="CKeyBinding.cpp" />
     <ClCompile Include="CKillauraModule.cpp" />
     <ClCompile Include="CMinecraft.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="CInstanceKlass.hpp" />
     <ClInclude Include="CIntelligentMappings.hpp" />
     <ClInclude Include="CJavaHook.hpp" />
+    <ClInclude Include="CJesusModule.h" />
     <ClInclude Include="CKeyBinding.hpp" />
     <ClInclude Include="CKillauraModule.hpp" />
     <ClInclude Include="CMethod.hpp" />

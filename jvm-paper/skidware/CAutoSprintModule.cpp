@@ -1,7 +1,7 @@
 #include "CAutoSprintModule.hpp"
 #include "wrapper.h"
 
-CAutoSprintModule::CAutoSprintModule() : CModule("AutoSprint", '[', MOVEMENT)
+CAutoSprintModule::CAutoSprintModule() : CModule("AutoSprint", '[', MOVEMENT, "Crashes after a couple hundred ticks. idk why")
 {
 }
 

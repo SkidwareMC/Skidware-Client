@@ -1,6 +1,6 @@
 #include "CClickerModule.hpp"
 
-CClickerModule::CClickerModule() : CModule("Clicker", 'O', COMBAT) {
+CClickerModule::CClickerModule() : CModule("RClicker", 'O', COMBAT, "Don't use") {
 
 }
 
@@ -30,8 +30,8 @@ void CClickerModule::onEvent(const CSimpleEvent* event) {
 				POINT pt;
 				GetCursorPos(&pt);
 				if (FindWindowA(("LWJGL"), nullptr) == GetForegroundWindow()) {
-					SendMessageW(GetForegroundWindow(), WM_LBUTTONDOWN, MK_LBUTTON, MAKELPARAM(0, 0));
-					SendMessageW(GetForegroundWindow(), WM_LBUTTONUP, MK_LBUTTON, MAKELPARAM(0, 0));
+					SendMessageW(GetForegroundWindow(), WM_RBUTTONDOWN, MK_RBUTTON, MAKELPARAM(0, 0));
+					SendMessageW(GetForegroundWindow(), WM_RBUTTONUP, MK_RBUTTON, MAKELPARAM(0, 0));
 					Sleep(rand() % delay); // Sleep Delay Time
 				}
 				//swingItem();

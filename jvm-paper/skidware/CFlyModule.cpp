@@ -2,7 +2,7 @@
 #include "CCheat.hpp"
 #include "wrapper.h"
 
-CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT) {
+CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT, "Zoom") {
 
 }
 
@@ -42,12 +42,9 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 
 		else if (fly_current_mode == "Keep-Y")
 		{
-				mc->thePlayer->motionX = 0;
+				mc->thePlayer->motionX = mc->thePlayer->motionX * 0;
 				mc->thePlayer->motionY = 0;
-				mc->thePlayer->motionZ = 0;
-				if (mc->gameSettings->isAnyKeyDown()) {
-						mc->thePlayer->strafe(mc->thePlayer->getSpeed()*1.05);
-				}
+				mc->thePlayer->motionZ = mc->thePlayer->motionZ * 0;
 		}
 	} 
 
