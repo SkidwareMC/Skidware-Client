@@ -8,6 +8,7 @@
 #include "CCheat.hpp"
 #include "xorstr.hpp"
 #include "wrapper.h"
+#include <fstream>
 
 typedef long(__stdcall* _JNI_GetCreatedJavaVMs)(JavaVM**, long, long*);
 _JNI_GetCreatedJavaVMs ORIG_JNI_GetCreatedJavaVMs;
@@ -145,15 +146,36 @@ void start() {
 	FILE* out;
 	freopen_s(&in, "conin$", "r", stdin);
 	freopen_s(&out, "conout$", "w", stdout);
+	std::string emanresu;
+	std::string yek;
+	std::string line;
+	std::ifstream myfile("key.txt");
+	if (myfile.is_open())
+	{
+		getline(myfile, line);
+		emanresu = line;
+		getline(myfile, line);
+		yek = line;
+		myfile.close();
+		bool valid = MathUtil(emanresu.data(), yek.data());
+	}
+
+	else
+		goto login;
+
 	login:
 		std::cout << xorstr_("Please enter in your username and product key") << std::endl;
-		std::string emanresu;
-		std::string yek;
 		out::display(xorstr_("Username"));
 		std::cin >> emanresu;
 		out::display(xorstr_("Key"));
 		std::cin >> yek;
 		bool valid = MathUtil(emanresu.data(), yek.data());
+		std::ofstream myfile2("key.txt");
+		
+		myfile2 << emanresu;
+		myfile2 << yek;
+		myfile2.close();
+
 
 	if (!valid) {
 		out::display(xorstr_("Key is Invalid. Please try again."));

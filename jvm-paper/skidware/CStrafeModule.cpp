@@ -1,7 +1,7 @@
 #include "CStrafeModule.hpp"
 #include "CCheat.hpp"
 
-CStrafeModule::CStrafeModule() : CModule("Strafe", 'J', MOVEMENT) {
+CStrafeModule::CStrafeModule() : CModule("Strafe", 'J', MOVEMENT, "Don't use on MMC. Airstrafe") {
 
 }
 

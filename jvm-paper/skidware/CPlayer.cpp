@@ -1,7 +1,7 @@
 #include "CPlayer.hpp"
 #include "CCheat.hpp"
 
-CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass, 
+CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 	CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("onGround").name(), "Z"), moveForward(klass,
 		CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveForward").name(), "F"), moveStrafing(klass,
 			CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("moveStrafing").name(), "F"), motionX(klass,
@@ -11,7 +11,8 @@ CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 							CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("headRotationYaw").name(), "F"), rotationYaw(klass,
 								CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationYaw").name(), "F"), hurtTime(klass,
 									CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("hurttime").name(), "I"), speedInAir(klass,
-										CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("speedInAir").name(), "I") {
+										CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("speedInAir").name(), "I"), inWater(klass,
+											CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("inWater").name(), "Z") {
 	this->_klass = klass;
 	CIntelligentMappedClass intelligent = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
 	this->movementInput = new CMovementInput(CUtils::GetField<jobject>(this->_klass,

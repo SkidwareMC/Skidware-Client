@@ -12,6 +12,7 @@
 #include "CAntiKBModule.hpp"
 #include "CAutoSprintModule.hpp"
 #include "CNoFallModule.hpp"
+#include "CJesusModule.h"
 
 void CModuleManager::registerModules() {
 	this->registerModule(new CAirJumpModule()); //Airjump
@@ -28,5 +29,6 @@ void CModuleManager::registerModules() {
 	//Fix this Smellon
 	// this->registerModule(new CAutoSprintModule());
 	this->registerModule(new CNoFallDamageModule());
+	this->registerModule(new CJesusModule());
 	
 }

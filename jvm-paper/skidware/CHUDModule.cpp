@@ -3,7 +3,7 @@
 #include "CFlyModule.hpp"
 #include "CSpeedModule.hpp"
 
-CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER) {
+CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER, "yes") {
 	this->toggle();
 }
 
@@ -197,11 +197,11 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 				glPopMatrix();
 				float yPos = 25;
 				for (CModule* module : CCheat::moduleManager->modules) {
-					/*
+					
 					if (module->state == false) {
 						continue;
 					}
-					*/
+					
 
 					glPushMatrix();
 					glScalef(2, 2, 2);

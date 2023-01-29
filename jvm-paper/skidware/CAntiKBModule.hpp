@@ -16,4 +16,7 @@ typedef struct CAntiKBModule : CModule {
 	virtual void renderSettings();
 } CAntiKBModule;
 
+static const char* velo_modes[] = { "Motion", "Jump" };
+static const char* velo_current_mode = "Jump";
+
 #endif // !ANTIKBMODULE_CGUARD

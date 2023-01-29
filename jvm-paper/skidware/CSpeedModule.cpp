@@ -1,7 +1,7 @@
 #include "CSpeedModule.hpp"
 #include "CCheat.hpp"
 
-CSpeedModule::CSpeedModule() : CModule("Speed", 'B', MOVEMENT) {
+CSpeedModule::CSpeedModule() : CModule("Speed", 'B', MOVEMENT, "Fast legs hack") {
 
 }
 
@@ -51,6 +51,9 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 				mc->thePlayer->strafe(1.1);
 				mc->thePlayer->motionY = 0.44;
 			}
+		}
+		else if (speed_current_mode == "Vanilla BHop") {
+			mc->thePlayer->speedInAir = mc->thePlayer->speedInAir * 6;
 		}
 	}
 }

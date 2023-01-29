@@ -250,6 +250,9 @@
     <ClInclude Include="CNoFallModule.hpp">
       <Filter>modules\impl\Misc</Filter>
     </ClInclude>
+    <ClInclude Include="CJesusModule.h">
+      <Filter>modules\impl\movement</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -368,6 +371,9 @@
     </ClCompile>
     <ClCompile Include="CNoFallModule.cpp">
       <Filter>modules\impl\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="CJesusModule.cpp">
+      <Filter>modules\impl\movement</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

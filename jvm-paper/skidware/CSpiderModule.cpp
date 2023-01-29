@@ -1,7 +1,7 @@
 #include "CSpiderModule.hpp"
 #include "CCheat.hpp"
 
-CSpiderModule::CSpiderModule() : CModule("Spider", 'P', MOVEMENT) {
+CSpiderModule::CSpiderModule() : CModule("Spider", 'P', MOVEMENT, "Climb up walls") {
 
 }
 
