@@ -1,4 +1,4 @@
-#include "CJesusModule.h"
+#include "CJesusModule.hpp"
 #include "CCheat.hpp"
 
 CJesusModule::CJesusModule() : CModule("Jesus", 'L', MOVEMENT, "Walk on water")
@@ -24,12 +24,15 @@ void CJesusModule::onEvent(const CSimpleEvent*)
 			mc->thePlayer->motionY = jumpfactor;
 		}
 	}
+	else if (jesus_current_mode == "Dolphin") {
+		if (mc->thePlayer->inWater) mc->thePlayer->motionY = mc->thePlayer->motionY + 0.03999999910593033;
+	}
 }
 
 void CJesusModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##kombo", jesus_current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("##kombo2", jesus_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(jesus_modes); n++)
 		{

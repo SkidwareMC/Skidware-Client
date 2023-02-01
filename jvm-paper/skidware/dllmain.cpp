@@ -220,7 +220,7 @@ void start() {
 			Sleep(500);
 			while (true) {
 				mc->runTick();
-				Sleep(50);
+				Sleep(CCheat::timerDelay);
 			}
 		}
 	}

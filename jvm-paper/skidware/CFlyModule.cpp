@@ -54,7 +54,7 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 void CFlyModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##kombo", fly_current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("##kombo3", fly_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(fly_modes); n++)
 		{

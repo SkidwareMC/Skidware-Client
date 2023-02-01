@@ -6,6 +6,7 @@
 #include "CCheat.hpp"
 #include "CModule.hpp"
 #include "wrapper.h"
+#include "CTimer.h"
 
 typedef struct CPlayer CPlayer;
 
@@ -50,6 +51,11 @@ CMinecraft::CMinecraft() {
 		Sleep(500);
 		this->playerController = new CPlayerController(this->getNativePlayerController());
 	}
+	jobject timerField = CUtils::GetField<jobject>(getNativeMinecraft(),
+		minecraftClass.getField("timer").name(), minecraftClass.getField("timer").signature());
+	if (timerField) {
+		this->timer = new CTimer(timerField);
+	}
 
 	// this->__klass = this->getNativeMinecraft();
 
@@ -89,6 +95,14 @@ jobject CMinecraft::getNativePlayerController() {
 		minecraftClass.getField("playerController").name(), minecraftClass.getField("playerController").signature());
 }
 
+jobject CMinecraft::getNativeTimer() {
+	CIntelligentMappedClass minecraftClass = CIntelligentMappings::getClass("net.minecraft.client.Minecraft");
+	return CUtils::GetField<jobject>(getNativeMinecraft(),
+		minecraftClass.getField("timer").name(), minecraftClass.getField("timer").signature());
+}
+
+
+
 void CMinecraft::runTick() {
 	//making a new instance of the player in case of nullptr
 	if (this->thePlayer == nullptr && this->getNativePlayer()) {
@@ -100,6 +114,9 @@ void CMinecraft::runTick() {
 	}
 	if (this->playerController == nullptr && this->getNativePlayerController()) {
 		this->playerController = new CPlayerController(this->getNativePlayerController());
+	}	
+	if (this->timer == nullptr && this->getNativeTimer()) {
+		this->timer = new CTimer(this->getNativeTimer());
 	}
 	//to be sure if we have right player instance
 	if (this->thePlayer != nullptr && this->getNativePlayer()) {
@@ -129,6 +146,10 @@ void CMinecraft::runTick() {
 	}
 	if (this->playerController != nullptr && !this->playerController->GetKlass()) {
 		this->playerController = nullptr;
+	}	
+	
+	if (this->timer != nullptr && !this->timer->GetKlass()) {
+		this->timer = nullptr;
 	}
 	//to be sure if the player isn't null
 	if (this->thePlayer != nullptr && this->thePlayer->GetKlass()) {

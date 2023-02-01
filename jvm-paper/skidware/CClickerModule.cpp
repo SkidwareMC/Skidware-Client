@@ -17,7 +17,7 @@ void CClickerModule::onEvent(const CSimpleEvent* event) {
 
 		int cp_seconds = cps * 10;
 
-		if (GetAsyncKeyState(VK_LBUTTON) < 0)
+		if (GetAsyncKeyState(VK_RBUTTON) < 0)
 		{
 
 				if (f_cps <= 0)

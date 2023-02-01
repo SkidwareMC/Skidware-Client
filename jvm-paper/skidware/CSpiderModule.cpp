@@ -17,7 +17,7 @@ void CSpiderModule::onEvent(const CSimpleEvent* event) {
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
 		CMinecraft* mc = CCheat::theMinecraft;
 		if (mc->thePlayer->isCollidedHorizontally())
-			mc->thePlayer->motionY = 0.2;
+			mc->thePlayer->motionY = 0.3;
 
 			
 		// if (mc->thePlayer->isMovingForwardOrBackwards() && mc->thePlayer->motionX == 0 || mc->thePlayer->motionZ == 0) 

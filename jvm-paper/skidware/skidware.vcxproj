@@ -171,6 +171,7 @@
     <ClCompile Include="CCheat.cpp" />
     <ClCompile Include="CClickerModule.cpp" />
     <ClCompile Include="CClickGUIModule.cpp" />
+    <ClCompile Include="CCriticalsModule.cpp" />
     <ClCompile Include="CEntityRenderer.cpp" />
     <ClCompile Include="CFlyModule.cpp" />
     <ClCompile Include="CFontRenderer.cpp" />
@@ -190,6 +191,8 @@
     <ClCompile Include="CSpiderModule.cpp" />
     <ClCompile Include="CSpeedModule.cpp" />
     <ClCompile Include="CStrafeModule.cpp" />
+    <ClCompile Include="CTimer.cpp" />
+    <ClCompile Include="CTimerModule.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="CWorld.cpp" />
     <ClCompile Include="dllmain.cpp" />
@@ -214,6 +217,7 @@
     <ClInclude Include="CClickerModule.hpp" />
     <ClInclude Include="CClickGUIModule.hpp" />
     <ClInclude Include="CConstantPool.hpp" />
+    <ClInclude Include="CCriticalsModule.hpp" />
     <ClInclude Include="CEntityRenderer.hpp" />
     <ClInclude Include="CFlyModule.hpp" />
     <ClInclude Include="CFontRenderer.hpp" />
@@ -222,7 +226,7 @@
     <ClInclude Include="CInstanceKlass.hpp" />
     <ClInclude Include="CIntelligentMappings.hpp" />
     <ClInclude Include="CJavaHook.hpp" />
-    <ClInclude Include="CJesusModule.h" />
+    <ClInclude Include="CJesusModule.hpp" />
     <ClInclude Include="CKeyBinding.hpp" />
     <ClInclude Include="CKillauraModule.hpp" />
     <ClInclude Include="CMethod.hpp" />
@@ -240,6 +244,7 @@
     <ClInclude Include="CSpeedModule.hpp" />
     <ClInclude Include="CStrafeModule.hpp" />
     <ClInclude Include="CSymbol.hpp" />
+    <ClInclude Include="CTimerModule.hpp" />
     <ClInclude Include="CUniqueReference.hpp" />
     <ClInclude Include="CUtils.hpp" />
     <ClInclude Include="CWorld.hpp" />
@@ -265,6 +270,7 @@
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
     <ClInclude Include="CNoFallModule.hpp" />
+    <ClInclude Include="CTimer.h" />
     <ClInclude Include="wrapper.h" />
     <ClInclude Include="xorstr.hpp" />
   </ItemGroup>

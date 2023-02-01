@@ -40,6 +40,7 @@ void CIntelligentMappings::init(Version ver) {
 			"field_71439_g", "h", "Lnet/minecraft/client/entity/EntityPlayerSP;", "Lbud;");
 		CIntelligentMappedField fontRendererField = make_field("fontRenderer", "Lnet/minecraft/client/gui/FontRenderer;",
 			"field_71466_p", "k", "Lnet/minecraft/client/gui/FontRenderer", "Lbip;");
+		CIntelligentMappedField timerField = make_field("timer", "Lnet/minecraft/util/Timer", "field_152352_aC", "aR", "Lnet/minecraft/util/Timer", "Lnet/minecraft/util/Timer");
 		CIntelligentMappedField entityRendererField = make_field("entityRenderer", "Lnet/minecraft/client/renderer/EntityRenderer;",
 			"field_71460_t", "o", "Lnet/minecraft/client/renderer/EntityRenderer;", "Lbuq;");
 		CIntelligentMappedField gameSettingsField = make_field("gameSettings", "Lnet/minecraft/client/settings/GameSettings;",
@@ -53,7 +54,7 @@ void CIntelligentMappings::init(Version ver) {
 		CIntelligentMappedField isGameHadFocusField = make_field("isGameHasFocus", "Z", "field_71415_G", "w", "Z", "Z");
 		CIntelligentMappedClass minecraftKlass = make_klass("net.minecraft.client.Minecraft",
 			"net.minecraft.client.Minecraft", "bib", std::vector({ thePlayerField, fontRendererField, entityRendererField,
-				gameSettingsField, Minecraft__theWorldField, playerControllerField, isGameHadFocusField }), std::vector({ getMinecraftMethod }));
+				gameSettingsField, Minecraft__theWorldField, playerControllerField, isGameHadFocusField, timerField}), std::vector({ getMinecraftMethod }));
 		_klasses.push_back(minecraftKlass);
 
 		/*-------------------------*/
@@ -75,6 +76,7 @@ void CIntelligentMappings::init(Version ver) {
 			"field_70759_as", "aP", "F", "F");
 
 		CIntelligentMappedField rotationYawField = make_field("rotationYaw", "F", "field_70177_z", "v", "F", "F");
+		CIntelligentMappedField rotationPitchField = make_field("rotationPitch", "F", "field_70125_A", "w", "F", "F");
 
 		CIntelligentMappedField motionXField = make_field("motionX", "D",
 			"field_70159_w", "s", "D", "D");
@@ -98,11 +100,13 @@ void CIntelligentMappings::init(Version ver) {
 
 		CIntelligentMappedField speedInAirField = make_field("speedInAir", "F", "field_71102_ce", "bT", "F", "F");
 
+		CIntelligentMappedField fallDistanceField = make_field("fallDistance", "F", "field_70143_R", "L", "F", "F");
+
 		CIntelligentMappedMethod setSprintMethod = make_method("setSprint", "(Z)V", "func_70031_b", "f", "(Z)V", "(Z)V");
 
 		CIntelligentMappedClass playerKlass = make_klass("net.minecraft.client.entity.EntityPlayerSP",
 			"net.minecraft.client.entity.EntityPlayerSP", "bud", std::vector({ onGroundField, moveForwardField,
-				moveStrafingField, headRotationYawField, inWaterField, speedInAirField, motionXField, motionYField, motionZField, hurttimeField, rotationYawField, movementInputField, theWorldField}),
+				moveStrafingField, headRotationYawField, fallDistanceField, inWaterField, speedInAirField, rotationPitchField, motionXField, motionYField, motionZField, hurttimeField, rotationYawField, movementInputField, theWorldField}),
 			std::vector({ jumpMethod, setSprintMethod }));
 		_klasses.push_back(playerKlass);
 
@@ -119,7 +123,22 @@ void CIntelligentMappings::init(Version ver) {
 			"field_78288_b", "a", "I", "I");
 		CIntelligentMappedClass fontRendererKlass = make_klass("net.minecraft.client.gui.FontRenderer",
 			"net.minecraft.client.gui.FontRenderer", "bip", std::vector({ fontHeightField }), std::vector({ drawStringWithShadowMethod }));
-		_klasses.push_back(fontRendererKlass);
+		_klasses.push_back(fontRendererKlass);		
+		
+		/*-------------------------*/
+
+		/*       Timer		      */
+
+		/*-------------------------*/
+		out::display("Timer");
+		Sleep(500);
+		CIntelligentMappedMethod nullmethod = make_method("(null)", "(null)",
+			"(null)", "(null)", "x.x", "Default string");
+		CIntelligentMappedField tickLengthField = make_field("tickLength", "F",
+			"field_194149_e", "e", "F", "F");
+		CIntelligentMappedClass timerKlass = make_klass("net.minecraft.util.Timer",
+			"net.minecraft.util.Timer", "bif", std::vector({ tickLengthField }), std::vector({ nullmethod }));
+		_klasses.push_back(timerKlass);
 
 		/*-------------------------*/
 
