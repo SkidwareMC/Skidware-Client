@@ -50,6 +50,7 @@ public:
 	static inline CModuleManager* moduleManager = nullptr;
 	static inline CSimpleEventManager* eventBus = nullptr;
 	std::string version = "b0.3"; //alpha
+	static inline int timerDelay = 50;
 } CCheat;
 
 #endif //CCHEAT_HPP_GUARD

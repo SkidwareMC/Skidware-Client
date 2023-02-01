@@ -57,7 +57,7 @@ void CClickGUIModule::onEnable() {
 
 	ImGui::GetStyle().ScrollbarRounding = 5.0f;
 	Style->GrabMinSize = 15.0f;
-	Style->ScrollbarSize = 50.0f;
+	Style->ScrollbarSize = 25.0f;
 	Style->Colors[ImGuiCol_Text] = ImColor(255, 255, 255);
 
 	io.IniFilename = NULL; // GET RID OF IMGUI.INI
@@ -96,32 +96,29 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 			//ImGui::Checkbox(module->name.c_str(), &module->state);
 			if (gui::tab == 0) {
 				if (module->catagory == COMBAT) {
-					ImGui::Text(module->name.c_str()); ImGui::SameLine();
-					if (ImGui::Button("Toggle")) module->toggle();
+					if(ImGui::Button(module->name.c_str())) module->toggle();
+					// if (ImGui::Button("Toggle")) module->toggle();
 					module->renderSettings();
 					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 1) {
 				if (module->catagory == MOVEMENT) {
-					ImGui::Text(module->name.c_str()); ImGui::SameLine();
-					if (ImGui::Button("Toggle")) module->toggle();
+					if (ImGui::Button(module->name.c_str())) module->toggle();
 					module->renderSettings();
 					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 2) {
 				if (module->catagory == RENDER) {
-					ImGui::Text(module->name.c_str()); ImGui::SameLine();
-					if (ImGui::Button("Toggle")) module->toggle();
+					if (ImGui::Button(module->name.c_str())) module->toggle();
 					module->renderSettings();
 					HelpMarker(module->desc);
 				}
 			}
 			else if (gui::tab == 3) {
 				if (module->catagory == MISC) {
-					ImGui::Text(module->name.c_str()); ImGui::SameLine();
-					if (ImGui::Button("Toggle")) module->toggle();
+					if (ImGui::Button(module->name.c_str())) module->toggle();
 					module->renderSettings();
 					HelpMarker(module->desc);
 				}

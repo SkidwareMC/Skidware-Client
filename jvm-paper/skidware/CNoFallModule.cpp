@@ -18,15 +18,22 @@ void CNoFallDamageModule::onDisable()
 void CNoFallDamageModule::onEvent(const CSimpleEvent*)
 {
 	CMinecraft* mc = CCheat::theMinecraft;
-	if (mc->thePlayer->onGround) {
-	 	mc->thePlayer->motionY = force;
+	if (nofall_current_mode == "AAC 3.3.7") {
+		if (mc->thePlayer->onGround) {
+			mc->thePlayer->motionY = force;
+		}
+	}
+	else if (nofall_current_mode == "Spoof") {
+		if (mc->thePlayer->fallDistance > 2.5) {
+			mc->thePlayer->motionY = 0;
+		}
 	}
 }
 
 void CNoFallDamageModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##combo", nofall_current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("##combo8", nofall_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(nofall_modes); n++)
 		{

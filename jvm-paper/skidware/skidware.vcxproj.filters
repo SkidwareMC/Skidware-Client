@@ -68,6 +68,9 @@
     <Filter Include="modules\impl\Misc">
       <UniqueIdentifier>{709cb20c-532c-4223-9920-2cac15f43244}</UniqueIdentifier>
     </Filter>
+    <Filter Include="modules\impl\Util">
+      <UniqueIdentifier>{54701a7b-2da7-4d36-9029-44dc06cf4910}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">
@@ -250,8 +253,17 @@
     <ClInclude Include="CNoFallModule.hpp">
       <Filter>modules\impl\Misc</Filter>
     </ClInclude>
-    <ClInclude Include="CJesusModule.h">
+    <ClInclude Include="CJesusModule.hpp">
       <Filter>modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CCriticalsModule.hpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimerModule.hpp">
+      <Filter>modules\impl\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimer.h">
+      <Filter>sdk\mc_sdk\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -374,6 +386,15 @@
     </ClCompile>
     <ClCompile Include="CJesusModule.cpp">
       <Filter>modules\impl\movement</Filter>
+    </ClCompile>
+    <ClCompile Include="CCriticalsModule.cpp">
+      <Filter>modules\impl\combat</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimer.cpp">
+      <Filter>sdk\mc_sdk\util</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimerModule.cpp">
+      <Filter>modules\impl\Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

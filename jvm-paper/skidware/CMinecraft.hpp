@@ -11,6 +11,7 @@
 #include "CWorld.hpp"
 #include "CPlayerController.hpp"
 #include "CUniqueReference.hpp"
+#include "CTimer.h"
 
 typedef struct CWorld CWorld;
 typedef struct CPlayer CPlayer;
@@ -28,6 +29,8 @@ typedef struct CMinecraft {
 	jobject getNativeWorld();
 	jobject getNativePlayerController();
 
+	jobject getNativeTimer();
+
 	void runTick();
 	std::vector<std::shared_ptr<CPlayer*>> get_players();
 	jni_ptr<bool> isGameHasFocus = make_jni_ptr<bool>(this->getNativeMinecraft(), "", "Z");
@@ -43,7 +46,7 @@ public:
 	MinecraftFontRenderer* fontRendererObj = nullptr;
 	CWorld* theWorld = nullptr;
 	CPlayerController* playerController = nullptr;
-
+	CTimer* timer = nullptr;
 } CMinecraft;
 
 #endif //CMINECRAFT_HPP_GUARD

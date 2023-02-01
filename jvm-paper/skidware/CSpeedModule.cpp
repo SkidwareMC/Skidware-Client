@@ -53,7 +53,20 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 			}
 		}
 		else if (speed_current_mode == "Vanilla BHop") {
-			mc->thePlayer->speedInAir = mc->thePlayer->speedInAir * 6;
+			if (mc->thePlayer->onGround) {
+				mc->thePlayer->jump();
+			}
+		}
+		else if (speed_current_mode == "Jump Boost") {
+			if (mc->gameSettings->keyBindJump) {
+				mc->thePlayer->motionY = mc->thePlayer->motionY * boost;
+			}
+		}
+		else if (speed_current_mode == "OnGround") {
+			if (mc->thePlayer->onGround) {
+				mc->thePlayer->motionX = mc->thePlayer->motionX * 2;
+				mc->thePlayer->motionZ = mc->thePlayer->motionZ * 2;
+			}
 		}
 	}
 }
@@ -73,4 +86,6 @@ void CSpeedModule::renderSettings()
 		}
 		ImGui::EndCombo();
 	}
+	if (speed_current_mode == "Jump Boost")
+		ImGui::SliderInt("Boost", &boost, 1, 10);
 }

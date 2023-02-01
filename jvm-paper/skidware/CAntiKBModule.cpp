@@ -26,8 +26,13 @@ void CAntiKBModule::onEvent(const CSimpleEvent*)
 		}
 	}
 	else if (velo_current_mode == "Jump") {
-		if (mc->thePlayer->IsHurt() > 7)
-			mc->thePlayer->jump();
+		if (mc->thePlayer->IsHurt()) {
+			if (!mc->thePlayer->onGround) {
+				// mc->thePlayer->jump();
+			}
+			mc->thePlayer->onGround = true;
+		}
+
 	}
 }
 
