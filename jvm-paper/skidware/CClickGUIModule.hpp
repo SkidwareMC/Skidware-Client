@@ -29,6 +29,7 @@ namespace gui {
 	static int tab;
 	extern ImVec4 clear_col;
 	float color[3];
+	bool showUser;
 }
 
 #endif //CCLICKGUIMODULE_HPP_GUARD

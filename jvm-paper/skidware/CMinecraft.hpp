@@ -20,6 +20,7 @@ typedef struct CEntityRenderer CEntityRenderer;
 typedef struct MinecraftFontRenderer MinecraftFontRenderer;
 typedef struct CGameSettings CGameSettings;
 typedef struct CPlayerController CPlayerController;
+typedef struct CTimer CTimer;
 
 typedef struct CMinecraft {
 	CMinecraft();
@@ -38,7 +39,6 @@ private:
 	static CMinecraft* theMinecraft;
 	jobject __klass;
 public:
-	
 	CEntityRenderer* entityRenderer = nullptr;
 	CFontRenderer* fontRenderer = nullptr;
 	CPlayer* thePlayer = nullptr;

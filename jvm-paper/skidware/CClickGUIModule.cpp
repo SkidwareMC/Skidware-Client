@@ -57,7 +57,7 @@ void CClickGUIModule::onEnable() {
 
 	ImGui::GetStyle().ScrollbarRounding = 5.0f;
 	Style->GrabMinSize = 15.0f;
-	Style->ScrollbarSize = 25.0f;
+	Style->ScrollbarSize = 20.0f;
 	Style->Colors[ImGuiCol_Text] = ImColor(255, 255, 255);
 
 	io.IniFilename = NULL; // GET RID OF IMGUI.INI
@@ -81,7 +81,7 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 		ImGui_ImplOpenGL2_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
-		ImGui::SetNextWindowSize(ImVec2(650, 400));
+		ImGui::SetNextWindowSize(ImVec2(800, 600));
 
 		ImGui::Begin("Skidware", nullptr, ImGuiWindowFlags_NoTitleBar | ImGuiWindowFlags_NoResize | ImGuiWindowFlags_NoCollapse | ImGuiWindowFlags_NoSavedSettings);
 		ImGui::Text("Skidware b0.3");
@@ -150,5 +150,6 @@ void CClickGUIModule::onEvent(const CSimpleEvent* event) {
 
 void CClickGUIModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
+	if (gui::showUser) ImGui::ShowUserGuide();
 }

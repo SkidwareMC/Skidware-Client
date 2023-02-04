@@ -12,17 +12,22 @@ void CTimerModule::onEnable()
 
 void CTimerModule::onDisable()
 {
+	CMinecraft* mc = CCheat::theMinecraft;
 	CCheat::eventBus->unregisterListener(this);
+	mc->timer->tickLength = 50;
+	CCheat::timerDelay = 50;
 }
 
 void CTimerModule::onEvent(const CSimpleEvent*)
 {
 	CMinecraft* mc = CCheat::theMinecraft;
-	mc->timer->tickLength = millsEachTick;
+	int delay = (1000 / tps);
+	CCheat::timerDelay = delay;
+	mc->timer->tickLength = delay;
 }
 
 void CTimerModule::renderSettings()
 {
 	ImGui::Separator();
-	ImGui::SliderInt("Milliseconds between each tick", &millsEachTick, 1, 1000);
+	ImGui::SliderInt("Ticks Per Second (default 20)", &tps, 1, 1000);
 }
