@@ -12,5 +12,5 @@ typedef struct CTimerModule : CModule {
 	virtual void renderSettings();
 };
 
-static int millsEachTick = 50;
+static int tps = 30;
 #endif //CNoFallModule_HPP_GUARD

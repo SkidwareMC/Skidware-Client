@@ -193,20 +193,25 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 				glPushMatrix();
 				glScalef(3, 3, 3);
 				std::string minecraftType = CCheat::getInstance()->getMinecraftType() == CMinecraftType::FORGE ? "forge" : "vanilla";
-				CCheat::theMinecraft->fontRendererObj->drawStringWithShadow("Skidware (" + CCheat::getInstance()->version + "-" + minecraftType + ")", 4, 4, 0x47fff6);
+				CCheat::theMinecraft->fontRendererObj->drawStringWithShadow("Skidware " + CCheat::getInstance()->version, 4, 4, 0x47fff6);
 				glPopMatrix();
+				float xpos = 4;
 				float yPos = 25;
 				for (CModule* module : CCheat::moduleManager->modules) {
 					
 					if (module->state == false) {
 						continue;
 					}
-					
 
 					glPushMatrix();
 					glScalef(2, 2, 2);
-					CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name + " [" + MapSpecialKeyToString(module->keyBind) + "]", 4,
-						yPos, module->state ? 0x4DF77A : 0xF7524D);
+					if (showBinds) {
+						CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name
+					+ " - " + MapSpecialKeyToString(module->keyBind), xpos,
+							yPos, 0x7a04c4);
+					}
+					else
+						CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name, xpos, yPos, 0x7a04c4);
 					glPopMatrix();
 					yPos += 10;
 				}
@@ -217,5 +222,6 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 
 void CHUDModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
+	ImGui::Checkbox("ShowBinds", &showBinds);
 }

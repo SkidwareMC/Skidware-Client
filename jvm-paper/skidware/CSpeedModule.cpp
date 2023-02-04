@@ -54,6 +54,7 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 		}
 		else if (speed_current_mode == "Vanilla BHop") {
 			if (mc->thePlayer->onGround) {
+				mc->thePlayer->setSprint(true);
 				mc->thePlayer->jump();
 			}
 		}
@@ -63,9 +64,19 @@ void CSpeedModule::onEvent(const CSimpleEvent* event) {
 			}
 		}
 		else if (speed_current_mode == "OnGround") {
-			if (mc->thePlayer->onGround) {
-				mc->thePlayer->motionX = mc->thePlayer->motionX * 2;
-				mc->thePlayer->motionZ = mc->thePlayer->motionZ * 2;
+			if (mc->thePlayer->onGround && mc->gameSettings->isAnyKeyDown()) {
+				mc->thePlayer->motionX = mc->thePlayer->motionX * 1.2;
+				mc->thePlayer->motionZ = mc->thePlayer->motionZ * 1.2;
+			}
+		}
+		else if (speed_current_mode == "Frequency OnGround") {
+			mc->thePlayer->motionX = 0;
+			mc->thePlayer->motionZ = 0;
+
+			if (mc->gameSettings->isAnyKeyDown()) {
+				if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
+					mc->thePlayer->strafe(freqMulti);
+				}
 			}
 		}
 	}
@@ -87,5 +98,7 @@ void CSpeedModule::renderSettings()
 		ImGui::EndCombo();
 	}
 	if (speed_current_mode == "Jump Boost")
-		ImGui::SliderInt("Boost", &boost, 1, 10);
+		ImGui::SliderFloat("Boost", &boost, 1, 10, "%.1f");
+	if (speed_current_mode == "Frequency OnGround")
+		ImGui::SliderFloat("Speed", &freqMulti, 1, 10, "%.1f");
 }

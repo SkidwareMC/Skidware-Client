@@ -11,5 +11,5 @@ typedef struct CHUDModule : CModule {
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
 };
-
+static bool showBinds = true;
 #endif //CHUDMODULE_HPP_GUARD

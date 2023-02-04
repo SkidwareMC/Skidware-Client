@@ -71,6 +71,9 @@
     <Filter Include="modules\impl\Util">
       <UniqueIdentifier>{54701a7b-2da7-4d36-9029-44dc06cf4910}</UniqueIdentifier>
     </Filter>
+    <Filter Include="sdk\util\auth">
+      <UniqueIdentifier>{7dfbe270-87ea-4dd2-82cd-57167d2b437c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CArray.hpp">

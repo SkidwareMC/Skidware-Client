@@ -3,7 +3,8 @@
 #pragma once
 
 #include "common.h"
-#include "CMinecraft.hpp"
+#include "CUtils.hpp"
+#include "CUniqueReference.hpp"
 
 typedef struct CTimer {
 	CTimer(jobject);
