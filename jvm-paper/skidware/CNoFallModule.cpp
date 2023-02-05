@@ -17,6 +17,8 @@ void CNoFallDamageModule::onDisable()
 
 void CNoFallDamageModule::onEvent(const CSimpleEvent*)
 {
+	displayName = (char*)nofall_current_mode;
+	this->displayName = displayName;
 	CMinecraft* mc = CCheat::theMinecraft;
 	if (nofall_current_mode == "AAC 3.3.7") {
 		if (mc->thePlayer->onGround) {

@@ -15,6 +15,7 @@
 #include "CJesusModule.hpp"
 #include "CCriticalsModule.hpp"
 #include "CTimerModule.hpp"
+#include "CFullBrightModule.hpp"
 
 void CModuleManager::registerModules() {
 	this->registerModule(new CAirJumpModule()); //Airjump
@@ -29,9 +30,10 @@ void CModuleManager::registerModules() {
 	// this->registerModule(new CAimAssistModule());
 	this->registerModule(new CAntiKBModule());
 	//Fix this Smellon
-	// this->registerModule(new CAutoSprintModule());
+	this->registerModule(new CAutoSprintModule());
 	this->registerModule(new CNoFallDamageModule());
 	this->registerModule(new CJesusModule());
 	this->registerModule(new CCriticalsModule());
 	this->registerModule(new CTimerModule());
+	this->registerModule(new CFullBrightModule());
 }

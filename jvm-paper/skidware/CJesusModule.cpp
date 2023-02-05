@@ -1,7 +1,7 @@
 #include "CJesusModule.hpp"
 #include "CCheat.hpp"
 
-CJesusModule::CJesusModule() : CModule("Jesus", 'L', MOVEMENT, "Walk on water")
+CJesusModule::CJesusModule() : CModule("Jesus", 'L', MOVEMENT, "Walk on water", displayName)
 {
 }
 
@@ -17,6 +17,8 @@ void CJesusModule::onDisable()
 
 void CJesusModule::onEvent(const CSimpleEvent*)
 {
+	displayName = (char*)jesus_current_mode;
+	this->displayName = displayName;
 	double jumpfactor = 0.0336;
 	CMinecraft* mc = CCheat::theMinecraft;
 	if (jesus_current_mode == "AAC 4.2.1") {

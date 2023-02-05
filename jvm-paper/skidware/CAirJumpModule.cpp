@@ -1,6 +1,6 @@
 #include "CAirJumpModule.hpp"
 
-CAirJumpModule::CAirJumpModule() : CModule("AirJump", 'F', MOVEMENT, "Jump in the air") {
+CAirJumpModule::CAirJumpModule() : CModule("AirJump", 'F', MOVEMENT, "Jump in the air", "AirJump") {
 }
 
 void CAirJumpModule::onEvent(const CSimpleEvent* event) {

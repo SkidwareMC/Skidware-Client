@@ -17,10 +17,17 @@ void CCriticalsModule::onDisable()
 
 void CCriticalsModule::onEvent(const CSimpleEvent*)
 {
+
+	displayName = (char*)crits_current_mode;
+	this->displayName = displayName;
 	CMinecraft* mc = CCheat::theMinecraft;
 	if (crits_current_mode == "Mini-Jump") {
 		if (mc->thePlayer->onGround)
 			mc->thePlayer->motionY = 0.31;
+	}
+	else if (crits_current_mode == "Jump") {
+		if (mc->thePlayer->onGround)
+			mc->thePlayer->jump();
 	}
 }
 
