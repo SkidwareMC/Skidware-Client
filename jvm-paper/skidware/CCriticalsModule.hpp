@@ -3,15 +3,18 @@
 #pragma once
 
 #include "CModule.hpp"
-
+static const char* crits_modes[] = { "Mini-Jump", "Jump" };
+static const char* crits_current_mode = "Mini-Jump";
 typedef struct CCriticalsModule : CModule {
 	CCriticalsModule();
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
+private:
+	static inline char* displayName = (char*)crits_current_mode;
 };
-static const char* crits_modes[] = { "Mini-Jump", "Jump" };
-static const char* crits_current_mode = "Mini-Jump";
+
+
 
 #endif //CNoFallModule_HPP_GUARD

@@ -15,10 +15,12 @@ typedef struct CModule : CEventListener {
 	int keyBind = 0x0;
 	CATAGORY catagory;
 	const char* desc;
+	const char* displayName;
 
 protected:
-	CModule(std::string name, int keyBind, CATAGORY catagory, const char* desc = "Figure it out");
+	CModule(std::string name, int keyBind, CATAGORY catagory, const char* desc, const char* displayName = "");
 public:
+
 
 	virtual ~CModule();
 	virtual void setState(bool);

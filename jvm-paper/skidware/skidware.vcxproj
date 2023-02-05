@@ -175,6 +175,7 @@
     <ClCompile Include="CEntityRenderer.cpp" />
     <ClCompile Include="CFlyModule.cpp" />
     <ClCompile Include="CFontRenderer.cpp" />
+    <ClCompile Include="CFullBrightModule.cpp" />
     <ClCompile Include="CGameSettings.cpp" />
     <ClCompile Include="CHUDModule.cpp" />
     <ClCompile Include="CIntelligentMappings.cpp" />
@@ -221,6 +222,7 @@
     <ClInclude Include="CEntityRenderer.hpp" />
     <ClInclude Include="CFlyModule.hpp" />
     <ClInclude Include="CFontRenderer.hpp" />
+    <ClInclude Include="CFullBrightModule.hpp" />
     <ClInclude Include="CGameSettings.hpp" />
     <ClInclude Include="CHUDModule.hpp" />
     <ClInclude Include="CInstanceKlass.hpp" />

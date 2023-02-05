@@ -1,6 +1,6 @@
 #include "CAntiKBModule.hpp"
 
-CAntiKBModule::CAntiKBModule() : CModule("AntiKB", 'K', COMBAT, "(Broken) makes you not move")
+CAntiKBModule::CAntiKBModule() : CModule("AntiKB", 'K', COMBAT, "NoKB Hack")
 {
 }
 
@@ -16,6 +16,8 @@ void CAntiKBModule::onDisable()
 
 void CAntiKBModule::onEvent(const CSimpleEvent*)
 {
+	displayName = (char*)velo_current_mode;
+	this->displayName = displayName;
 	CMinecraft* mc = CCheat::theMinecraft;
 	if (velo_current_mode == "Motion") {
 		if (mc->thePlayer->IsHurt()) {

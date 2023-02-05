@@ -2,7 +2,7 @@
 #include "CCheat.hpp"
 #include "wrapper.h"
 
-CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT, "Zoom") {
+CFlyModule::CFlyModule() : CModule("Fly", 'V', MOVEMENT, "Zoom", displayName) {
 
 }
 
@@ -19,14 +19,15 @@ void CFlyModule::onDisable() {
 }
 
 void CFlyModule::onEvent(const CSimpleEvent* event) {
-	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
+	displayName = (char*)fly_current_mode;
+	this->displayName = displayName;
 		CMinecraft* mc = CCheat::theMinecraft;
 
-		if (fly_current_mode == "Spartan")
+		if (fly_current_mode == "Spartan") {
 			mc->thePlayer->motionX = 0;
 			mc->thePlayer->motionY = -0.1;
 			mc->thePlayer->motionZ = 0;
-			
+
 			if (mc->gameSettings->isAnyKeyDown()) {
 				if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
 					mc->thePlayer->strafe(2);
@@ -39,17 +40,26 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 			if (mc->gameSettings->keyBindSneak->pressed) {
 				mc->thePlayer->motionY = -0.5;
 			}
-
+		}
 		else if (fly_current_mode == "Keep-Y")
 		{
-				mc->thePlayer->motionX = mc->thePlayer->motionX * 0;
-				mc->thePlayer->motionY = 0;
-				mc->thePlayer->motionZ = mc->thePlayer->motionZ * 0;
+			mc->thePlayer->motionX = 0;
+			mc->thePlayer->motionY = 0;
+			mc->thePlayer->motionZ = 0;
+			if (mc->gameSettings->isAnyKeyDown()) {
+				if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
+					mc->thePlayer->strafe(1.5);
+				}
+			}
+		}
+		else if (fly_current_mode == "JetPack") {
+			if (mc->gameSettings->keyBindJump->isKeyDown())
+				mc->thePlayer->jump();
 		}
 	} 
 
 	
-}
+
 
 void CFlyModule::renderSettings()
 {

@@ -1,7 +1,8 @@
 #include "CGameSettings.hpp"
 #include "CCheat.hpp"
 
-CGameSettings::CGameSettings(jobject klass) : _klass(klass) {
+CGameSettings::CGameSettings(jobject klass) : _klass(klass), gammaSetting(klass,
+	CIntelligentMappings::getClass("net.minecraft.client.settings.GameSettings").getField("gammaSetting").name(), "F"){
 	this->_klass = klass;
 	CIntelligentMappedClass gameSettingsKlass = CIntelligentMappings::getClass("net.minecraft.client.settings.GameSettings");
 	this->keyBindForward = new CKeyBinding(CUtils::GetField<jobject>(klass,

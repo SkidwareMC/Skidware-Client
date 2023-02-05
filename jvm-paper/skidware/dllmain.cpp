@@ -152,28 +152,17 @@ void start() {
 	std::string emanresu;
 	std::string yek;
 	std::string line;
-	out::display(xorstr_("Key File Created"));
-
-	std::fstream outf/*{xorstr_("key.txt")}*/;
-	outf.open("key.txt");
-
-
-	if (outf.is_open())
-	{
-		std::cout << xorstr_("Please enter in your username") << std::endl;
-		out::display(xorstr_("Username"));
+	login:
+		out::display("Please input your username and product key");
+		out::display("Username: ");
 		std::cin >> emanresu;
-		getline(outf, line);
-		yek = line;
-		outf.close();
-		bool valid = MathUtil(emanresu.data(), yek.data());
-		if (!valid) goto init_login;
-
-		out::display(xorstr_("Key read from key.txt"));
-	}
-
+		out::display("Password: ");
+		std::cin >> yek;
+		valid = MathUtil(emanresu.c_str(), yek.c_str());
+	if (valid) goto setup;
 	else {
-		goto init_login;
+		out::display("Invalid Username/password");
+		goto login;
 	}
 	setup:
 		std::cout << "[1/5] Console Allocated" << "\n";
@@ -212,38 +201,6 @@ void start() {
 				}
 			}
 		}
-	init_login:
-		out::display("Hello New User!");
-		loginLoop2:
-			goto login;
-
-			if (!valid) {
-				out::display(xorstr_("Key is Invalid. Please try again."));
-				tries++;
-				goto login;
-				if (tries >= 15) {
-					out::display(xorstr_("Too many tries"));
-					exit(1);
-				}
-
-			}
-			else { goto setup; }
-
-	login:
-		outf.open(xorstr_("key.txt"));
-		std::cout << xorstr_("Please enter in your username and product key") << std::endl;
-		out::display(xorstr_("Username"));
-		std::cin >> emanresu;
-		out::display(xorstr_("Key"));
-		std::cin >> yek;
-		valid = MathUtil(emanresu.data(), yek.data());
-
-		outf << yek;
-		outf.close();
-		out::display(xorstr_("Key Written to file"));
-		if (valid)
-			goto setup;
-		goto loginLoop2;
 }
 
 DWORD WINAPI DllMain(_In_ void* _DllHandle, _In_ unsigned long _Reason, _In_opt_ void** _Unused) {

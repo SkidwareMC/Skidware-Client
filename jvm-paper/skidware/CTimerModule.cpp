@@ -1,7 +1,7 @@
 #include "CTimerModule.hpp"
 #include "CCheat.hpp"
 
-CTimerModule::CTimerModule() : CModule("Timer", '\0', MISC, "TimerHack")
+CTimerModule::CTimerModule() : CModule("Timer", '\0', MISC, "TimerHack", "Timer")
 {
 }
 
