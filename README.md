@@ -9,7 +9,7 @@ Trash GUI lmao
 
 
 Minecraft injection client <br>
-![url](https://github.com/SkidwareMC/Skidware-Client/blob/New-1.8.9/skidware.png) <br>
+![url](https://github.com/SkidwareMC/Skidware-Client/blob/Stable/skidware.png) <br>
 
 1.12.2 forge/vanilla <br>
 1.8.9 support soon <br>
