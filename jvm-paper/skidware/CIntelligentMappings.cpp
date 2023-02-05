@@ -208,10 +208,11 @@ void CIntelligentMappings::init(Version ver) {
 			"field_74314_A", "X", "Lnet/minecraft/client/settings/KeyBinding;", "Lbhy;");
 		CIntelligentMappedField keyBindSneakField = make_field("keyBindSneak", "Lnet/minecraft/client/settings/KeyBinding;",
 			"field_74311_E", "Y", "Lnet/minecraft/client/settings/KeyBinding;", "Lbhy;");
+		CIntelligentMappedField gammaSettingField = make_field("gammaSetting", "F", "field_74333_Y", "aE", "F", "F");
 
 		CIntelligentMappedClass gameSettingsKlass = make_klass("net.minecraft.client.settings.GameSettings",
 			"net.minecraft.client.settings.GameSettings", "bid", std::vector({ keyBindForwardField, keyBindBackField,
-				keyBindLeftField, keyBindRightField, keyBindJumpField, keyBindSneakField }), std::vector({ nullMethod }));
+				keyBindLeftField, keyBindRightField, keyBindJumpField, keyBindSneakField, gammaSettingField }), std::vector({ nullMethod }));
 		_klasses.push_back(gameSettingsKlass);
 
 		/*-------------------------*/

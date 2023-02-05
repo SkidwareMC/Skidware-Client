@@ -15,6 +15,9 @@ void CSpeedModule::onDisable() {
 }
 
 void CSpeedModule::onEvent(const CSimpleEvent* event) {
+	
+	displayName = (char*)speed_current_mode;
+	this->displayName = displayName;
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {
 		CMinecraft* mc = CCheat::theMinecraft;
 

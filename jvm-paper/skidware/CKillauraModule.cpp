@@ -2,7 +2,7 @@
 #include "CCheat.hpp"
 #include "wrapper.h"
 float yaw, pitch;
-CKillauraModule::CKillauraModule() : CModule("Aura", '-', MISC, "generic killaura") {
+CKillauraModule::CKillauraModule() : CModule("Aura", '-', MISC, "generic killaura", "Aura") {
 	
 }
 

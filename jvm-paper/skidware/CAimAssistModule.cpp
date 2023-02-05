@@ -1,6 +1,6 @@
 #include "CAimAssistModule.hpp"
 
-CAimAssistModule::CAimAssistModule() : CModule("Rotation", 'I', COMBAT, "Silent Rotation test")
+CAimAssistModule::CAimAssistModule() : CModule("Rotation", 'I', COMBAT, "Silent Rotation test", "AimTest")
 {
 	float yaw = 0.0;
 }

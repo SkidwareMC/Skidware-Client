@@ -4,6 +4,7 @@
 
 #include "common.h"
 #include "CKeyBinding.hpp"
+#include "CUniqueReference.hpp"
 
 typedef struct CKeyBinding CKeyBinding;
 
@@ -17,6 +18,7 @@ typedef struct CGameSettings {
 	CKeyBinding* keyBindRight = nullptr;
 	CKeyBinding* keyBindJump = nullptr;
 	CKeyBinding* keyBindSneak = nullptr;
+	jni_ptr<float> gammaSetting = make_jni_ptr<float>(this->_klass, "", "F");
 	bool isAnyKeyDown();
 private:
 	jobject _klass;

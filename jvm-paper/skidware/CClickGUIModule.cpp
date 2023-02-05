@@ -24,7 +24,7 @@ void ChromaticTab(char* label, int& tabhandler, int tab)
 
 
 
-CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT, RENDER) {
+CClickGUIModule::CClickGUIModule() : CModule("ClickGUI", VK_RSHIFT, RENDER, "ClickGui", "GUI") {
 	//this->toggle();
 
 }

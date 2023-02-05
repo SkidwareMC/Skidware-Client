@@ -1,6 +1,6 @@
 #include "CClickerModule.hpp"
 
-CClickerModule::CClickerModule() : CModule("RClicker", 'O', COMBAT, "Don't use") {
+CClickerModule::CClickerModule() : CModule("RClicker", 'O', COMBAT, "Don't use", "RClicker") {
 
 }
 

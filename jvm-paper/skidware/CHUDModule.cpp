@@ -3,7 +3,7 @@
 #include "CFlyModule.hpp"
 #include "CSpeedModule.hpp"
 
-CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER, "yes") {
+CHUDModule::CHUDModule() : CModule("HUD", 'H', RENDER, "yes", "HUD") {
 	this->toggle();
 }
 
@@ -208,10 +208,10 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 					if (showBinds) {
 						CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name
 					+ " - " + MapSpecialKeyToString(module->keyBind), xpos,
-							yPos, 0x7a04c4);
+							yPos, 0x0e35e6);
 					}
 					else
-						CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(module->name, xpos, yPos, 0x7a04c4);
+						CCheat::theMinecraft->fontRendererObj->drawStringWithShadow(MapSpecialKeyToString(module->keyBind), xpos, yPos, 0x0e35e6);
 					glPopMatrix();
 					yPos += 10;
 				}
@@ -223,5 +223,5 @@ void CHUDModule::onEvent(const CSimpleEvent* event) {
 void CHUDModule::renderSettings()
 {
 	ImGui::Separator();
-	ImGui::Checkbox("ShowBinds", &showBinds);
+	ImGui::Checkbox("ShowMode", &showBinds);
 }

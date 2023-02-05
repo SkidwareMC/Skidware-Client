@@ -7,16 +7,19 @@
 #include "CCheat.hpp"
 #include "mathUtil.h"
 #include "wrapper.h"
-
+static const char* velo_modes[] = { "Motion", "Jump" };
+static const char* velo_current_mode = "Jump";
 typedef struct CAntiKBModule : CModule {
 	CAntiKBModule();
 	virtual void onEnable() override;
 	virtual void onDisable() override;
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
+private:
+	static inline char* displayName = (char*)velo_current_mode;
 } CAntiKBModule;
 
-static const char* velo_modes[] = { "Motion", "Jump" };
-static const char* velo_current_mode = "Jump";
+
+
 
 #endif // !ANTIKBMODULE_CGUARD
