@@ -11,6 +11,8 @@ typedef struct CKillauraModule : CModule {
 	virtual void onEvent(const CSimpleEvent*) override;
 	virtual void renderSettings();
 
+	void auraRotate();
+
 	// void click();
 
 } CNoFallModule;

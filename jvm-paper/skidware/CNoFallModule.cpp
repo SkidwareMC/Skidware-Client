@@ -25,9 +25,15 @@ void CNoFallDamageModule::onEvent(const CSimpleEvent*)
 			mc->thePlayer->motionY = force;
 		}
 	}
-	else if (nofall_current_mode == "Spoof") {
+	else if (nofall_current_mode == "Motion") {
 		if (mc->thePlayer->fallDistance > 2.5) {
 			mc->thePlayer->motionY = 0;
+		}
+	}
+	else if (nofall_current_mode == "Spoof") {
+		if (mc->thePlayer->fallDistance > 2.5) {
+			mc->thePlayer->onGround = true;
+			mc->thePlayer->fallDistance = 0;
 		}
 	}
 }

@@ -43,13 +43,11 @@ void CFlyModule::onEvent(const CSimpleEvent* event) {
 		}
 		else if (fly_current_mode == "Keep-Y")
 		{
-			mc->thePlayer->motionX = 0;
 			mc->thePlayer->motionY = 0;
-			mc->thePlayer->motionZ = 0;
-			if (mc->gameSettings->isAnyKeyDown()) {
-				if (mc->thePlayer->isMovingForwardOrBackwards() || mc->thePlayer->isStrafing()) {
-					mc->thePlayer->strafe(1.5);
-				}
+			mc->thePlayer->onGround = true;
+			if (!mc->gameSettings->isAnyKeyDown()) {
+				mc->thePlayer->motionZ = 0;
+				mc->thePlayer->motionX = 0;
 			}
 		}
 		else if (fly_current_mode == "JetPack") {

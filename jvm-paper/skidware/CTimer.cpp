@@ -1,8 +1,10 @@
 #include "CTimer.h"
 #include "CIntelligentMappings.hpp"
-CTimer::CTimer(jobject klass) : _klass(klass), tickLength(klass, 
-	CIntelligentMappings::getClass("net.minecraft.util.Timer").getField("tickLength").name(), "F") {
 
+CTimer::CTimer(jobject klass) : _klass(klass), tickLength(klass, 
+	CIntelligentMappings::getClass("net.minecraft.util.Timer").getField("tickLength").name(), "F"), timerSpeed(klass,
+		CIntelligentMappings::getClass("net.minecraft.util.Timer").getField("timerSpeed").name(), "F"){
+	
 	this->_klass = klass;
 }
 

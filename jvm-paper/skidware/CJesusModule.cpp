@@ -21,9 +21,10 @@ void CJesusModule::onEvent(const CSimpleEvent*)
 	this->displayName = displayName;
 	double jumpfactor = 0.0336;
 	CMinecraft* mc = CCheat::theMinecraft;
-	if (jesus_current_mode == "AAC 4.2.1") {
+	if (jesus_current_mode == "NCP") {
 		if (mc->thePlayer->inWater) {
 			mc->thePlayer->motionY = jumpfactor;
+			mc->thePlayer->onGround = false;
 		}
 	}
 	else if (jesus_current_mode == "Dolphin") {

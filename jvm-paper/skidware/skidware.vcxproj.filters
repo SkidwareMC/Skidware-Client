@@ -241,9 +241,6 @@
     <ClInclude Include="CClickerModule.hpp">
       <Filter>modules\impl\combat</Filter>
     </ClInclude>
-    <ClInclude Include="CStrafeModule.hpp">
-      <Filter>modules\impl\movement</Filter>
-    </ClInclude>
     <ClInclude Include="mathUtil.h">
       <Filter>sdk\util\Math</Filter>
     </ClInclude>
@@ -262,14 +259,18 @@
     <ClInclude Include="CCriticalsModule.hpp">
       <Filter>modules\impl\combat</Filter>
     </ClInclude>
-    <ClInclude Include="CTimerModule.hpp">
-      <Filter>modules\impl\Misc</Filter>
-    </ClInclude>
-    <ClInclude Include="CTimer.h">
-      <Filter>sdk\mc_sdk\util</Filter>
-    </ClInclude>
     <ClInclude Include="CFullBrightModule.hpp">
       <Filter>modules\impl\render</Filter>
+    </ClInclude>
+    <ClInclude Include="CNoSlowModule.hpp">
+      <Filter>modules\impl\Misc</Filter>
+    </ClInclude>
+    <ClInclude Include="CTimer.h" />
+    <ClInclude Include="CStrafeModule.hpp">
+      <Filter>modules\impl\movement</Filter>
+    </ClInclude>
+    <ClInclude Include="CTowerModule.hpp">
+      <Filter>modules\impl\Misc</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -396,19 +397,23 @@
     <ClCompile Include="CCriticalsModule.cpp">
       <Filter>modules\impl\combat</Filter>
     </ClCompile>
-    <ClCompile Include="CTimer.cpp">
-      <Filter>sdk\mc_sdk\util</Filter>
-    </ClCompile>
-    <ClCompile Include="CTimerModule.cpp">
-      <Filter>modules\impl\Misc</Filter>
-    </ClCompile>
     <ClCompile Include="CFullBrightModule.cpp">
       <Filter>modules\impl\render</Filter>
+    </ClCompile>
+    <ClCompile Include="CNoSlowModule.cpp">
+      <Filter>modules\impl\Misc</Filter>
+    </ClCompile>
+    <ClCompile Include="CTimer.cpp">
+      <Filter>main</Filter>
+    </ClCompile>
+    <ClCompile Include="CTowerModule.cpp">
+      <Filter>modules\impl\Misc</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="CAutoSprintModule.hpp">
       <Filter>modules\impl\movement</Filter>
     </None>
+    <None Include="cpp.hint" />
   </ItemGroup>
 </Project>

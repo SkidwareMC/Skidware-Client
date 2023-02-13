@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CModule.hpp"
-static const char* nofall_modes[] = { "AAC 3.3.7", "Motion" };
+static const char* nofall_modes[] = { "AAC 3.3.7", "Motion", "Spoof"};
 static const char* nofall_current_mode = "AAC 3.3.7";
 typedef struct CNoFallDamageModule : CModule {
 	CNoFallDamageModule();

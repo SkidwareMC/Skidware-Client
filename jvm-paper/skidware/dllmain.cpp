@@ -11,7 +11,6 @@
 #include <fstream>
 
 
-
 typedef long(__stdcall* _JNI_GetCreatedJavaVMs)(JavaVM**, long, long*);
 _JNI_GetCreatedJavaVMs ORIG_JNI_GetCreatedJavaVMs;
 
@@ -142,65 +141,65 @@ bool MathUtil(const char* resu, const char* hjkhjk)
 	return true;
 }
 int tries;
+
 void start() {
 	AllocConsole();
 	FILE* in;
 	FILE* out;
 	bool valid;
+	std::string filename;
 	freopen_s(&in, "conin$", "r", stdin);
 	freopen_s(&out, "conout$", "w", stdout);
+	std::ifstream inf;
 	std::string emanresu;
 	std::string yek;
 	std::string line;
-	login:
-		out::display("Please input your username and product key");
-		out::display("Username: ");
-		std::cin >> emanresu;
-		out::display("Password: ");
-		std::cin >> yek;
-		valid = MathUtil(emanresu.c_str(), yek.c_str());
-	if (valid) goto setup;
-	else {
-		out::display("Invalid Username/password");
-		goto login;
-	}
-	setup:
-		std::cout << "[1/5] Console Allocated" << "\n";
-		Sleep(1500);
-		void* handle;
-		void* base;
-		size_t size;
-		if (GetModuleInfo("jvm.dll", &handle, &base, &size)) {
-			MH_Initialize();
-			std::cout << "[2/5] MinHook initilized" << "\n";
+	inf.open("key.txt");
+
+
+setup:
+	std::cout << "[1/5] Console Allocated" << "\n";
+	Sleep(1500);
+	void* handle;
+	void* base;
+	size_t size;
+	if (GetModuleInfo("jvm.dll", &handle, &base, &size)) {
+		MH_Initialize();
+		std::cout << "[2/5] MinHook initilized" << "\n";
+		Sleep(500);
+		ORIG_JNI_GetCreatedJavaVMs = reinterpret_cast<_JNI_GetCreatedJavaVMs>(GetProcAddress(reinterpret_cast<HMODULE>(handle), "JNI_GetCreatedJavaVMs"));
+		JavaVM* javavm;
+		ORIG_JNI_GetCreatedJavaVMs(&javavm, 1, nullptr);
+		std::cout << "[3/5] JVM Created" << "\n";
+		Sleep(500);
+		javavm->AttachCurrentThread(reinterpret_cast<void**>(&env), nullptr);
+		std::cout << "[4/5] Thread Attached" << "\n";
+		Sleep(500);
+		jvmtiEnv* jvmti_env;
+		javavm->GetEnv(reinterpret_cast<void**>(&jvmti_env), JVMTI_VERSION);
+		std::cout << "[5/5] Java Enviroment Created" << "\n";
+		Sleep(500);
+		if (env) {
+			std::cout << "Starting... " << "\n";
 			Sleep(500);
-			ORIG_JNI_GetCreatedJavaVMs = reinterpret_cast<_JNI_GetCreatedJavaVMs>(GetProcAddress(reinterpret_cast<HMODULE>(handle), "JNI_GetCreatedJavaVMs"));
-			JavaVM* javavm;
-			ORIG_JNI_GetCreatedJavaVMs(&javavm, 1, nullptr);
-			std::cout << "[3/5] JVM Created" << "\n";
+			CCheat* cheat = new CCheat(env, javavm);
+			std::cout << "Cheat Instance created" << "\n";
 			Sleep(500);
-			javavm->AttachCurrentThread(reinterpret_cast<void**>(&env), nullptr);
-			std::cout << "[4/5] Thread Attached" << "\n";
+			CMinecraft* mc = cheat->theMinecraft;
+			std::cout << "Minecraft Instance created" << "\n";
 			Sleep(500);
-			jvmtiEnv* jvmti_env;
-			javavm->GetEnv(reinterpret_cast<void**>(&jvmti_env), JVMTI_VERSION);
-			std::cout << "[5/5] Java Enviroment Created" << "\n";
-			Sleep(500);
-			if (env) {
-				std::cout << "Starting..." << "\n";
-				Sleep(500);
-				CCheat* cheat = new CCheat(env, javavm);
-				std::cout << "Cheat Instance created" << "\n";
-				Sleep(500);
-				CMinecraft* mc = cheat->theMinecraft;
-				std::cout << "Minecraft Instance created" << "\n";
-				Sleep(500);
-				while (true) {
-					mc->runTick();
-					Sleep(CCheat::timerDelay);
-				}
+			while (true) {
+				mc->runTick();
+				Sleep(CCheat::timerDelay);
 			}
 		}
+	}
+
+
+
+	
+
+	
 }
 
 DWORD WINAPI DllMain(_In_ void* _DllHandle, _In_ unsigned long _Reason, _In_opt_ void** _Unused) {

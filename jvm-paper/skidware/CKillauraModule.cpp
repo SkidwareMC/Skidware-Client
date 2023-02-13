@@ -2,7 +2,7 @@
 #include "CCheat.hpp"
 #include "wrapper.h"
 float yaw, pitch;
-CKillauraModule::CKillauraModule() : CModule("Aura", '-', MISC, "generic killaura", "Aura") {
+CKillauraModule::CKillauraModule() : CModule("Aura", '-', COMBAT, "generic killaura", "Aura") {
 	
 }
 
@@ -22,9 +22,13 @@ void CKillauraModule::onEvent(const CSimpleEvent* event) {
 			mc->playerController->attackEntity(mc->thePlayer, entityPlayer);
 		}
 		*/
+		// CMinecraft* mc = CCheat::theMinecraft;
 		yaw = mc->thePlayer->rotationYaw;
 		pitch = mc->thePlayer->rotationPitch;
-		misc::thread(misc::Rclick);
+		mc->thePlayer->rotationPitch = 0;
+		mc->thePlayer->rotationYaw = 90;
+		misc::thread(misc::Lclick);
+		Sleep(0.1);
 		mc->thePlayer->rotationPitch = pitch;
 		mc->thePlayer->rotationYaw = yaw;
 	}
@@ -35,4 +39,6 @@ void CKillauraModule::renderSettings()
 	ImGui::Separator();
 	ImGui::SliderFloat("APS", &cps::cps, 1, 20);
 }
+
+
 

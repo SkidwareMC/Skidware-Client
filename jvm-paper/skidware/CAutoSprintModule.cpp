@@ -19,11 +19,12 @@ void CAutoSprintModule::onEvent(const CSimpleEvent* event)
 {
 	if (auto e = dynamic_cast<const UpdateEvent*>(event)) {}
 	CMinecraft* mc = CCheat::theMinecraft;
-	if (mc->thePlayer->moveForward > 0) {
-		mc->thePlayer->setSprint(true);
-	}
+	if (mc->gameSettings->keyBindForward->isKeyDown())
+		mc->gameSettings->keyBindSprint->setKeyBindState(mc->gameSettings->keyBindSprint->keyCode, true);
 }
 
 void CAutoSprintModule::renderSettings()
 {
+	ImGui::Separator();
+	return;
 }

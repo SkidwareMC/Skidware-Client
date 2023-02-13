@@ -16,7 +16,10 @@ CGameSettings::CGameSettings(jobject klass) : _klass(klass), gammaSetting(klass,
 	this->keyBindJump = new CKeyBinding(CUtils::GetField<jobject>(klass,
 		gameSettingsKlass.getField("keyBindJump").name(), gameSettingsKlass.getField("keyBindJump").signature()));
 	this->keyBindSneak = new CKeyBinding(CUtils::GetField<jobject>(klass,
-		gameSettingsKlass.getField("keyBindSneak").name(), gameSettingsKlass.getField("keyBindSneak").signature()));
+		gameSettingsKlass.getField("keyBindSneak").name(), gameSettingsKlass.getField("keyBindSneak").signature()));	
+	this->keyBindSprint = new CKeyBinding(CUtils::GetField<jobject>(klass,
+		gameSettingsKlass.getField("keyBindSprint").name(), gameSettingsKlass.getField("keyBindSprint").signature()));
+
 }
 
 CGameSettings::~CGameSettings() {

@@ -1,8 +1,10 @@
 #include "CWorld.hpp"
 #include "CCheat.hpp"
-
+#include "wrapper.h"
 CWorld::CWorld(jobject klass) : _klass(klass) {
+	out::display("Klass created");
 	this->_klass = klass;
+	return;
 }
 
 CWorld::~CWorld() {

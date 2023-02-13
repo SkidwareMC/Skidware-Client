@@ -7,7 +7,7 @@
 #include "CCheat.hpp"
 #include "mathUtil.h"
 #include "wrapper.h"
-static const char* velo_modes[] = { "Motion", "Jump" };
+static const char* velo_modes[] = { "OnGround", "Jump" };
 static const char* velo_current_mode = "Jump";
 typedef struct CAntiKBModule : CModule {
 	CAntiKBModule();

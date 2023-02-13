@@ -19,15 +19,14 @@ void CAntiKBModule::onEvent(const CSimpleEvent*)
 	displayName = (char*)velo_current_mode;
 	this->displayName = displayName;
 	CMinecraft* mc = CCheat::theMinecraft;
-	if (velo_current_mode == "Motion") {
+	if (velo_current_mode == "Jump") {
 		if (mc->thePlayer->IsHurt()) {
-			mc->thePlayer->motionX = 0;
-			mc->thePlayer->motionX = 0;
-			mc->thePlayer->motionX = 0;
+			if (mc->thePlayer->onGround)
+				mc->thePlayer->jump();
 
 		}
 	}
-	else if (velo_current_mode == "Jump") {
+	else if (velo_current_mode == "OnGround") {
 		if (mc->thePlayer->IsHurt()) {
 			if (!mc->thePlayer->onGround) {
 				// mc->thePlayer->jump();
@@ -41,7 +40,7 @@ void CAntiKBModule::onEvent(const CSimpleEvent*)
 void CAntiKBModule::renderSettings()
 {
 	ImGui::Separator();
-	if (ImGui::BeginCombo("##combo", velo_current_mode)) // The second parameter is the label previewed before opening the combo.
+	if (ImGui::BeginCombo("#ecombo", velo_current_mode)) // The second parameter is the label previewed before opening the combo.
 	{
 		for (int n = 0; n < IM_ARRAYSIZE(velo_modes); n++)
 		{

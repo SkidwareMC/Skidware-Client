@@ -1,6 +1,6 @@
 #include "CAimAssistModule.hpp"
 
-CAimAssistModule::CAimAssistModule() : CModule("Rotation", 'I', COMBAT, "Silent Rotation test", "AimTest")
+CAimAssistModule::CAimAssistModule() : CModule("RotationTest", 'I', COMBAT, "Silent Rotation test", "AimTest")
 {
 	float yaw = 0.0;
 }
@@ -18,9 +18,9 @@ void CAimAssistModule::onDisable()
 void CAimAssistModule::onEvent(const CSimpleEvent*)
 {
 	CMinecraft* mc = CCheat::theMinecraft;
-	//for (CPlayer* entityPlayer : mc->theWorld->getPlayers()) {
-
-	//}
+	for (CPlayer* entityPlayer : mc->thePlayer->theWorld->getPlayers()) {
+		printf("player\n");
+	}
 		mc->thePlayer->headRotationYaw = 90;
 }
 

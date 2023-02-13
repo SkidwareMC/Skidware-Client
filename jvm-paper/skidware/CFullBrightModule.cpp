@@ -1,12 +1,14 @@
 #include "CFullBrightModule.hpp"
 #include "CCheat.hpp"
-float originalGammaSetting = 0;
+float originalGammaSetting;
 CFullBrightModule::CFullBrightModule() : CModule("FullBright", VK_DOWN, RENDER, "Make your game brighter", "FullBright")
 {
 }
 
 void CFullBrightModule::onEnable()
 {
+	CMinecraft* mc = CCheat::theMinecraft;
+	originalGammaSetting = mc->gameSettings->gammaSetting;
 	CCheat::eventBus->registerListener(this);
 }
 
@@ -20,9 +22,8 @@ void CFullBrightModule::onDisable()
 
 void CFullBrightModule::onEvent(const CSimpleEvent* event)
 {
-	CMinecraft* mc = CCheat::theMinecraft;
 	if (auto e = dynamic_cast<const Render2DEvent*>(event)) {
-		originalGammaSetting = mc->gameSettings->gammaSetting;
+		CMinecraft* mc = CCheat::theMinecraft;
 		mc->gameSettings->gammaSetting = 100;
 	}
 }

@@ -14,7 +14,10 @@ CPlayer::CPlayer(jobject klass) : _klass(klass), onGround(klass,
 										CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("speedInAir").name(), "I"), inWater(klass,
 											CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("inWater").name(), "Z"), fallDistance(klass,
 												CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("fallDistance").name(), "F"), rotationPitch(klass,
-													CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationPitch").name(), "F"){
+													CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("rotationPitch").name(), "F"), posX(klass,
+														CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("posX").name(), "D"), posY(klass,
+															CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("posY").name(), "D"), posZ(klass,
+																CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP").getField("posZ").name(), "D") {
 	this->_klass = klass;
 	CIntelligentMappedClass intelligent = CIntelligentMappings::getClass("net.minecraft.client.entity.EntityPlayerSP");
 	this->movementInput = new CMovementInput(CUtils::GetField<jobject>(this->_klass,

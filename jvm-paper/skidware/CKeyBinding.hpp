@@ -34,6 +34,8 @@ public:
 	}
 };
 
+
+
 typedef struct CKeyBinding {
 	CKeyBinding(jobject);
 	~CKeyBinding();
@@ -42,6 +44,7 @@ typedef struct CKeyBinding {
 	__FIX_ME__2::jni_ptr<int> keyCode = __FIX_ME__2::make_jni_ptr<int>(this->_klass, "", "I");
 
 	bool isKeyDown();
+	void setKeyBindState(int keycode, bool state);
 private:
 	jobject _klass;
 } CKeyBinding;

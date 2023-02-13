@@ -22,7 +22,7 @@ typedef struct CPlayer {
 
 	jni_ptr<double> motionX = make_jni_ptr<double>(this->_klass, "", "D");
 	jni_ptr<double> motionY = make_jni_ptr<double>(this->_klass, "", "D");
-	jni_ptr<double> motionZ = make_jni_ptr<double>(this->_klass, "", "D");
+	jni_ptr<double> motionZ = make_jni_ptr<double>(this->_klass, "", "D");	
 	
 	jni_ptr<float> rotationYaw = make_jni_ptr<float>(this->_klass, "", "F");
 	jni_ptr<float> headRotationYaw = make_jni_ptr<float>(this->_klass, "", "F");
@@ -33,6 +33,10 @@ typedef struct CPlayer {
 	jni_ptr<bool> inWater = make_jni_ptr<bool>(this->_klass, "", "Z");
 	jni_ptr<float> fallDistance = make_jni_ptr<float>(this->_klass, "", "F");
 	jni_ptr<float> rotationPitch = make_jni_ptr<float>(this->_klass, "", "F");
+
+	jni_ptr<double> posX = make_jni_ptr<double>(this->_klass, "", "D");
+	jni_ptr<double> posY = make_jni_ptr<double>(this->_klass, "", "D");
+	jni_ptr<double> posZ = make_jni_ptr<double>(this->_klass, "", "D");
 
 	CMovementInput* movementInput = nullptr;
 	CWorld* theWorld = nullptr;

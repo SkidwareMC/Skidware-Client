@@ -153,6 +153,7 @@
       </PrecompiledHeaderFile>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <DisableLanguageExtensions>false</DisableLanguageExtensions>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -187,13 +188,14 @@
     <ClCompile Include="CModuleManager.cpp" />
     <ClCompile Include="CMovementInput.cpp" />
     <ClCompile Include="CNoFallModule.cpp" />
+    <ClCompile Include="CNoSlowModule.cpp" />
     <ClCompile Include="CPlayer.cpp" />
     <ClCompile Include="CPlayerController.cpp" />
     <ClCompile Include="CSpiderModule.cpp" />
     <ClCompile Include="CSpeedModule.cpp" />
     <ClCompile Include="CStrafeModule.cpp" />
     <ClCompile Include="CTimer.cpp" />
-    <ClCompile Include="CTimerModule.cpp" />
+    <ClCompile Include="CTowerModule.cpp" />
     <ClCompile Include="CUtils.cpp" />
     <ClCompile Include="CWorld.cpp" />
     <ClCompile Include="dllmain.cpp" />
@@ -237,6 +239,7 @@
     <ClInclude Include="CModule.hpp" />
     <ClInclude Include="CModuleManager.hpp" />
     <ClInclude Include="CMovementInput.hpp" />
+    <ClInclude Include="CNoSlowModule.hpp" />
     <ClInclude Include="common.h" />
     <ClInclude Include="CPatch.hpp" />
     <ClInclude Include="CPlayer.hpp" />
@@ -246,7 +249,8 @@
     <ClInclude Include="CSpeedModule.hpp" />
     <ClInclude Include="CStrafeModule.hpp" />
     <ClInclude Include="CSymbol.hpp" />
-    <ClInclude Include="CTimerModule.hpp" />
+    <ClInclude Include="CTimer.h" />
+    <ClInclude Include="CTowerModule.hpp" />
     <ClInclude Include="CUniqueReference.hpp" />
     <ClInclude Include="CUtils.hpp" />
     <ClInclude Include="CWorld.hpp" />
@@ -272,12 +276,12 @@
     <ClInclude Include="minhook\MinHook.h" />
     <ClInclude Include="minhook\trampoline.h" />
     <ClInclude Include="CNoFallModule.hpp" />
-    <ClInclude Include="CTimer.h" />
     <ClInclude Include="wrapper.h" />
     <ClInclude Include="xorstr.hpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CAutoSprintModule.hpp" />
+    <None Include="cpp.hint" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

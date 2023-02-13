@@ -18,3 +18,10 @@ bool CKeyBinding::isKeyDown() {
 
 	return CUtils::CallMethod<bool>(this->_klass, isKeyDownMethod.name(), "()Z");
 }
+void CKeyBinding::setKeyBindState(int keycode, bool state)
+{
+	CIntelligentMappedClass klass = CIntelligentMappings::getClass("net.minecraft.client.settings.KeyBinding");
+	CIntelligentMappedMethod isKeyDownMethod = klass.getMethod("setKeyBindState");
+	CUtils::CallMethod<void>(this->_klass, isKeyDownMethod.name(), "(IZ)V", keycode, state);
+	return;
+}

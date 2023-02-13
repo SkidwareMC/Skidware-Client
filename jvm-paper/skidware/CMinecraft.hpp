@@ -23,6 +23,7 @@ typedef struct CPlayerController CPlayerController;
 typedef struct CTimer CTimer;
 
 typedef struct CMinecraft {
+	// CMinecraft(jobject klass);
 	CMinecraft();
 	static CMinecraft* getMinecraft();
 	jobject getNativeMinecraft();
@@ -30,7 +31,7 @@ typedef struct CMinecraft {
 	jobject getNativeWorld();
 	jobject getNativePlayerController();
 
-	jobject getNativeTimer();
+	// jobject getNativeTimer();
 
 	void runTick();
 	std::vector<std::shared_ptr<CPlayer*>> get_players();

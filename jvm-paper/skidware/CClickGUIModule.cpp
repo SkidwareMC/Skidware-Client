@@ -62,7 +62,7 @@ void CClickGUIModule::onEnable() {
 
 	io.IniFilename = NULL; // GET RID OF IMGUI.INI
 	CMinecraft* mc = CCheat::theMinecraft;
-
+	mc->isGameHasFocus = false;
 	io.MouseDrawCursor = true;
 
 	CCheat::eventBus->registerListener(this);
@@ -72,7 +72,7 @@ void CClickGUIModule::onDisable() {
 	CMinecraft* mc = CCheat::theMinecraft;
 	ImGuiIO& io = ImGui::GetIO();
 	io.MouseDrawCursor = false;
-
+	mc->isGameHasFocus = true;
 	CCheat::eventBus->unregisterListener(this);
 }
 

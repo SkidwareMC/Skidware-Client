@@ -3,7 +3,7 @@
 #pragma once
 
 #include "CModule.hpp"
-static const char* crits_modes[] = { "Mini-Jump", "Jump" };
+static const char* crits_modes[] = { "Mini-Jump", "Jump", "NoGround"};
 static const char* crits_current_mode = "Mini-Jump";
 typedef struct CCriticalsModule : CModule {
 	CCriticalsModule();

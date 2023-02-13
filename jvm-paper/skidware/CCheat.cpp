@@ -1,7 +1,6 @@
 #include "CCheat.hpp"
 #include "CModuleManager.hpp"
 #include "CClickGUIModule.hpp"
-#include "wrapper.h"
 
 namespace ImGui {
 	void setColors() {
@@ -156,7 +155,7 @@ long __stdcall HOOKED_wndproc(const HWND a1, unsigned int a2, unsigned long long
 
 	if (CCheat::moduleManager->getModule<CClickGUIModule>()->state && ImGui_ImplWin32_WndProcHandler(a1, a2, a3, a4) && ImGui::wndproc(a1, a2, a3, a4))
 		return true;
-	
+
 	if (a3 == VK_ESCAPE && CCheat::moduleManager->getModule<CClickGUIModule>()->state) CCheat::moduleManager->getModule<CClickGUIModule>()->toggle();
 
 	return CallWindowProcA(ORIG_wndproc, a1, a2, a3, a4);
@@ -174,33 +173,32 @@ int __stdcall HOOKED_wglSwapBuffers(HDC a1) {
 		CCheat::getInstance()->javavm->AttachCurrentThread(reinterpret_cast<void**>(&swapBuffers_env), nullptr);
 	}
 	//if (CCheat::theMinecraft->fontRendererObj == nullptr) {
-		CIntelligentMappedClass minecraftClass = CIntelligentMappings::getClass("net.minecraft.client.Minecraft");
-		CIntelligentMappedField fontRendererField = minecraftClass.getField("fontRenderer");
-		jclass minecraftKlass = swapBuffers_env->FindClass(minecraftClass.name().data());
-		while (!minecraftKlass) minecraftKlass = swapBuffers_env->FindClass(minecraftClass.name().data());
-		jmethodID getMinecraft = swapBuffers_env->GetStaticMethodID(minecraftKlass, minecraftClass.getMethod("getMinecraft").name().data(), minecraftClass.getMethod("getMinecraft").signature().data());
-		while (!getMinecraft) getMinecraft = swapBuffers_env->GetStaticMethodID(minecraftKlass, minecraftClass.getMethod("getMinecraft").name().data(), minecraftClass.getMethod("getMinecraft").signature().data());
-		jobject minecraft = swapBuffers_env->CallStaticObjectMethod(minecraftKlass, getMinecraft);
-		while (!minecraft) minecraft = swapBuffers_env->CallStaticObjectMethod(minecraftKlass, getMinecraft);
-		jfieldID fontRendererFD = swapBuffers_env->GetFieldID(minecraftKlass, minecraftClass.getField("fontRenderer").name().data(),
-			minecraftClass.getField("fontRenderer").signature().data());
-		while (!fontRendererFD) fontRendererFD = swapBuffers_env->GetFieldID(minecraftKlass, minecraftClass.getField("fontRenderer").name().data(),
-			minecraftClass.getField("fontRenderer").signature().data());
-		jobject a = swapBuffers_env->GetObjectField(minecraft, fontRendererFD);
-		while (!a) a = swapBuffers_env->GetObjectField(minecraft, fontRendererFD);
-		if (a) {
-			CCheat::theMinecraft->fontRendererObj = new MinecraftFontRenderer(a, swapBuffers_env);
-		}
+	CIntelligentMappedClass minecraftClass = CIntelligentMappings::getClass("net.minecraft.client.Minecraft");
+	CIntelligentMappedField fontRendererField = minecraftClass.getField("fontRenderer");
+	jclass minecraftKlass = swapBuffers_env->FindClass(minecraftClass.name().data());
+	while (!minecraftKlass) minecraftKlass = swapBuffers_env->FindClass(minecraftClass.name().data());
+	jmethodID getMinecraft = swapBuffers_env->GetStaticMethodID(minecraftKlass, minecraftClass.getMethod("getMinecraft").name().data(), minecraftClass.getMethod("getMinecraft").signature().data());
+	while (!getMinecraft) getMinecraft = swapBuffers_env->GetStaticMethodID(minecraftKlass, minecraftClass.getMethod("getMinecraft").name().data(), minecraftClass.getMethod("getMinecraft").signature().data());
+	jobject minecraft = swapBuffers_env->CallStaticObjectMethod(minecraftKlass, getMinecraft);
+	while (!minecraft) minecraft = swapBuffers_env->CallStaticObjectMethod(minecraftKlass, getMinecraft);
+	jfieldID fontRendererFD = swapBuffers_env->GetFieldID(minecraftKlass, minecraftClass.getField("fontRenderer").name().data(),
+		minecraftClass.getField("fontRenderer").signature().data());
+	while (!fontRendererFD) fontRendererFD = swapBuffers_env->GetFieldID(minecraftKlass, minecraftClass.getField("fontRenderer").name().data(),
+		minecraftClass.getField("fontRenderer").signature().data());
+	jobject a = swapBuffers_env->GetObjectField(minecraft, fontRendererFD);
+	while (!a) a = swapBuffers_env->GetObjectField(minecraft, fontRendererFD);
+	if (a) {
+		CCheat::theMinecraft->fontRendererObj = new MinecraftFontRenderer(a, swapBuffers_env);
+	}
 	//}
 	if (firstRun) {
 		HWND minecraftWindow = FindWindowA("LWJGL", nullptr);
-		
-		IMGUI_CHECKVERSION();
+
 		ImGui::CreateContext();
 		ImGui::setColors();
 		ImGui_ImplWin32_Init(minecraftWindow);
 		ImGui_ImplOpenGL2_Init();
-		
+
 		firstRun = false;
 
 		return ORIG_wglSwapBuffers(a1);
@@ -238,7 +236,7 @@ int __stdcall HOOKED_wglSwapBuffers(HDC a1) {
 	return ORIG_wglSwapBuffers(a1);
 }
 
-typedef int(__stdcall* _WSASend)(_In_ SOCKET, _In_ WSABUF*, _In_ unsigned long, _Out_ unsigned long*, _In_ unsigned long, _In_ OVERLAPPED*, 
+typedef int(__stdcall* _WSASend)(_In_ SOCKET, _In_ WSABUF*, _In_ unsigned long, _Out_ unsigned long*, _In_ unsigned long, _In_ OVERLAPPED*,
 	LPWSAOVERLAPPED_COMPLETION_ROUTINE);
 _WSASend ORIG_WSASend;
 
@@ -254,12 +252,12 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 	//Yes
 	//
 	theCheat = this;
-	std::cout << "[Debug] Env Created" << "\n";
-
+	std::cout << "[Null] Env Created" << "\n";
+	Sleep(500);
 	this->env = env;
 	this->javavm = javavm;
 	this->minecraftType = this->setMinecraftType();
-	std::cout << "[Dubug] Minecraft Type Initialized" << "\n";
+	std::cout << "[Null] Minecraft Type Initialized" << "\n";
 
 	//
 	//Set Up Mappings
@@ -272,37 +270,32 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 		if (handle_issue(name, res))
 			std::exit(0);
 
-		return res;
+		return res;NoSwrd
 	}*/
 	if (FindWindowA(nullptr, "Minecraft 1.12.2"))
 		CIntelligentMappings::init(ONE_TWELVE_TWO);
 	else {
-		std::cout << "1.8.9 Client support isnt ready yet" << "\n";
+		std::cout << "1.8.9 support isnt ready yet" << "\n";
 		Sleep(1000);
 		exit(-1);
 	}
 
-	std::cout << "[Debug] Mappings Created" << "\n";;
-
-	std::cout << "[Debug] Creating MC instance" << "\n";;
-
+	std::cout << "[Null] Mappings Created" << "\n";;
 	this->theMinecraft = new CMinecraft();
-	std::cout << "[Debug] Minecraft Created" << "\n";
+	std::cout << "[Null] Minecraft Created" << "\n";
 	this->moduleManager = new CModuleManager();
-	out::display("Module Manager");
-	Sleep(500);
+	std::cout << "Modules" << "\n";
 	this->eventBus = new CSimpleEventManager();
-	out::display("EventManager... ");
-	Sleep(500);
+	std::cout << "Modules" << "\n";
 	this->moduleManager->registerModules();
 
 	//Modules Setup
 
-	std::cout << "[Debug] Event Manager and Modules Setup" << "\n";
+	std::cout << "[Null] Event Manager and Modules Setup" << "\n";
 
 	//I HATE HOOKS
 
-	ORIG_wndproc = reinterpret_cast<WNDPROC>(SetWindowLongPtrA(FindWindowA("LWJGL", nullptr), 
+	ORIG_wndproc = reinterpret_cast<WNDPROC>(SetWindowLongPtrA(FindWindowA("LWJGL", nullptr),
 		GWLP_WNDPROC, reinterpret_cast<long long>(HOOKED_wndproc)));
 	std::cout << "[Null] WndProc Created" << "\n";
 	ORIG_wglSwapBuffers = reinterpret_cast<_wglSwapBuffers>(GetProcAddress(GetModuleHandleA("opengl32"), "wglSwapBuffers"));
@@ -317,7 +310,7 @@ CCheat::CCheat(JNIEnv* env, JavaVM* javavm) {
 
 	std::cout << "Hooks Created" << "\n";
 	Sleep(1500);
-	printf("51squad. Minecraft type: %s\nJNIEnv: 0x%p\nMinecraft klass: %s\n", 
+	printf("51squad. Minecraft type: %s\nJNIEnv: 0x%p\nMinecraft klass: %s\n",
 		this->getMinecraftType() == EMinecraftType::FORGE ? "FORGE" : "VANILLA", this->env,
 		CIntelligentMappings::getClass("net.minecraft.client.Minecraft").name().c_str());
 }

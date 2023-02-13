@@ -1,6 +1,6 @@
 #include "CCriticalsModule.hpp"
 #include "CCheat.hpp"
-
+#include "wrapper.h"
 CCriticalsModule::CCriticalsModule() : CModule("Criticals", '+', COMBAT, "Crits")
 {
 }
@@ -29,9 +29,26 @@ void CCriticalsModule::onEvent(const CSimpleEvent*)
 		if (mc->thePlayer->onGround)
 			mc->thePlayer->jump();
 	}
+	else if (crits_current_mode == "NoGround") {
+		if (misc::get_keystate(VK_LBUTTON))
+			mc->thePlayer->onGround = false;
+	}
 }
 
 void CCriticalsModule::renderSettings()
 {
-	return;
+	ImGui::Separator();
+	ImGui::Separator();
+	if (ImGui::BeginCombo("##e", crits_current_mode)) // The second parameter is the label previewed before opening the combo.
+	{
+		for (int n = 0; n < IM_ARRAYSIZE(crits_modes); n++)
+		{
+			bool is_selected = (crits_current_mode == crits_modes[n]); // You can store your selection however you want, outside or inside your objects
+			if (ImGui::Selectable(crits_modes[n], is_selected))
+				crits_current_mode = crits_modes[n];
+			if (is_selected)
+				ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
+		}
+		ImGui::EndCombo();
+	}
 }

@@ -6,7 +6,7 @@
 #include "CCheat.hpp"
 
 enum Version {
-	ONE_TWELVE_TWO, ONE_EIGHT_NINE
+	ONE_TWELVE_TWO, ONE_EIGHT_NINE, ONE_SEVEN_TEN, BADLION_ONE_SEVEN_TEN, LUNAR
 };
 
 typedef struct CIntelligentMappedField {

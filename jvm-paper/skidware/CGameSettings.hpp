@@ -18,6 +18,7 @@ typedef struct CGameSettings {
 	CKeyBinding* keyBindRight = nullptr;
 	CKeyBinding* keyBindJump = nullptr;
 	CKeyBinding* keyBindSneak = nullptr;
+	CKeyBinding* keyBindSprint = nullptr;
 	jni_ptr<float> gammaSetting = make_jni_ptr<float>(this->_klass, "", "F");
 	bool isAnyKeyDown();
 private:
