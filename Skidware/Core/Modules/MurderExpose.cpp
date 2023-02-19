@@ -4,7 +4,8 @@
 #include "../../Wrapper/Logger.hpp"
 #include "../../Wrapper/ClientConsole.hpp"
 #include "../../SDK/Utils/MCHelper.hpp"
-
+#include <string.h>
+using namespace std;
 std::vector<std::string> MurderExpose::MurderItems =
 {
 	"item.swordGold",
@@ -74,7 +75,7 @@ void MurderExpose::OnTick()
 		if (player.getCurrentEquipedItem().getUnlocalizedName() == NULL) continue;
 		if (player.getCurrentEquipedItem().getDisplayName() == NULL) continue;
 
-		std::string ItemName = MCHelper::JstringToString(player.getCurrentEquipedItem().getDisplayName());
+		string ItemName = MCHelper::JstringToString(player.getCurrentEquipedItem().getDisplayName());
 
 		if (!ItemName.contains("§a")) continue;
 
