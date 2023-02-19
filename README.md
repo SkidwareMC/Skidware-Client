@@ -1,5 +1,5 @@
-# Skidware
-## Before reusing code, pls check license
+# Skidwate
+Simple Minecraft Injection Cheat written in C++
 
 Trash GUI lmao
 

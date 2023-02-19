@@ -1,0 +1,402 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Quelldateien">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Headerdateien">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Ressourcendateien">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="JNI">
+      <UniqueIdentifier>{a53f4706-fbed-4e6d-a5bd-6412bc9df311}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Wrapper">
+      <UniqueIdentifier>{bbd41927-b2aa-4704-956b-d7a51fbe4919}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{d027a21b-eb12-48eb-92bc-1a636c44520c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="minhook">
+      <UniqueIdentifier>{e973c146-fd39-43e7-95ef-722b70b5092c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4b17e810-15ce-4e75-9925-eed584934ad4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK">
+      <UniqueIdentifier>{f22413d9-12d5-4eb7-9d8b-14d690710ebf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Modules">
+      <UniqueIdentifier>{76030581-23c0-4846-a089-b365f717b662}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SDK\Utils">
+      <UniqueIdentifier>{406e2d01-aedd-4c3c-ba7f-baadd666f13d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="framework.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrapper\Utils.hpp">
+      <Filter>Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrapper\Logger.hpp">
+      <Filter>Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imconfig.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_opengl3.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_internal.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_rectpack.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_textedit.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imstb_truetype.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\buffer.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\MinHook.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\trampoline.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde32.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\hde64.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\pstdint.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table32.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="minhook\hde\table64.h">
+      <Filter>minhook</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Patching.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\GUI.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_win32.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGui\imgui_impl_opengl3_loader.h">
+      <Filter>ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Settings.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\LaunchWrapper.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\LocalPlayer.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Minecraft.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\World.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="JNI\jni.h">
+      <Filter>JNI</Filter>
+    </ClInclude>
+    <ClInclude Include="JNI\jni_md.h">
+      <Filter>JNI</Filter>
+    </ClInclude>
+    <ClInclude Include="JNI\jvmti.h">
+      <Filter>JNI</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Handler.hpp">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Utils\JavaUtil.hpp">
+      <Filter>SDK\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EntityPlayer.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EntityLivingBase.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Entity.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\NetworkManager.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\NetworkPlayerInfo.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\NetHandlerPlayClient.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\WorldClient.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Autoclicker.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NoHitDelay.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NoBuildDelay.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\FrameSpoof.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\AntiBot.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\AutoSprint.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\HitBoxExtender.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NoFire.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\PlayerESP.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\PingSpoof.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrapper\ClientConsole.hpp">
+      <Filter>Wrapper</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Utils\MCHelper.hpp">
+      <Filter>SDK\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ServerData.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\InventoryPlayer.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ItemStack.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\JNIHelper.hpp">
+      <Filter>SDK\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\MurderExpose.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\RenderManager.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\ActiveRenderInfo.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Session.hpp">
+      <Filter>SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NameSpoofer.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="dummy.hpp">
+      <Filter>Core\Modules</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Flight.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\Event.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\RenderEvent.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\UpdateEvent.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Module.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="dllmain.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_draw.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_opengl3.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_tables.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_widgets.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\buffer.c">
+      <Filter>minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hook.c">
+      <Filter>minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\trampoline.c">
+      <Filter>minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde32.c">
+      <Filter>minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="minhook\hde\hde64.c">
+      <Filter>minhook</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Patching.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\GUI.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGui\imgui_impl_win32.cpp">
+      <Filter>ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Settings.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\LaunchWrapper.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\LocalPlayer.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Minecraft.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\World.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrapper\Logger.cpp">
+      <Filter>Wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrapper\Utils.cpp">
+      <Filter>Wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Handler.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Utils\JavaUtil.cpp">
+      <Filter>SDK\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\EntityPlayer.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\EntityLivingBase.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Entity.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\NetworkManager.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\NetworkPlayerInfo.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\NetHandlerPlayClient.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\WorldClient.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Autoclicker.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NoHitDelay.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NoBuildDelay.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\FrameSpoof.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\AntiBot.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\AutoSprint.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\HitBoxExtender.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NoFire.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\PlayerESP.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\PingSpoof.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrapper\ClientConsole.cpp">
+      <Filter>Wrapper</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Utils\MCHelper.cpp">
+      <Filter>SDK\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\ServerData.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\InventoryPlayer.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\ItemStack.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\JNIHelper.cpp">
+      <Filter>SDK\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\MurderExpose.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\RenderManager.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\ActiveRenderInfo.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Session.cpp">
+      <Filter>SDK</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NameSpoofer.cpp">
+      <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Flight.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Module.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
