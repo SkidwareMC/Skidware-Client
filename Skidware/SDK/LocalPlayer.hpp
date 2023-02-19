@@ -14,6 +14,7 @@ private:
 	jfieldID motionYfd = NULL;
 	jfieldID motionZfd = NULL;
 	jfieldID playerCapablitiesfd = NULL;
+	jfieldID hurttimefd = NULL;
 
 	jobject getNetHandlerPlayClientObject = NULL;
 	NetHandlerPlayClient NetHandlerPlayClientInstance = NULL;
