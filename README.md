@@ -1,4 +1,4 @@
-# Skidwate
+# Skidware
 Simple Minecraft Injection Cheat written in C++
 
 Trash GUI lmao
