@@ -26,8 +26,11 @@ void CNoFallDamageModule::onEvent(const CSimpleEvent*)
 		}
 	}
 	else if (nofall_current_mode == "Motion") {
+		mc->thePlayer->hurtTime = 5;
 		if (mc->thePlayer->fallDistance > 2.5) {
 			mc->thePlayer->motionY = 0;
+			mc->thePlayer->fallDistance = 0;
+			
 		}
 	}
 	else if (nofall_current_mode == "Spoof") {

@@ -30,10 +30,10 @@ void CModuleManager::registerModules() {
 	this->registerModule(new CSpiderModule());
 	this->registerModule(new CClickerModule());
 	this->registerModule(new CStrafeModule());
-	this->registerModule(new CAimAssistModule());
+	// this->registerModule(new CAimAssistModule());
 	this->registerModule(new CAntiKBModule());
 	//Fix this Smellon
-	this->registerModule(new CAutoSprintModule());
+	// this->registerModule(new CAutoSprintModule());
 	this->registerModule(new CNoFallDamageModule());
 	this->registerModule(new CJesusModule());
 	this->registerModule(new CCriticalsModule());
