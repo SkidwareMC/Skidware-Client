@@ -32,6 +32,7 @@ public:
 	static bool ChestESP;
 	static bool MurderExpose;
 	static bool NameSpoof;
-	static bool fly;
+	static bool Velocity;
+	static int VeloTicks;
 	static char NameSpoofValue;
 };

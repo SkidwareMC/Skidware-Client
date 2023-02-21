@@ -19,6 +19,8 @@ int Settings::AutoclickerCount = 16;
 bool Settings::HitBoxExtender = false;
 float Settings::HitBoxWidth = 0.4f;
 float Settings::HitBoxHeight = 0.2f;
+bool Settings::Velocity = false;
+int Settings::VeloTicks = 0;
 
 
 //PROTECTION
