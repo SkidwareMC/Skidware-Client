@@ -15,6 +15,7 @@ private:
 	jfieldID motionZfd = NULL;
 	jfieldID playerCapablitiesfd = NULL;
 	jfieldID hurttimefd = NULL;
+	jfieldID ongroundfd = NULL;
 
 	jobject getNetHandlerPlayClientObject = NULL;
 	NetHandlerPlayClient NetHandlerPlayClientInstance = NULL;
@@ -34,4 +35,6 @@ public:
 	void SetVelocity(double motionx, double motiony, double motionz);
 	jobject getPlayerCapabilites();
 	void setFly(jboolean);
+	bool isHurt(int ticks);
+	void setOnGround(jboolean onGround);
 };

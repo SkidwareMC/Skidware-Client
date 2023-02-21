@@ -107,3 +107,19 @@ void LocalPlayer::setFly(jboolean state)
 	JNIHelper::env->DeleteLocalRef(capabilities);
 }
 
+bool LocalPlayer::isHurt(int ticks)
+{
+	if (GetCurrentClass() == NULL) return NULL;
+	if (hurttimefd == NULL)
+		hurttimefd = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_70737_aN" : "au", "I");
+	int hurtTime = (int)JNIHelper::env->GetIntField(GetCurrentObject(), hurttimefd);
+	return (hurtTime > ticks);
+}   
+
+void LocalPlayer::setOnGround(jboolean onGround)
+{
+	if (GetCurrentClass() == NULL) return;
+	if (ongroundfd == NULL)
+		ongroundfd = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_70122_E" : "C", "Z");
+	JNIHelper::env->SetBooleanField(CurrentObject, ongroundfd, onGround);
+}

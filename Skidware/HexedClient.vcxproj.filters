@@ -222,6 +222,9 @@
     <ClInclude Include="dummy.hpp">
       <Filter>Core\Modules</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Modules\Flight.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
     <ClInclude Include="SDK\EventSystem\Event.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -388,6 +391,9 @@
     </ClCompile>
     <ClCompile Include="Core\Modules\NameSpoofer.cpp">
       <Filter>Core\Modules</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Flight.cpp">
+      <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Core\Modules\Module.cpp">
       <Filter>Quelldateien</Filter>
