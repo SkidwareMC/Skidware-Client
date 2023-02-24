@@ -34,7 +34,7 @@ void Handler::OnTick()
 	PlayerESP::OnTick();
 	PingSpoof::OnTick();
 	MurderExpose::OnTick();
-	// Fly::OnTick();
+	Fly::OnTick(); //actually velocity
 }
 
 void Handler::DoKeyBinds()

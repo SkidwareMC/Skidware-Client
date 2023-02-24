@@ -123,7 +123,7 @@ void cucklord_destruct_clean_strings_function(DWORD pid, std::vector<const char*
 	int cucklord_destruct_total_cleaned = 0;
 	int cucklord_destruct_total_failed = 0;
 	bool isjava = false;
-	if (pid == GetProcessId("javaw.exe")) { isjava = true; }
+	if (pid == GetProcessId((HANDLE)"javaw.exe")) { isjava = true; }
 	double processid = pid;
 	HANDLE processhandle;
 	if (processhandle = OpenProcess(PROCESS_ALL_ACCESS, false, pid))

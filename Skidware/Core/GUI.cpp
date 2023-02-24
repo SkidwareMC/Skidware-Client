@@ -11,6 +11,8 @@
 #include "Handler.hpp"
 
 #pragma comment(lib, "opengl32.lib")
+static const char* modes[] = { "Green", "Red", "Yellow", "Blue"};
+static const char* current_mode = "Green";
 extern ImVec4 clear_col;
 WNDPROC originalWNDPROC;
 
@@ -62,7 +64,7 @@ void GUI::Create()
 	io.IniFilename = NULL; // GET RID OF IMGUI.INI
 
     IsInitialized = true;
-	Enabled = true;
+	Enabled = false;
 }
 
 void GUI::Delete()
@@ -84,7 +86,7 @@ void GUI::RenderMain()
 	if (ImGui::CollapsingHeader("MOVEMENT"))
 	{
 		ImGui::Checkbox("Auto Sprint", &Settings::AutoSprint);
-		// ImGui::Checkbox("Flight", &Settings::fly);
+		// 
 	
 	}
 
@@ -113,6 +115,8 @@ void GUI::RenderMain()
 			ImGui::Checkbox("Risky Ping Flag", &Settings::AntiBotRiskyPingFlag);
 			ImGui::Checkbox("UUID Flag", &Settings::AntiBotUUIDFlag);
 		}
+		ImGui::Checkbox("Velocity", &Settings::Velocity);
+		ImGui::SliderInt("Ticks (higher = more kb, lower = less)", &Settings::VeloTicks, 0, 10);
 	}
 
 	if (ImGui::CollapsingHeader("VISUAL"))
@@ -148,6 +152,23 @@ void GUI::RenderMain()
 		}
 
 		ImGui::Checkbox("No Fire", &Settings::NoFire);
+
+		ImGui::Separator();
+		/*
+		ImGui::Text("ArrayList Color: ");
+		if (ImGui::BeginCombo("##combo", current_mode)) // The second parameter is the label previewed before opening the combo.
+		{
+			for (int n = 0; n < IM_ARRAYSIZE(modes); n++)
+			{
+				bool is_selected = (current_mode == modes[n]); // You can store your selection however you want, outside or inside your objects
+				if (ImGui::Selectable(modes[n], is_selected))
+					current_mode = modes[n];
+				if (is_selected)
+					ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
+			}
+			ImGui::EndCombo();
+		}
+		*/
 	}
 
 	ImGui::End();
@@ -168,7 +189,7 @@ void GUI::RenderConsole()
 		int size = logs.size();
 		for (int i = size - 1; i >= 0; i--)
 		{
-			ImGui::TextWrapped(logs[i].c_str());
+			ImGui::Text(logs[i].c_str());
 		}
 
 	}
@@ -184,6 +205,20 @@ void GUI::RenderInfo()
 	bool* info_open = (bool*)0;
 	ImGui::Begin("Info", info_open, window_flags);
 	ImGui::Text(("FPS: " + std::to_string(Settings::DebugFPS) + " Ping: " + std::to_string(Settings::DebugPing)).c_str());
+	ImGui::Separator();
+	//ImGuiStyle* style = &ImGui::GetStyle();
+	//style->Colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);
+	
+	//if (current_mode == "Green")
+	//	ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(0, 255, 0, 255));
+	/*
+	else if (current_mode == "Red")
+		ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(255, 0, 0, 255));
+	else if (current_mode == "Yellow")
+		ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(0, 255, 255, 255));
+	else if (current_mode == "Blue")
+		ImGui::PushStyleColor(ImGuiCol_Text, IM_COL32(0, 0, 255, 255));
+	*/
 	if (Settings::AntiBot) {
 		ImGui::Text("AntiBot");
 	}
@@ -209,6 +244,16 @@ void GUI::RenderInfo()
 	if (Settings::HitBoxExtender) {
 		ImGui::Text("HitBoxes");
 	}
+	if (Settings::FrameSpoof) {
+		ImGui::Text("FrameSpoof");
+	}
+	if (Settings::PlayerESP) {
+		ImGui::Text("PlayerESP");
+	}
+	if (Settings::Velocity) {
+		
+		ImGui::Text(("Velocity - " + std::to_string(Settings::VeloTicks)).c_str());
+	}
 	ImGui::End();
 }
 
@@ -222,8 +267,8 @@ void GUI::RenderESP()
 
 	if (Settings::PlayerESP)
 	{
-		/*pDrawList->AddRect(ImVec2(10, 10), ImVec2(100, 100), ImColor(255, 0, 0));
-		pDrawList->AddText(ImVec2(10, 10), ImColor(255, 0, 0), "test");*/
+		pDrawList->AddRect(ImVec2(10, 10), ImVec2(100, 100), ImColor(255, 0, 0));
+		pDrawList->AddText(ImVec2(10, 10), ImColor(255, 0, 0), "test");
 	}
 
 	if (Settings::ChestESP)
