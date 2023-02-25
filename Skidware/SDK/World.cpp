@@ -97,3 +97,21 @@ std::vector<Entity> World::getEntityList()
 
 	return result;
 }
+
+bool World::isBlockAir(double x, double y, double z)
+{
+	jclass blockposclass = JNIHelper::env->FindClass("cj"); //blockpos class
+	jmethodID bpmid = JNIHelper::env->GetMethodID(blockposclass, "<init>", "(DDD)V"); // construcor
+	jobject blockpos = JNIHelper::env->NewObject(blockposclass, bpmid, (jdouble)x, (jdouble)y, (jdouble)z); // object go brrr
+	jclass worldclass = JNIHelper::env->GetObjectClass(CurrentObject);
+	jmethodID mid = JNIHelper::env->GetMethodID(worldclass, JNIHelper::IsForge() ? "func_175623_d" : "d", "(Lcj;)Z");
+
+	bool res = JNIHelper::env->CallBooleanMethod(CurrentObject, mid, blockpos);
+
+	JNIHelper::env->DeleteLocalRef(blockposclass);
+	JNIHelper::env->DeleteLocalRef(worldclass);
+	JNIHelper::env->DeleteLocalRef(blockpos);
+
+	return res;
+}
+

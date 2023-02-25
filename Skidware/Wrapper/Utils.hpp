@@ -2,6 +2,14 @@
 #include <string>
 #include <iostream>
 
+struct vector3 {
+    double x, y, z;
+
+    vector3 add(vector3 other) {
+        return vector3(this->x + other.x, this->y + other.y, this->z + other.z);
+    }
+};
+
 class Utils
 {
 public:

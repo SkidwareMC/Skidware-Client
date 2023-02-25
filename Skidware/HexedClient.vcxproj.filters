@@ -237,6 +237,12 @@
     <ClInclude Include="Core\Modules\Module.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Core\font.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\VanillaSpeed.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -396,6 +402,9 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Core\Modules\Module.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\VanillaSpeed.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

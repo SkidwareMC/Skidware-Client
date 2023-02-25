@@ -10,6 +10,8 @@ bool Settings::CanRenderMenu = false;
 
 //MOVEMENT
 bool Settings::AutoSprint = false;
+bool Settings::Speed = false;
+float Settings::multiplier = 1.0f;
 
 //COMBAT
 bool Settings::NoHitDelay = false;
@@ -21,6 +23,8 @@ float Settings::HitBoxWidth = 0.4f;
 float Settings::HitBoxHeight = 0.2f;
 bool Settings::Velocity = false;
 int Settings::VeloTicks = 0;
+float Settings::hori = 0;
+float Settings::vert = 100;
 
 
 //PROTECTION
