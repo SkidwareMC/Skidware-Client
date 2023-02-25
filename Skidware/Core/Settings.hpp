@@ -34,5 +34,11 @@ public:
 	static bool NameSpoof;
 	static bool Velocity;
 	static int VeloTicks;
+	static float hori;
+	static float vert;
+	static const char* velo_modes[2];
+	static const char* velo_current_mode;
 	static char NameSpoofValue;
+	static bool Speed;
+	static float multiplier;
 };

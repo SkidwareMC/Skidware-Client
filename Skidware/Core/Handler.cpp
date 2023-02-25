@@ -16,9 +16,10 @@
 #include "Modules/PlayerESP.hpp"
 #include "Modules/PingSpoof.hpp"
 #include "Modules/MurderExpose.hpp"
+#include "Modules/VanillaSpeed.hpp"
 #include "GUI.hpp"
 
-
+int speed_modes = { 0 }; // vanilla, y-port
 
 void Handler::OnTick()
 {
@@ -35,6 +36,10 @@ void Handler::OnTick()
 	PingSpoof::OnTick();
 	MurderExpose::OnTick();
 	Fly::OnTick(); //actually velocity
+	if (speed_modes == 0)
+	{
+		VanillaSpeed::OnTick();
+	}
 }
 
 void Handler::DoKeyBinds()

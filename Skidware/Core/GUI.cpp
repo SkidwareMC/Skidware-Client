@@ -9,7 +9,9 @@
 #include "../Wrapper/ClientConsole.hpp"
 #include "../Core/Modules/NameSpoofer.hpp"
 #include "Handler.hpp"
-
+#include <iostream>
+#include "font.hpp"
+# define my_sizeof(type) ((char *)(&type+1)-(char*)(&type))
 #pragma comment(lib, "opengl32.lib")
 static const char* modes[] = { "Green", "Red", "Yellow", "Blue"};
 static const char* current_mode = "Green";
@@ -31,6 +33,7 @@ void GUI::Create()
 	ImGui::StyleColorsDark();
 	ImGui_ImplWin32_Init(minecraftWindow);
 	ImGui_ImplOpenGL3_Init();
+
 
 	ImGuiStyle* Style = &ImGui::GetStyle();
 	ImGui::StyleColorsDark();
@@ -80,14 +83,18 @@ void GUI::Delete()
 
 void GUI::RenderMain()
 {
+
+
 	ImGui::SetNextWindowSize(ImVec2(800, 600));
 	ImGui::Begin("Skidware");
 
 	if (ImGui::CollapsingHeader("MOVEMENT"))
 	{
 		ImGui::Checkbox("Auto Sprint", &Settings::AutoSprint);
-		// 
-	
+		ImGui::Checkbox("Speed", &Settings::Speed);
+		if (Settings::Speed) {
+			ImGui::SliderFloat("Multiplier", &Settings::multiplier, 0.0f, 6.0f);
+		}
 	}
 
 	if (ImGui::CollapsingHeader("COMBAT"))
@@ -116,7 +123,9 @@ void GUI::RenderMain()
 			ImGui::Checkbox("UUID Flag", &Settings::AntiBotUUIDFlag);
 		}
 		ImGui::Checkbox("Velocity", &Settings::Velocity);
-		ImGui::SliderInt("Ticks (higher = more kb, lower = less)", &Settings::VeloTicks, 0, 10);
+		if (Settings::Velocity) {
+			ImGui::SliderInt("Ticks (higher = more kb, lower = less)", &Settings::VeloTicks, 0, 10);
+		}
 	}
 
 	if (ImGui::CollapsingHeader("VISUAL"))
@@ -200,11 +209,11 @@ void GUI::RenderConsole()
 void GUI::RenderInfo()
 {
 	ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav;
-	ImGui::SetNextWindowPos(ImVec2(1770, 0), ImGuiCond_FirstUseEver);
+	ImGui::SetNextWindowPos(ImVec2(1670, 0));
 	ImGui::SetNextWindowBgAlpha(0.25f);
 	bool* info_open = (bool*)0;
 	ImGui::Begin("Info", info_open, window_flags);
-	ImGui::Text(("FPS: " + std::to_string(Settings::DebugFPS) + " Ping: " + std::to_string(Settings::DebugPing)).c_str());
+	ImGui::Text(("Skidware B0.5 | FPS: " + std::to_string(Settings::DebugFPS) + " Ping: " + std::to_string(Settings::DebugPing)).c_str());
 	ImGui::Separator();
 	//ImGuiStyle* style = &ImGui::GetStyle();
 	//style->Colors[ImGuiCol_Text] = ImVec4(1.0f, 1.0f, 1.0f, 1.00f);
@@ -251,8 +260,10 @@ void GUI::RenderInfo()
 		ImGui::Text("PlayerESP");
 	}
 	if (Settings::Velocity) {
-		
 		ImGui::Text(("Velocity - " + std::to_string(Settings::VeloTicks)).c_str());
+	}
+	if (Settings::Speed) {
+		ImGui::Text(("Speed - " + std::to_string(Settings::multiplier)).c_str());
 	}
 	ImGui::End();
 }

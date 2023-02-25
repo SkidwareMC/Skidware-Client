@@ -29,4 +29,6 @@ public:
 
 	std::vector<EntityPlayer> getPlayerList();
 	std::vector<Entity> getEntityList();
+	bool isBlockAir(double x, double y, double z);
+
 };
