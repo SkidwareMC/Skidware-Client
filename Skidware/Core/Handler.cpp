@@ -17,14 +17,32 @@
 #include "Modules/PingSpoof.hpp"
 #include "Modules/MurderExpose.hpp"
 #include "Modules/VanillaSpeed.hpp"
+#include "Modules/LegitScaffold.hpp"
+#include "Modules/Killaura.hpp"
+#include "Modules/NCPYPort.hpp"
+#include "Modules/Fly.hpp"
+#include "Modules//NCPBhop.hpp"
 #include "GUI.hpp"
+#include <mutex>
 
-int speed_modes = { 0 }; // vanilla, y-port
+
+int Handler::speed_modes = 1; // vanilla, y-port
+int Handler::tick = 0;
 
 void Handler::OnTick()
 {
+	
+	// std::thread thread_obj(DoKeyBinds);
+		// CreateThread(0, 0, (LPTHREAD_START_ROUTINE)DoKeyBinds(), 0, 0, 0);
 	SetSettings();
-	DoKeyBinds();
+	if (tick == 1)
+	{
+		tick = 0;
+		DoKeyBinds();
+	}
+	else {
+		tick++;
+	}
 
 	NoHitDelay::OnTick();
 	NoBuildDelay::OnTick();
@@ -36,21 +54,32 @@ void Handler::OnTick()
 	PingSpoof::OnTick();
 	MurderExpose::OnTick();
 	Fly::OnTick(); //actually velocity
-	if (speed_modes == 0)
-	{
-		VanillaSpeed::OnTick();
-	}
+	
+	VanillaSpeed::OnTick();
+	NCPBHop::OnTick();
+	NCPYPort::OnTick();
+	Flight::OnTick();
+	LegitScaffold::OnTick();
+	Aura::OnTick();
 }
+
 
 void Handler::DoKeyBinds()
 {
-	if (GetAsyncKeyState(VK_END)) Settings::ShouldUninject = true;
-	if ((GetAsyncKeyState(VK_RSHIFT) & 0x8000)) GUI::Enabled = !GUI::Enabled; Sleep(50);
-
+	
+	//if (!timer.has_passed(50)) return;
+	if (GetAsyncKeyState(VK_END)) Settings::ShouldUninject = true; 
+	if ((GetAsyncKeyState(VK_RSHIFT) & 0x8000)) GUI::Enabled = !GUI::Enabled;
 	if (!LaunchWrapper::getMinecraft().InGameHasFocus()) return;
+	if ((GetAsyncKeyState('U') & 0x8000)) Settings::Fly = !Settings::Fly;
+	// if ((GetAsyncKeyState('Y') & 0x8000)) Settings::LegitScaffold = !Settings::LegitScaffold; Sleep(0);
+	//if ((GetAsyncKeyState('G') & 0x8000)) Settings::Killaura = !Settings::Killaura; Sleep(0);
+	//
 	
 	AutoSprint::OnTick();
 	Autoclicker::OnTick();
+	//timer.reset();
+	
 }
 
 void Handler::SetSettings()

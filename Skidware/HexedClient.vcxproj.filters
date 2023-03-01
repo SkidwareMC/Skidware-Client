@@ -243,6 +243,30 @@
     <ClInclude Include="Core\Modules\VanillaSpeed.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+    <ClInclude Include="Core\Modules\LegitScaffold.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Wrapper\timer.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Killaura.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NCPYPort.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Fly.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\SimpleEventSystem.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\SpartanSpeed.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NCPBhop.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dllmain.cpp">
@@ -405,6 +429,24 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Core\Modules\VanillaSpeed.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\LegitScaffold.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Wrapper\timer.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Killaura.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NCPYPort.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Fly.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NCPBHop.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

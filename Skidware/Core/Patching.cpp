@@ -103,6 +103,8 @@ void Patching::PatchSetSprinting()
 
 void Patching::PatchSwapBuffers()
 {
+	Logger::LogDebug("Patching swapbuffers...");
+	Sleep(100);
 	MH_STATUS status = MH_UNKNOWN;
 	while (status != MH_OK)
 	{
@@ -126,6 +128,7 @@ void Patching::ApplyPatches()
 	//PatchSetSprinting();
 
 	MH_EnableHook(MH_ALL_HOOKS);
+	Logger::LogDebug("Hooks Enabled");
 }
 
 void Patching::UnapplyPatches()

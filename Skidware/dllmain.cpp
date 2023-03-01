@@ -249,16 +249,22 @@ void Initialize()
             Logger::Log("Minecraft running on: " + Mappings);
 
             Logger::Log("Waiting for World to Initialize...");
-            while (LaunchWrapper::getMinecraft().GetCurrentClass() == NULL || LaunchWrapper::getMinecraft().getWorld().GetCurrentClass() == NULL)
+            while (LaunchWrapper::getMinecraft().GetCurrentObject() == NULL || LaunchWrapper::getMinecraft().getWorld().GetCurrentObject() == NULL)
             {
                 Sleep(1);
             }
 
             Patching::ApplyPatches();
+			//Handler::HandlerInit();
             while (!Settings::ShouldUninject)
             {
-                Handler::OnTick(); // for now 
-                Sleep(50);
+				if (LaunchWrapper::getMinecraft().getWorld().GetCurrentClass() == NULL || LaunchWrapper::getMinecraft().getLocalPlayer().GetCurrentClass() == NULL) {
+					Sleep(1);
+				}
+				else {
+					Handler::OnTick(); // for now 
+					Sleep(50);
+				}
             }
         }
     }

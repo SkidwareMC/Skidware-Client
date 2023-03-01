@@ -232,6 +232,30 @@ bool Minecraft::InGameHasFocus()
 	return hasIngameFocusBool;
 }
 
+void Minecraft::setTimer(float value) {
+	jfieldID timerObjfid = JNIHelper::env->GetFieldID(CurrentClass, JNIHelper::IsForge() ? "field_71428_T" : "Y", "Lavl;");
+	if (timerObjfid == NULL) {
+		return;
+	}
+	jobject timerObj = JNIHelper::env->GetObjectField(CurrentObject, timerObjfid);
+	if (timerObj == NULL) {
+		return;
+	}
+	jclass timerClass = JNIHelper::env->FindClass("avl");
+	if (timerClass == NULL) {
+		return;
+	}
+	jfieldID timerSpeedfid = JNIHelper::env->GetFieldID(timerClass, JNIHelper::IsForge() ? "field_74278_d" : "d", "F");
+	if (timerClass == NULL) {
+		return;
+	}
+	JNIHelper::env->SetFloatField(timerObj, timerSpeedfid, value);
+	float timerVal = JNIHelper::env->GetFloatField(timerObj, timerSpeedfid);
+
+	JNIHelper::env->DeleteLocalRef(timerObj);
+	JNIHelper::env->DeleteLocalRef(timerClass);
+}
+
 int Minecraft::GetFPS()
 {
 	if (GetCurrentClass() == NULL) return NULL;
@@ -298,3 +322,22 @@ int Minecraft::GetDisplayWidth()
 
 	return displayWidthInt;
 }
+
+void Minecraft::setIsGameHasFocus(jboolean state)
+{
+	if (GetCurrentClass() == NULL) return;
+
+	if (hasIngameFocusBool == NULL)
+	{
+		if (gameHasFocusFieldID == NULL)
+		{
+			gameHasFocusFieldID = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_71415_G" : "w", "Z");
+			if (gameHasFocusFieldID == NULL) return;
+		}
+
+		JNIHelper::env->SetBooleanField(GetCurrentObject(), gameHasFocusFieldID, state);
+	}
+
+	return;
+}
+

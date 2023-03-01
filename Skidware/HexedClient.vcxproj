@@ -169,6 +169,9 @@
     <ClInclude Include="Core\font.hpp" />
     <ClInclude Include="Core\GUI.hpp" />
     <ClInclude Include="Core\Handler.hpp" />
+    <ClInclude Include="Core\Modules\Fly.hpp" />
+    <ClInclude Include="Core\Modules\Killaura.hpp" />
+    <ClInclude Include="Core\Modules\LegitScaffold.hpp" />
     <ClInclude Include="Core\Modules\Module.hpp" />
     <ClInclude Include="Core\Modules\AntiBot.hpp" />
     <ClInclude Include="Core\Modules\Autoclicker.hpp" />
@@ -177,14 +180,18 @@
     <ClInclude Include="Core\Modules\HitBoxExtender.hpp" />
     <ClInclude Include="Core\Modules\MurderExpose.hpp" />
     <ClInclude Include="Core\Modules\NameSpoofer.hpp" />
+    <ClInclude Include="Core\Modules\NCPBhop.hpp" />
+    <ClInclude Include="Core\Modules\NCPYPort.hpp" />
     <ClInclude Include="Core\Modules\NoBuildDelay.hpp" />
     <ClInclude Include="Core\Modules\NoFire.hpp" />
     <ClInclude Include="Core\Modules\NoHitDelay.hpp" />
     <ClInclude Include="Core\Modules\PingSpoof.hpp" />
     <ClInclude Include="Core\Modules\PlayerESP.hpp" />
+    <ClInclude Include="Core\Modules\SpartanSpeed.hpp" />
     <ClInclude Include="Core\Modules\VanillaSpeed.hpp" />
     <ClInclude Include="Core\Patching.hpp" />
     <ClInclude Include="Core\Settings.hpp" />
+    <ClInclude Include="Core\SimpleEventSystem.hpp" />
     <ClInclude Include="dummy.hpp" />
     <ClInclude Include="Core\Modules\Flight.hpp" />
     <ClInclude Include="framework.h" />
@@ -233,6 +240,7 @@
     <ClInclude Include="SDK\WorldClient.hpp" />
     <ClInclude Include="Wrapper\ClientConsole.hpp" />
     <ClInclude Include="Wrapper\Logger.hpp" />
+    <ClInclude Include="Wrapper\timer.h" />
     <ClInclude Include="Wrapper\Utils.hpp" />
   </ItemGroup>
   <ItemGroup>
@@ -241,11 +249,16 @@
     <ClCompile Include="Core\Modules\AntiBot.cpp" />
     <ClCompile Include="Core\Modules\Autoclicker.cpp" />
     <ClCompile Include="Core\Modules\AutoSprint.cpp" />
+    <ClCompile Include="Core\Modules\Fly.cpp" />
     <ClCompile Include="Core\Modules\FrameSpoof.cpp" />
     <ClCompile Include="Core\Modules\HitBoxExtender.cpp" />
+    <ClCompile Include="Core\Modules\Killaura.cpp" />
+    <ClCompile Include="Core\Modules\LegitScaffold.cpp" />
     <ClCompile Include="Core\Modules\Module.cpp" />
     <ClCompile Include="Core\Modules\MurderExpose.cpp" />
     <ClCompile Include="Core\Modules\NameSpoofer.cpp" />
+    <ClCompile Include="Core\Modules\NCPBHop.cpp" />
+    <ClCompile Include="Core\Modules\NCPYPort.cpp" />
     <ClCompile Include="Core\Modules\NoBuildDelay.cpp" />
     <ClCompile Include="Core\Modules\NoFire.cpp" />
     <ClCompile Include="Core\Modules\NoHitDelay.cpp" />
@@ -289,6 +302,7 @@
     <ClCompile Include="SDK\WorldClient.cpp" />
     <ClCompile Include="Wrapper\ClientConsole.cpp" />
     <ClCompile Include="Wrapper\Logger.cpp" />
+    <ClCompile Include="Wrapper\timer.cpp" />
     <ClCompile Include="Wrapper\Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

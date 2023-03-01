@@ -11,10 +11,12 @@
 #include "Handler.hpp"
 #include <iostream>
 #include "font.hpp"
+#include <mutex>
+#include "../SDK/LaunchWrapper.hpp"
 # define my_sizeof(type) ((char *)(&type+1)-(char*)(&type))
 #pragma comment(lib, "opengl32.lib")
-static const char* modes[] = { "Green", "Red", "Yellow", "Blue"};
-static const char* current_mode = "Green";
+static const char* speed_modes[] = { "VerusHop", "NCPBHop", "Vanilla", "Spartan", "AAC3"};
+static const char* speed_current_mode = "NCPBHop";
 extern ImVec4 clear_col;
 WNDPROC originalWNDPROC;
 
@@ -91,10 +93,45 @@ void GUI::RenderMain()
 	if (ImGui::CollapsingHeader("MOVEMENT"))
 	{
 		ImGui::Checkbox("Auto Sprint", &Settings::AutoSprint);
-		ImGui::Checkbox("Speed", &Settings::Speed);
+/*		ImGui::Checkbox("Speed", &Settings::Speed);
 		if (Settings::Speed) {
-			ImGui::SliderFloat("Multiplier", &Settings::multiplier, 0.0f, 6.0f);
+			
+			if (ImGui::BeginCombo("##combo", speed_current_mode)) // The second parameter is the label previewed before opening the combo.
+			{
+				for (int n = 0; n < IM_ARRAYSIZE(speed_modes); n++)
+				{
+					bool is_selected = (speed_current_mode == speed_modes[n]); // You can store your selection however you want, outside or inside your objects
+					if (ImGui::Selectable(speed_modes[n], is_selected))
+						speed_current_mode = speed_modes[n];
+					if (is_selected)
+						ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
+				}
+				ImGui::EndCombo();
+			}
+			if (speed_current_mode == "VerusHop") {
+				Handler::speed_modes = 3;
+				
+			}
+			if (speed_current_mode == "NCPBHop") {
+				Handler::speed_modes = 2;
+				
+			}
+			if (speed_current_mode == "Vanilla") {
+				Handler::speed_modes = 1;
+				
+			}
+			Logger::LogDebug(std::to_string(Handler::speed_modes));
+		}*/
+		ImGui::Checkbox("Vanilla", &Settings::VanillaSpeed);
+		ImGui::SliderFloat("Multiplier", &Settings::multiplier, 0.0f, 6.0f);
+		ImGui::Checkbox("VerusBHop", &Settings::NCPYPort);
+		ImGui::Checkbox("NCP BHop", &Settings::NCPBHop);
+		ImGui::Checkbox("Fly", &Settings::Fly);
+		if (Settings::Fly) {
+			ImGui::SliderFloat("Speed", &Settings::flySpeed, 0.0, 5.0);
 		}
+
+		
 	}
 
 	if (ImGui::CollapsingHeader("COMBAT"))
@@ -124,8 +161,14 @@ void GUI::RenderMain()
 		}
 		ImGui::Checkbox("Velocity", &Settings::Velocity);
 		if (Settings::Velocity) {
+			ImGui::Checkbox("Groundspoof", &Settings::groundSpoof);
 			ImGui::SliderInt("Ticks (higher = more kb, lower = less)", &Settings::VeloTicks, 0, 10);
+			ImGui::SliderFloat("Horizontal", &Settings::hori, -1, 1);
+			ImGui::SliderFloat("Vertical", &Settings::vert, -1, 1);
 		}
+		ImGui::Checkbox("Aura", &Settings::Killaura);
+		if (Settings::Killaura)
+			ImGui::SliderFloat("Range", &Settings::range, 3.0, 6.0f);
 	}
 
 	if (ImGui::CollapsingHeader("VISUAL"))
@@ -162,22 +205,8 @@ void GUI::RenderMain()
 
 		ImGui::Checkbox("No Fire", &Settings::NoFire);
 
-		ImGui::Separator();
-		/*
-		ImGui::Text("ArrayList Color: ");
-		if (ImGui::BeginCombo("##combo", current_mode)) // The second parameter is the label previewed before opening the combo.
-		{
-			for (int n = 0; n < IM_ARRAYSIZE(modes); n++)
-			{
-				bool is_selected = (current_mode == modes[n]); // You can store your selection however you want, outside or inside your objects
-				if (ImGui::Selectable(modes[n], is_selected))
-					current_mode = modes[n];
-				if (is_selected)
-					ImGui::SetItemDefaultFocus();   // You may set the initial focus when opening the combo (scrolling + for keyboard navigation support)
-			}
-			ImGui::EndCombo();
-		}
-		*/
+
+		ImGui::Checkbox("LegitScaffold", &Settings::LegitScaffold);
 	}
 
 	ImGui::End();
@@ -209,7 +238,7 @@ void GUI::RenderConsole()
 void GUI::RenderInfo()
 {
 	ImGuiWindowFlags window_flags = ImGuiWindowFlags_NoDecoration | ImGuiWindowFlags_AlwaysAutoResize | ImGuiWindowFlags_NoFocusOnAppearing | ImGuiWindowFlags_NoNav;
-	ImGui::SetNextWindowPos(ImVec2(1670, 0));
+	ImGui::SetNextWindowPos(ImVec2(1640, 0));
 	ImGui::SetNextWindowBgAlpha(0.25f);
 	bool* info_open = (bool*)0;
 	ImGui::Begin("Info", info_open, window_flags);
@@ -262,8 +291,22 @@ void GUI::RenderInfo()
 	if (Settings::Velocity) {
 		ImGui::Text(("Velocity - " + std::to_string(Settings::VeloTicks)).c_str());
 	}
-	if (Settings::Speed) {
-		ImGui::Text(("Speed - " + std::to_string(Settings::multiplier)).c_str());
+	if (Settings::VanillaSpeed) {
+		ImGui::Text(("Speed - Vanilla"));
+	}
+
+	if (Settings::LegitScaffold) {
+		ImGui::Text(("Scaffold - " + std::to_string(Settings::sneak_delay)).c_str());
+	}
+
+	if (Settings::NCPYPort) {
+		ImGui::Text(("Speed - VerusHop"));
+	}
+	if (Settings::NCPBHop) {
+		ImGui::Text(("Speed - NCPHop"));
+	}
+	if (Settings::Fly) {
+		ImGui::Text(("Fly - " + std::to_string(Settings::flySpeed)).c_str());
 	}
 	ImGui::End();
 }
@@ -292,17 +335,28 @@ void GUI::RenderESP()
 
 void GUI::Render()
 {
+	std::once_flag flag1, flag2;
+
 	ImGui_ImplOpenGL3_NewFrame();
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
-
+	ImGuiIO& io = ImGui::GetIO(); (void)io;
 	if (Enabled)
 	{
 		RenderMain();
-		RenderConsole();
+		// RenderConsole();
+		
+		//LaunchWrapper::getMinecraft().setIsGameHasFocus(false);
+		//io.MouseDrawCursor = true;
 	}
 	RenderInfo();
 	RenderESP();
+	
+	if (!Enabled)
+	{
+		//io.MouseDrawCursor = false;
+		//LaunchWrapper::getMinecraft().setIsGameHasFocus(true);
+	}
 
 	ImGui::EndFrame();
 	ImGui::Render();

@@ -1,6 +1,8 @@
 #include "Utils.hpp"
 #include <vector>
 #include <random>
+#include "../JNI/jni.h"
+
 
 std::string Utils::RandomString(std::size_t length)
 {
@@ -25,3 +27,7 @@ std::string Utils::time_to_string(const char* format, tm* time)
     buf.resize(std::strftime(buf.data(), buf.size(), format, time));
     return std::string(buf.begin(), buf.end());
 }
+
+using qword = unsigned long long;
+using t_createdvms = jint(__stdcall*)(JavaVM**, jsize, jsize*);
+

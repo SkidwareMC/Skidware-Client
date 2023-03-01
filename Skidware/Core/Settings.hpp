@@ -34,6 +34,7 @@ public:
 	static bool NameSpoof;
 	static bool Velocity;
 	static int VeloTicks;
+	static bool VanillaSpeed;
 	static float hori;
 	static float vert;
 	static const char* velo_modes[2];
@@ -41,4 +42,14 @@ public:
 	static char NameSpoofValue;
 	static bool Speed;
 	static float multiplier;
+	static bool LegitScaffold;
+	static int sneak_delay;
+	static bool Killaura;
+	static float range;
+	static bool NCPYPort;
+	static float force;
+	static bool Fly;
+	static float flySpeed;
+	static bool NCPBHop;
+	static bool groundSpoof;
 };
