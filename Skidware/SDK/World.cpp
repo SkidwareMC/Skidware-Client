@@ -100,14 +100,18 @@ std::vector<Entity> World::getEntityList()
 
 bool World::isBlockAir(double x, double y, double z)
 {
-	jclass blockposclass = JNIHelper::env->FindClass("cj"); //blockpos class
+	jclass blockposclass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net.minecraft.util.BlockPos") : JNIHelper::env->FindClass("cj"); //blockpos class
+	Logger::Log("BlockPosClass");
 	jmethodID bpmid = JNIHelper::env->GetMethodID(blockposclass, "<init>", "(DDD)V"); // construcor
+	Logger::Log("Constructer");
 	jobject blockpos = JNIHelper::env->NewObject(blockposclass, bpmid, (jdouble)x, (jdouble)y, (jdouble)z); // object go brrr
+	Logger::Log("New Object");
 	jclass worldclass = JNIHelper::env->GetObjectClass(CurrentObject);
-	jmethodID mid = JNIHelper::env->GetMethodID(worldclass, JNIHelper::IsForge() ? "func_175623_d" : "d", "(Lcj;)Z");
-
+	Logger::Log("WorldClass");
+	jmethodID mid = JNIHelper::env->GetMethodID(worldclass, JNIHelper::IsForge() ? "func_175623_d" : "d", "(Lnet/minecraft/util/BlockPos;)Z");
+	Logger::Log("Call method1");
 	bool res = JNIHelper::env->CallBooleanMethod(CurrentObject, mid, blockpos);
-
+	Logger::Log("Call method");
 	JNIHelper::env->DeleteLocalRef(blockposclass);
 	JNIHelper::env->DeleteLocalRef(worldclass);
 	JNIHelper::env->DeleteLocalRef(blockpos);

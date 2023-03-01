@@ -4,8 +4,8 @@
 #include "../../SDK/LocalPlayer.hpp"
 #include "../../SDK/Launchwrapper.hpp"
 #include "../Settings.hpp"
-
-class Fly
+#include "../../Wrapper/timer.h"
+class Flight
 {
 private:
 

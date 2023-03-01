@@ -5,7 +5,7 @@
 #include "../../SDK/Launchwrapper.hpp"
 #include "../Settings.hpp"
 
-class Fly
+class NCPYPort
 {
 private:
 

@@ -72,8 +72,10 @@ public:
 	void LeftClick();
 	void RightClick();
 	bool InGameHasFocus();
+	void setTimer(float value);
 	int GetFPS();
 	void SetFPS(jint);
 	int GetDisplayHeight();
 	int GetDisplayWidth();
+	void setIsGameHasFocus(jboolean);
 };
