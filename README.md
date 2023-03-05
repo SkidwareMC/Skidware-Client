@@ -8,7 +8,7 @@ Trash GUI lmao
 [![License](https://img.shields.io/github/license/danielkrupinski/Osiris.svg?style=plastic)](LICENSE)
 ![Windows](https://github.com/danielkrupinski/Osiris/workflows/Windows/badge.svg?branch=master&event=push)
 Minecraft injection client <br>
-![url](https://github.com/SkidwareMC/Skidware-Client/blob/New-1.8.9/skidware.png) <br>
+![url](https://github.com/SkidwareMC/Skidware-Client/blob/Stable/skidware.png) <br>
 1.8.9 forge/vanilla
 use your favorite mods along with skidware
 credits to Liam5750, Umbra9999, ocornut, and CheatMaker
