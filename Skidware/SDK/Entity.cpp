@@ -185,3 +185,9 @@ jint Entity::GetEntityID()
 
 	return EntityIdInt;
 }
+
+int Entity::ticksExisted()
+{
+	jfieldID ticksExistedfd = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_70173_aa" : "W", "I");
+	return JNIHelper::env->GetIntField(GetCurrentObject(), ticksExistedfd);
+}

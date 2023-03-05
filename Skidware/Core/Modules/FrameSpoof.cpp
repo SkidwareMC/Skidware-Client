@@ -4,5 +4,5 @@
 
 void FrameSpoof::OnTick()
 {
-	if (Settings::FrameSpoof) LaunchWrapper::getMinecraft().SetFPS(Settings::FrameSpoofValue);
+	if (Settings::FrameSpoof) LaunchWrapper::getMinecraft().SetFPS(Settings::FrameSpoofValue); 
 }

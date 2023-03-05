@@ -90,7 +90,7 @@ void LocalPlayer::setFly(jboolean state)
 		return;
 	}
 
-	jclass capabilitiesClass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net.minecraft.entity.player.PlayerCapabilities") : JNIHelper::env->GetObjectClass(capabilities);
+	jclass capabilitiesClass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net/minecraft/entity/player/PlayerCapabilities") : JNIHelper::env->GetObjectClass(capabilities);
 
 	jfieldID fid = JNIHelper::env->GetFieldID(capabilitiesClass, JNIHelper::IsForge() ? "field_75100_b" : "b", "Z");
 	JNIHelper::env->SetBooleanField(capabilities, fid, state);
@@ -170,7 +170,15 @@ bool LocalPlayer::isHurt(int ticks)
 		hurttimefd = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_70737_aN" : "au", "I");
 	int hurtTime = (int)JNIHelper::env->GetIntField(GetCurrentObject(), hurttimefd);
 	return (hurtTime > ticks);
-}   
+}
+
+void LocalPlayer::setHurt(int ticks)
+{
+	if (GetCurrentClass() == NULL) return;
+	if (hurttimefd == NULL)
+		hurttimefd = JNIHelper::env->GetFieldID(GetCurrentClass(), JNIHelper::IsForge() ? "field_70737_aN" : "au", "I");
+	 JNIHelper::env->SetIntField(GetCurrentObject(), hurttimefd, ticks);
+}
 
 void LocalPlayer::setOnGround(jboolean onGround)
 {
@@ -268,6 +276,23 @@ void LocalPlayer::setFallDist(float dist)
 	return JNIHelper::env->SetFloatField(CurrentObject, falldfid, dist);
 }
 
+bool LocalPlayer::isBlocking()
+{
+	jclass playerclass = JNIHelper::env->GetObjectClass(CurrentObject);
+	jmethodID blockmid = JNIHelper::env->GetMethodID(playerclass, JNIHelper::IsForge() ? "func_70632_aY" : "bW", "()Z");
+	JNIHelper::env->DeleteLocalRef(playerclass);
+	return (bool)JNIHelper::env->CallBooleanMethod(CurrentObject, blockmid);
+
+}
+
+jobject LocalPlayer::raytrace(float dist)
+{
+	jclass player_class = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net/minecraft/client/entity/EntityPlayerSP") : JNIHelper::env->GetObjectClass(CurrentObject);
+	jmethodID raytrace_mid = JNIHelper::env->GetMethodID(player_class, JNIHelper::IsForge() ? "func_174822_a" : "a", "(DF)Lauh;");
+	JNIHelper::env->DeleteLocalRef(player_class);
+	return JNIHelper::env->CallObjectMethod(CurrentObject, raytrace_mid, 1.0, dist);
+}
+
 
 void LocalPlayer::setMoveStrafing(float value)
 {
@@ -283,15 +308,8 @@ void LocalPlayer::setMoveForward(float value)
 	return JNIHelper::env->SetFloatField(CurrentObject, moveForward, value);
 }
 
-jobject LocalPlayer::get_player_controller() {
-	jclass mcclass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net.minecraft.client.Minecraft") : JNIHelper::env->FindClass("ave");
-	jfieldID controllerfid = JNIHelper::env->GetFieldID(mcclass, JNIHelper::IsForge() ? "field_71442_b" : "c", "Lbda; ");
-	JNIHelper::env->DeleteLocalRef(mcclass);
-	return JNIHelper::env->GetObjectField(LaunchWrapper::getMinecraft().GetCurrentObject(), controllerfid);
-}
-
 void LocalPlayer::attackEntity(Entity entity) {
-	jobject pc_obj = get_player_controller();
+	jobject pc_obj = LaunchWrapper::getMinecraft().get_player_controller();
 	Logger::LogDebug("PC class");
 	jclass pc_class = JNIHelper::env->GetObjectClass(pc_obj);
 	Logger::LogDebug("pc object");
@@ -354,7 +372,7 @@ void LocalPlayer::strafe(float speed) {
 
 bool LocalPlayer::isMoving() {
 	if (GetCurrentClass() == NULL) return NULL;
-	return (this->get_motion_x() != 0) || (this->get_motion_z() != 0);
+	return (this->getMoveForward() != 0) || (this->getMoveStrafing() != 0);
 }
 
 

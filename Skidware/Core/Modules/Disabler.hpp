@@ -4,12 +4,16 @@
 #include "../../SDK/LocalPlayer.hpp"
 #include "../../SDK/Launchwrapper.hpp"
 #include "../Settings.hpp"
+#include "../../Wrapper/Utils.hpp"
+#include "../../Wrapper/Logger.hpp"
+#include "../../Wrapper/timer.h"
 #include "Module.hpp"
-class Fly : Module
+class Disabler : Module
 {
 private:
 
 public:
-	Fly();
+	Disabler();
 	static void OnTick();
+
 };

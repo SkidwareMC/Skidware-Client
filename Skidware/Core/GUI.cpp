@@ -130,7 +130,7 @@ void GUI::RenderMain()
 		if (Settings::Fly) {
 			ImGui::SliderFloat("Speed", &Settings::flySpeed, 0.0, 5.0);
 		}
-
+		ImGui::Checkbox("Strafe", &Settings::Strafe);
 		
 	}
 
@@ -140,6 +140,9 @@ void GUI::RenderMain()
 		if (Settings::Autoclicker)
 		{
 			ImGui::SliderInt("CPS", &Settings::AutoclickerCount, 1, 20);
+			ImGui::Checkbox("BlockHit", &Settings::BlockHit);
+			ImGui::Checkbox("Right Clicker", &Settings::RightClick);
+			ImGui::SliderInt("Right CPS", &Settings::RightClickSpeed, 1, 20);
 		}
 
 		ImGui::Checkbox("No Hit Delay", &Settings::NoHitDelay);
@@ -169,6 +172,11 @@ void GUI::RenderMain()
 		ImGui::Checkbox("Aura", &Settings::Killaura);
 		if (Settings::Killaura)
 			ImGui::SliderFloat("Range", &Settings::range, 3.0, 6.0f);
+		ImGui::Checkbox("NoSlow", &Settings::NoSlow);
+		ImGui::Checkbox("Reach", &Settings::Reach);
+		if (Settings::Reach) {
+			ImGui::SliderFloat("Reach", &Settings::dist, 1, 6);
+		}
 	}
 
 	if (ImGui::CollapsingHeader("VISUAL"))
@@ -205,8 +213,13 @@ void GUI::RenderMain()
 
 		ImGui::Checkbox("No Fire", &Settings::NoFire);
 
-
 		ImGui::Checkbox("LegitScaffold", &Settings::LegitScaffold);
+		ImGui::Checkbox("Disabler", &Settings::Disabler);
+		if (Settings::Disabler) {
+			ImGui::Separator();
+			ImGui::Checkbox("Frequency Fly", &Settings::FrequencyFly);
+			ImGui::Checkbox("OldAAC", &Settings::OldAAC);
+		}
 	}
 
 	ImGui::End();
@@ -307,6 +320,18 @@ void GUI::RenderInfo()
 	}
 	if (Settings::Fly) {
 		ImGui::Text(("Fly - " + std::to_string(Settings::flySpeed)).c_str());
+	}
+	if (Settings::Disabler && Settings::FrequencyFly) {
+		ImGui::Text("Disabler - FrequencyFly");
+	}
+	if (Settings::Disabler && Settings::OldAAC) {
+		ImGui::Text("Disabler - OldAAC");
+	}
+	if (Settings::NoSlow) {
+		ImGui::Text("NoSlow");
+	}
+	if (Settings::Strafe) {
+		ImGui::Text("Strafe");
 	}
 	ImGui::End();
 }

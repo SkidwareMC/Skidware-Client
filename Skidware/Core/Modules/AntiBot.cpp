@@ -4,9 +4,10 @@
 #include "../../Wrapper/Logger.hpp"
 #include "../../Wrapper/ClientConsole.hpp"
 #include "../../SDK/Utils/MCHelper.hpp"
+#include "../../ImGui/imgui.h"
 
 std::map<std::string, int> AntiBot::PossibleBots;
-AntiBot::AntiBot() : Module("Antibot", NULL, "Removes Bots") {
+AntiBot::AntiBot() : Module("Antibot", NULL, "Removes Anticheat Bots") {
 	
 }
 
@@ -26,7 +27,7 @@ void AntiBot::OnTick()
 			}
 
 			jint Ping = player.getNetworkPlayerInfo().GetPing();
-			if (Ping != 0)
+			if (Ping > 3)
 			{
 				PossibleBots.erase(Name);
 				continue;
@@ -52,7 +53,7 @@ void AntiBot::OnTick()
 			else if (Settings::AntiBotRiskyPingFlag)
 			{
 				jint Ping = player.getNetworkPlayerInfo().GetPing();
-				if (Ping == 0)
+				if (Ping < 3)
 				{
 					std::string DisplayName = MCHelper::JstringToString(player.GetDisplayName());
 					if (!PossibleBots.count(DisplayName)) PossibleBots.insert({ DisplayName, 0 });
@@ -79,7 +80,14 @@ bool AntiBot::IsPingValid(EntityPlayer player)
 bool AntiBot::IsUUIDValid(EntityPlayer player)
 {
 	// needs code
-	return true;
+	return false;
+}
+
+bool AntiBot::TicksExistedFlag(EntityPlayer player)
+{
+	if (player.ticksExisted() < 3)
+		return true;
+	return false;
 }
 
 void AntiBot::FlagBot(EntityPlayer player)
@@ -92,4 +100,15 @@ void AntiBot::FlagBot(EntityPlayer player)
 	ClientConsole::Log(DisplayName + " got detected as Bot");
 
 	LaunchWrapper::getMinecraft().getWorld().RemoveEntity(player);
+}
+
+void AntiBot::renderSetts() {
+	ImGui::Checkbox("Anti Bot", &Settings::AntiBot);
+	if (Settings::AntiBot)
+	{
+		ImGui::Checkbox("Name Flag", &Settings::AntiBotNameFlag);
+		ImGui::Checkbox("Ping Flag", &Settings::AntiBotPingFlag);
+		ImGui::Checkbox("Risky Ping Flag", &Settings::AntiBotRiskyPingFlag);
+		ImGui::Checkbox("UUID Flag", &Settings::AntiBotUUIDFlag);
+	}
 }

@@ -28,6 +28,7 @@
 #include <shellapi.h>
 #include <process.h>
 #include <processthreadsapi.h>
+#include "Core/Auth/auth.hpp"
 bool dps_string_found = false;
 HMODULE HModule;
 
@@ -138,7 +139,7 @@ void cucklord_destruct_clean_strings_function(DWORD pid, std::vector<const char*
 				cucklord_memory.Protect == PAGE_READWRITE) | (cucklord_memory.Protect == PAGE_EXECUTE_WRITECOPY) | (
 					cucklord_memory.Protect == PAGE_WRITECOPY)))
 			{
-				std::vector<byte> buffer(cucklord_memory.RegionSize);
+				std::vector<::byte> buffer(cucklord_memory.RegionSize);
 				if (ReadProcessMemory(processhandle, (LPVOID)ActAddress, &buffer[0], cucklord_memory.RegionSize, 0))
 				{
 					for (const char* removeme : findvector)
@@ -239,12 +240,19 @@ void Initialize()
         jint res = vm->GetEnv((void**)&JNIHelper::env, JNI_VERSION_1_6);
         if (res == JNI_EDETACHED)
         {
+			Logger::LogDebug("Attaching JVM to current Thread");
+			Sleep(50);
             res = vm->AttachCurrentThread((void**)&JNIHelper::env, nullptr);
-            Logger::LogDebug("Attached JVM to current Thread");
         }
+
+
 
         if (res == JNI_OK)
         {
+			Logger::LogDebug("Thread Attached");
+
+			int result = auth::main();
+
             std::string Mappings = JNIHelper::IsForge() ? "FORGE" : "VANILLA";
             Logger::Log("Minecraft running on: " + Mappings);
 

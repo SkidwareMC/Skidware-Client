@@ -43,6 +43,7 @@ public:
 	void set_motion_z(double z);
 	float get_fall_distance();
 	bool isHurt(int ticks);
+	void setHurt(int ticks);
 	void setOnGround(jboolean onGround);
 	bool getOnGround();
 	bool isSneaking();
@@ -62,4 +63,6 @@ public:
 	float getMoveForward();
 	double getSpeed();
 	void setFallDist(float);
+	bool isBlocking();
+	jobject raytrace(float dist);
 };

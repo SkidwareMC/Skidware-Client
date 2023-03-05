@@ -24,6 +24,10 @@ private:
 	jobject getNetworkManagerObject = NULL;
 	NetworkManager NetworkManagerInstance = NULL;
 
+	jobject getNetHandlerObject = NULL;
+	jmethodID getNetHandlermd = NULL;
+	NetHandlerPlayClient NetHandler = NULL;
+
 	jfieldID getServerDataFieldID = NULL;
 	jobject getServerDataObject = NULL;
 	ServerData ServerDataInstance = NULL;
@@ -56,6 +60,7 @@ private:
 	jfieldID displayHeightFieldID = NULL;
 	jint displayHeightInt = NULL;
 
+
 public:
 	Minecraft(jobject);
 	jobject GetCurrentObject();
@@ -64,6 +69,7 @@ public:
 	LocalPlayer getLocalPlayer();
 	WorldClient getWorld();
 	NetworkManager getNetworkManager();
+	NetHandlerPlayClient getNetHandler();
 	ServerData getServerData();
 	RenderManager getRenderManager();
 	Session getSession();
@@ -78,4 +84,8 @@ public:
 	int GetDisplayHeight();
 	int GetDisplayWidth();
 	void setIsGameHasFocus(jboolean);
+
+	jobject get_player_controller();
+	LocalPlayer thePlayer = NULL;
+	WorldClient theWorld = NULL;
 };

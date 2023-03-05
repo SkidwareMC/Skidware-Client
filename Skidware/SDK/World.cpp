@@ -100,7 +100,7 @@ std::vector<Entity> World::getEntityList()
 
 bool World::isBlockAir(double x, double y, double z)
 {
-	jclass blockposclass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net.minecraft.util.BlockPos") : JNIHelper::env->FindClass("cj"); //blockpos class
+	jclass blockposclass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net/minecraft/util/BlockPos") : JNIHelper::env->FindClass("cj"); //blockpos class
 	Logger::Log("BlockPosClass");
 	jmethodID bpmid = JNIHelper::env->GetMethodID(blockposclass, "<init>", "(DDD)V"); // construcor
 	Logger::Log("Constructer");

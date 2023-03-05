@@ -44,4 +44,5 @@ public:
 	void SetBoundingBoxWidth(jfloat);
 	void SetBoundingBoxHeight(jfloat);
 	jint GetEntityID();
+	int ticksExisted();
 };

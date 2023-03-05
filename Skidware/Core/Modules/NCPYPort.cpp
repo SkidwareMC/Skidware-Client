@@ -6,7 +6,7 @@ void NCPYPort::OnTick()
 	if (!Settings::NCPYPort == true) {
 		return;
 	}
-	float speed = 1.07;
+	float speed = 1.01;
 	/*
 	if (!(GetAsyncKeyState('W') & 0x8000)) return;
 	if (LaunchWrapper::getMinecraft().getLocalPlayer().getOnGround()) {
