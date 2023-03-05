@@ -1,15 +1,14 @@
 #pragma once
-#include "JNIHelper.hpp"
+#include "../JNIHelper.hpp"
 
-class NetHandlerPlayClient
+class C03PlayerPacket
 {
 private:
 	jobject CurrentObject = NULL;
 	jclass CurrentClass = NULL;
 
 public:
-	NetHandlerPlayClient(jobject obj);
+	C03PlayerPacket(bool onGround);
 	jobject GetCurrentObject();
 	jclass GetCurrentClass();
-	void addToSendQueue();
 };

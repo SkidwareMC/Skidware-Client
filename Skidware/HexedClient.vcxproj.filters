@@ -225,15 +225,6 @@
     <ClInclude Include="Core\Modules\Flight.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SDK\EventSystem\Event.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\EventSystem\RenderEvent.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="SDK\EventSystem\UpdateEvent.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="Core\Modules\Module.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -265,6 +256,36 @@
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="Core\Modules\NCPBhop.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Disabler.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\NoSlow.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Reach.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Auth\auth.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Utils\xorstr.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="Core\Modules\Strafe.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\Packets\C03PlayerPacket.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\Event.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\RenderEvent.hpp">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="SDK\EventSystem\UpdateEvent.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
@@ -447,6 +468,21 @@
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="Core\Modules\NCPBHop.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Disabler.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\NoSlow.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Reach.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="Core\Modules\Strafe.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="SDK\Packets\C03PlayerPacket.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>

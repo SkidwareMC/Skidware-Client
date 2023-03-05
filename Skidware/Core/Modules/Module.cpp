@@ -11,13 +11,26 @@ void Module::OnTick()
 {
 }
 
-void Module::OnUpdate()
+
+void Module::onEnable()
 {
 }
 
-void Module::OnRender()
+void Module::onDisable()
 {
 }
+
+void Module::toggle()
+{
+	this->enabled = !this->enabled;
+	if (this->enabled) {
+		this->onEnable();
+	}
+	else {
+		this->onDisable();
+	}
+}
+
 
 const char* Module::getName()
 {
@@ -28,6 +41,10 @@ const char* Module::getName()
 const char* Module::getDescription()
 {
 	return this->description;
+}
+
+void Module::renderSetts()
+{
 }
 
 

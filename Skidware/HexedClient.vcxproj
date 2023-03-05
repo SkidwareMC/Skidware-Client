@@ -166,9 +166,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Auth\auth.hpp" />
     <ClInclude Include="Core\font.hpp" />
     <ClInclude Include="Core\GUI.hpp" />
     <ClInclude Include="Core\Handler.hpp" />
+    <ClInclude Include="Core\Modules\Disabler.hpp" />
     <ClInclude Include="Core\Modules\Fly.hpp" />
     <ClInclude Include="Core\Modules\Killaura.hpp" />
     <ClInclude Include="Core\Modules\LegitScaffold.hpp" />
@@ -185,9 +187,12 @@
     <ClInclude Include="Core\Modules\NoBuildDelay.hpp" />
     <ClInclude Include="Core\Modules\NoFire.hpp" />
     <ClInclude Include="Core\Modules\NoHitDelay.hpp" />
+    <ClInclude Include="Core\Modules\NoSlow.hpp" />
     <ClInclude Include="Core\Modules\PingSpoof.hpp" />
     <ClInclude Include="Core\Modules\PlayerESP.hpp" />
+    <ClInclude Include="Core\Modules\Reach.hpp" />
     <ClInclude Include="Core\Modules\SpartanSpeed.hpp" />
+    <ClInclude Include="Core\Modules\Strafe.hpp" />
     <ClInclude Include="Core\Modules\VanillaSpeed.hpp" />
     <ClInclude Include="Core\Patching.hpp" />
     <ClInclude Include="Core\Settings.hpp" />
@@ -231,11 +236,13 @@
     <ClInclude Include="SDK\NetHandlerPlayClient.hpp" />
     <ClInclude Include="SDK\NetworkManager.hpp" />
     <ClInclude Include="SDK\NetworkPlayerInfo.hpp" />
+    <ClInclude Include="SDK\Packets\C03PlayerPacket.hpp" />
     <ClInclude Include="SDK\RenderManager.hpp" />
     <ClInclude Include="SDK\ServerData.hpp" />
     <ClInclude Include="SDK\Session.hpp" />
     <ClInclude Include="SDK\Utils\JavaUtil.hpp" />
     <ClInclude Include="SDK\Utils\MCHelper.hpp" />
+    <ClInclude Include="SDK\Utils\xorstr.h" />
     <ClInclude Include="SDK\World.hpp" />
     <ClInclude Include="SDK\WorldClient.hpp" />
     <ClInclude Include="Wrapper\ClientConsole.hpp" />
@@ -249,6 +256,7 @@
     <ClCompile Include="Core\Modules\AntiBot.cpp" />
     <ClCompile Include="Core\Modules\Autoclicker.cpp" />
     <ClCompile Include="Core\Modules\AutoSprint.cpp" />
+    <ClCompile Include="Core\Modules\Disabler.cpp" />
     <ClCompile Include="Core\Modules\Fly.cpp" />
     <ClCompile Include="Core\Modules\FrameSpoof.cpp" />
     <ClCompile Include="Core\Modules\HitBoxExtender.cpp" />
@@ -262,8 +270,11 @@
     <ClCompile Include="Core\Modules\NoBuildDelay.cpp" />
     <ClCompile Include="Core\Modules\NoFire.cpp" />
     <ClCompile Include="Core\Modules\NoHitDelay.cpp" />
+    <ClCompile Include="Core\Modules\NoSlow.cpp" />
     <ClCompile Include="Core\Modules\PingSpoof.cpp" />
     <ClCompile Include="Core\Modules\PlayerESP.cpp" />
+    <ClCompile Include="Core\Modules\Reach.cpp" />
+    <ClCompile Include="Core\Modules\Strafe.cpp" />
     <ClCompile Include="Core\Modules\VanillaSpeed.cpp" />
     <ClCompile Include="Core\Patching.cpp" />
     <ClCompile Include="Core\Settings.cpp" />
@@ -293,6 +304,7 @@
     <ClCompile Include="SDK\NetHandlerPlayClient.cpp" />
     <ClCompile Include="SDK\NetworkManager.cpp" />
     <ClCompile Include="SDK\NetworkPlayerInfo.cpp" />
+    <ClCompile Include="SDK\Packets\C03PlayerPacket.cpp" />
     <ClCompile Include="SDK\RenderManager.cpp" />
     <ClCompile Include="SDK\ServerData.cpp" />
     <ClCompile Include="SDK\Session.cpp" />

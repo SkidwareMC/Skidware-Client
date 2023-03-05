@@ -21,7 +21,11 @@
 #include "Modules/Killaura.hpp"
 #include "Modules/NCPYPort.hpp"
 #include "Modules/Fly.hpp"
-#include "Modules//NCPBhop.hpp"
+#include "Modules/NCPBhop.hpp"
+#include "Modules/Disabler.hpp"
+#include "Modules/NoSlow.hpp"
+#include "Modules/Reach.hpp"
+#include "Modules/Strafe.hpp"
 #include "GUI.hpp"
 #include <mutex>
 
@@ -54,13 +58,16 @@ void Handler::OnTick()
 	PingSpoof::OnTick();
 	MurderExpose::OnTick();
 	Fly::OnTick(); //actually velocity
-	
+	Disabler::OnTick();
 	VanillaSpeed::OnTick();
 	NCPBHop::OnTick();
 	NCPYPort::OnTick();
 	Flight::OnTick();
 	LegitScaffold::OnTick();
 	Aura::OnTick();
+	NoSlow::OnTick();
+	Strafe::OnTick();
+	//Reach::OnTick();
 }
 
 
@@ -71,7 +78,10 @@ void Handler::DoKeyBinds()
 	if (GetAsyncKeyState(VK_END)) Settings::ShouldUninject = true; 
 	if ((GetAsyncKeyState(VK_RSHIFT) & 0x8000)) GUI::Enabled = !GUI::Enabled;
 	if (!LaunchWrapper::getMinecraft().InGameHasFocus()) return;
-	if ((GetAsyncKeyState('U') & 0x8000)) Settings::Fly = !Settings::Fly;
+	if ((GetAsyncKeyState('U') & 0x8000)) { 
+		Settings::Fly = !Settings::Fly; 
+		Settings::Disabler = !Settings::Disabler;
+	}
 	// if ((GetAsyncKeyState('Y') & 0x8000)) Settings::LegitScaffold = !Settings::LegitScaffold; Sleep(0);
 	//if ((GetAsyncKeyState('G') & 0x8000)) Settings::Killaura = !Settings::Killaura; Sleep(0);
 	//

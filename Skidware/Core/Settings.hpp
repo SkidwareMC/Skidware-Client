@@ -52,4 +52,17 @@ public:
 	static float flySpeed;
 	static bool NCPBHop;
 	static bool groundSpoof;
+	static bool Disabler;
+	static bool FrequencyFly;
+	static bool TimerDisable;
+	static bool NoSlow;
+	static bool OldAAC;
+	static bool Reach;
+	static float dist;
+	static bool Strafe;
+	static bool Timer;
+	static float timerspeed;
+	static bool RightClick;
+	static bool BlockHit;
+	static int RightClickSpeed;
 };

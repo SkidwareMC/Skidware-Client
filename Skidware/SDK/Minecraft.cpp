@@ -3,6 +3,8 @@
 Minecraft::Minecraft(jobject obj)
 {
 	CurrentObject = obj;
+	thePlayer = getLocalPlayer();
+	theWorld = getWorld();
 }
 
 jobject Minecraft::GetCurrentObject()
@@ -88,6 +90,30 @@ NetworkManager Minecraft::getNetworkManager()
 	}
 
 	return NetworkManagerInstance;
+}
+
+NetHandlerPlayClient Minecraft::getNetHandler()
+{
+	if (GetCurrentClass() == NULL) return NULL;
+
+	if (NetHandler.GetCurrentClass() == NULL)
+	{
+		if (getNetHandlermd == NULL)
+		{
+			getNetHandlermd = JNIHelper::IsForge() ? JNIHelper::env->GetMethodID(GetCurrentClass(), "field_71422_O", "Lnet/minecraft/client/multiplayer/ServerData;") : JNIHelper::env->GetMethodID(GetCurrentClass(), "u", "Lbde;");
+			if (getNetHandlermd == NULL) return NULL;
+		}
+
+		if (getNetHandlerObject == NULL)
+		{
+			getNetHandlerObject = JNIHelper::env->CallObjectMethod(CurrentObject, getNetHandlermd);
+			if (getNetHandlerObject == NULL) return NULL;
+		}
+
+		NetHandler = NetHandlerPlayClient(getNetHandlerObject);
+	}
+
+	return NetHandler;
 }
 
 ServerData Minecraft::getServerData()
@@ -235,22 +261,27 @@ bool Minecraft::InGameHasFocus()
 void Minecraft::setTimer(float value) {
 	jfieldID timerObjfid = JNIHelper::env->GetFieldID(CurrentClass, JNIHelper::IsForge() ? "field_71428_T" : "Y", "Lavl;");
 	if (timerObjfid == NULL) {
+		printf("Error 1\n");
 		return;
 	}
 	jobject timerObj = JNIHelper::env->GetObjectField(CurrentObject, timerObjfid);
 	if (timerObj == NULL) {
+		printf("Error 2\n");
 		return;
 	}
-	jclass timerClass = JNIHelper::env->FindClass("avl");
+	jclass timerClass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net.minecraft.util.Timer") : JNIHelper::env->FindClass("avl");
 	if (timerClass == NULL) {
+		printf("Error 3\n");
 		return;
 	}
 	jfieldID timerSpeedfid = JNIHelper::env->GetFieldID(timerClass, JNIHelper::IsForge() ? "field_74278_d" : "d", "F");
 	if (timerClass == NULL) {
+		printf("Error 4\n");
 		return;
 	}
 	JNIHelper::env->SetFloatField(timerObj, timerSpeedfid, value);
 	float timerVal = JNIHelper::env->GetFloatField(timerObj, timerSpeedfid);
+	// std::cout << timerVal << std::endl;
 
 	JNIHelper::env->DeleteLocalRef(timerObj);
 	JNIHelper::env->DeleteLocalRef(timerClass);
@@ -341,3 +372,9 @@ void Minecraft::setIsGameHasFocus(jboolean state)
 	return;
 }
 
+jobject Minecraft::get_player_controller() {
+	jclass mcclass = JNIHelper::IsForge() ? JNIHelper::ForgeFindClass("net/minecraft/client/Minecraft") : JNIHelper::env->FindClass("ave");
+	jfieldID controllerfid = JNIHelper::env->GetFieldID(mcclass, JNIHelper::IsForge() ? "field_71442_b" : "c", "Lbda; ");
+	JNIHelper::env->DeleteLocalRef(mcclass);
+	return JNIHelper::env->GetObjectField(GetCurrentObject(), controllerfid);
+}

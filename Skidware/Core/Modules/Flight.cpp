@@ -1,6 +1,9 @@
 #include "Flight.hpp"
 #include "../../Wrapper/Logger.hpp"
 #include "../../Wrapper/Utils.hpp"
+Fly::Fly() : Module("Velocity", NULL, "Makes you take less knockback")
+{
+}
 void Fly::OnTick()
 {
 	if (Settings::Velocity) {

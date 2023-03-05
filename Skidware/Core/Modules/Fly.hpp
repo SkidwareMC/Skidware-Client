@@ -5,10 +5,12 @@
 #include "../../SDK/Launchwrapper.hpp"
 #include "../Settings.hpp"
 #include "../../Wrapper/timer.h"
-class Flight
+#include "Module.hpp"
+class Flight : Module
 {
 private:
 
 public:
+	Flight();
 	static void OnTick();
 };

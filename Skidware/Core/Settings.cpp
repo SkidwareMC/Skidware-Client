@@ -17,12 +17,18 @@ bool Settings::Fly = false;
 float Settings::flySpeed = 0.5;
 bool Settings::NCPBHop = false;
 bool Settings::VanillaSpeed = false;
+bool Settings::Strafe = false;
+bool Settings::Timer = false;
+float Settings::timerspeed = 1.2f;
 
 //COMBAT
 bool Settings::NoHitDelay = false;
 bool Settings::NoBuildDelay = false;
 bool Settings::Autoclicker = false;
+bool Settings::RightClick = false;
 int Settings::AutoclickerCount = 16;
+int Settings::RightClickSpeed = 16;
+bool Settings::BlockHit = true;
 bool Settings::HitBoxExtender = false;
 float Settings::HitBoxWidth = 0.4f;
 float Settings::HitBoxHeight = 0.2f;
@@ -33,7 +39,9 @@ bool Settings::groundSpoof = true;
 int Settings::VeloTicks = 0;
 bool Settings::Killaura = false;
 float Settings::range = 3.5;
-
+bool Settings::NoSlow = false;
+bool Settings::Reach = false;
+float Settings::dist = 3.2;
 
 
 //PROTECTION
@@ -59,5 +67,9 @@ bool Settings::NameSpoof = false;
 char Settings::NameSpoofValue = (const char)"Skidware";
 bool Settings::LegitScaffold = false;
 int Settings::sneak_delay = 100;
+bool Settings::Disabler = false;
+bool Settings::FrequencyFly = true;
+bool Settings::TimerDisable;
+bool Settings::OldAAC = false;
 //HYPIXEL
 bool Settings::MurderExpose = false;
